@@ -14,3 +14,4 @@ These are list of datapacks that has been verify:
 - [RedPlantation](https://github.com/RedCocoon/RedPlantation) by Cocoon#5487
 - [3D Model Editor](https://www.planetminecraft.com/data-pack/3d-model-editor/) by Philipp O.#9679
 - [K1S](https://www.planetminecraft.com/data-pack/k1s-minecraft-pack/) by UltroGhast#0286
+- [GGUNZ](https://www.planetminecraft.com/data-pack/ggunz-guns-and-weapons/) by Geegaz#4001
