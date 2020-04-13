@@ -1,6 +1,9 @@
 [book]
-authors = ["oOBoomberOo"]
+title = "MC Datapacks"
+authors = ["Boomber"]
 language = "en"
 multilingual = false
 src = "src"
-title = "MC Datapacks"
+
+[build]
+build-dir = "docs"
