@@ -1,7 +1,14 @@
 # Certified Datapacks
 
-Datapack that has followed Official Conventions can choose to display this banner in their project page:
-![Certified Datapack](https://i.imgur.com/lvZZouy.png)  
-(Link: `https://i.imgur.com/lvZZouy.png`)
+![Certified Datapack Banner](https://i.imgur.com/lvZZouy.png)
 
-This allow other users to quickly identify that your datapack is compatible to other Certified Datapacks
+```text
+https://i.imgur.com/lvZZouy.png
+```
+
+You can attach this banner to your project if you've successfully follow [Official Conventions](./conventions/index.md), This allow people to quickly identify that your datapack is compatible with other datapacks.
+
+These are list of datapacks that has been verify:
+
+- [Undermagic](https://www.planetminecraft.com/data-pack/undermagic/) by Hashs#9531
+- [RedPlantation](https://github.com/RedCocoon/RedPlantation) by Cocoon#5487

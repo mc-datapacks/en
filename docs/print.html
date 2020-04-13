@@ -244,10 +244,15 @@
 <p><img src="https://i.imgur.com/6bzBBr1.png" alt="Datapack Advancement Convention Preview" /><br />
 (Image by @Hashs#9531)</p>
 <h1><a class="header" href="#certified-datapacks" id="certified-datapacks">Certified Datapacks</a></h1>
-<p>Datapack that has followed Official Conventions can choose to display this banner in their project page:
-<img src="https://i.imgur.com/lvZZouy.png" alt="Certified Datapack" /><br />
-(Link: <code>https://i.imgur.com/lvZZouy.png</code>)</p>
-<p>This allow other users to quickly identify that your datapack is compatible to other Certified Datapacks</p>
+<p><img src="https://i.imgur.com/lvZZouy.png" alt="Certified Datapack Banner" /></p>
+<pre><code class="language-text">https://i.imgur.com/lvZZouy.png
+</code></pre>
+<p>You can attach this banner to your project if you've successfully follow <a href="./conventions/index.html">Official Conventions</a>, This allow people to quickly identify that your datapack is compatible with other datapacks.</p>
+<p>These are list of datapacks that has been verify:</p>
+<ul>
+<li><a href="https://www.planetminecraft.com/data-pack/undermagic/">Undermagic</a> by Hashs#9531</li>
+<li><a href="https://github.com/RedCocoon/RedPlantation">RedPlantation</a> by Cocoon#5487</li>
+</ul>
 
                     </main>
 
@@ -270,6 +275,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
