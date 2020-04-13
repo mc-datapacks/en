@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Official Conventions - MC Datapacks</title>
+        <title>Custom Model ID - MC Datapacks</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html" class="active"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html" class="active"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,21 +147,61 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#official-conventions" id="official-conventions">Official Conventions</a></h1>
-<p>These are official conventions that everyone <strong>must</strong> followed for datapack compatibility.</p>
+                        <h1><a class="header" href="#custom-model-id" id="custom-model-id">Custom Model ID</a></h1>
+<h2><a class="header" href="#about" id="about">About</a></h2>
+<p>This convention aim to reduce conflict within <a href="https://minecraft.gamepedia.com/Model#Item_tags">custom model data</a> system as much as possible by assigning unique id for every creator to use.</p>
+<h2><a class="header" href="#1-register-your-id" id="1-register-your-id">1. Register your id</a></h2>
+<p>&quot;id&quot; is an integer between 1-999 which we'll use to uniquely namespaced custom model data to prevent conflict between <a href="https://minecraft.gamepedia.com/Resource_pack">resourcepack</a>.</p>
+<p>You can register your id at <a href="https://mc-datapacks.web.app/custom_model_id">https://mc-datapacks.web.app</a>.</p>
+<blockquote>
+<p>Do note that any id above 700 is susceptible to floating point precision error.</p>
+</blockquote>
+<h2><a class="header" href="#2-prefix-your-model-with-your-id" id="2-prefix-your-model-with-your-id">2. Prefix your model with your id</a></h2>
+<p>You will prefix your custom model data with id in this format where <code>XXX</code> is your ID and <code>0000</code> is any custom model data that fit within 4 digits.</p>
+<table><thead><tr><th>id</th><th>cmd</th></tr></thead><tbody>
+<tr><td>XXX</td><td>0000</td></tr>
+</tbody></table>
+<p>Here are some example:</p>
+<h3><a class="header" href="#21-id--42" id="21-id--42">2.1. id = 42</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420020}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420300}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
+<h3><a class="header" href="#22-id--808" id="22-id--808">2.2. id = 808</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8081001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8082002}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8083003}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
+<h3><a class="header" href="#23-id--1" id="23-id--1">2.3. id = 1</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10010}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10011}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../conventions/datapack_advancement.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../conventions/datapack_advancement.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../certified_datapacks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -173,13 +213,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../conventions/datapack_advancement.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../conventions/datapack_advancement.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../certified_datapacks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
