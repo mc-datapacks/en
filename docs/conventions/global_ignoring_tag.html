@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html" class="active"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html" class="active"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -181,7 +181,7 @@
                         
 
                         
-                            <a rel="next" href="../certified_datapacks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../conventions/common_trait.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -199,7 +199,7 @@
                 
 
                 
-                    <a rel="next" href="../certified_datapacks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../conventions/common_trait.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -207,6 +207,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
