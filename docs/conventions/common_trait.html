@@ -188,6 +188,23 @@
 <h4><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h4>
 <p>In the above example you will notice the use of <code>/</code> in <code>metal/copper</code>, this is used when the trait alone can be disambiguous. For example what does trait <code>orange</code> mean? is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
 <p>In such case we'll use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
+<h2><a class="header" href="#usage" id="usage">Usage</a></h2>
+<p>To detect or check for trait item you just need to check for <code>traits</code> nbt of the item.</p>
+<blockquote>
+<p>Detect if player is holding a weapon</p>
+</blockquote>
+<pre><code class="language-mcfunction">execute as @a if entity @s SelectedItem.tag.ctc{traits: [&quot;tool/weapon&quot;]} run ...
+</code></pre>
+<blockquote>
+<p>Detect if container contain copper ore</p>
+</blockquote>
+<pre><code class="language-mcfunction">execute if block ~ ~ ~ Items[].tag.ctc{traits: [&quot;metal/copper&quot;, &quot;ore&quot;]} run ...
+</code></pre>
+<blockquote>
+<p>Detect if container contain placable item</p>
+</blockquote>
+<pre><code class="language-mcfunction">execute if block ~ ~ ~ Items[].tag.ctc{traits: [&quot;block&quot;]} run ...
+</code></pre>
 <h2><a class="header" href="#basic-traits" id="basic-traits">Basic Traits</a></h2>
 <p>These are provided list of traits that you can use, this doesn't mean you can't create new traits for your own use but if there is trait that suit your need in this you should use it instead.</p>
 <blockquote>

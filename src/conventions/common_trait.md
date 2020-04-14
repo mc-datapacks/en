@@ -56,6 +56,28 @@ In the above example you will notice the use of `/` in `metal/copper`, this is u
 
 In such case we'll use slash notation to separate them. `color/orange` and `fruit/orange`
 
+## Usage
+
+To detect or check for trait item you just need to check for `traits` nbt of the item.
+
+> Detect if player is holding a weapon
+
+```mcfunction
+execute as @a if entity @s SelectedItem.tag.ctc{traits: ["tool/weapon"]} run ...
+```
+
+> Detect if container contain copper ore
+
+```mcfunction
+execute if block ~ ~ ~ Items[].tag.ctc{traits: ["metal/copper", "ore"]} run ...
+```
+
+> Detect if container contain placable item
+
+```mcfunction
+execute if block ~ ~ ~ Items[].tag.ctc{traits: ["block"]} run ...
+```
+
 ## Basic Traits
 
 These are provided list of traits that you can use, this doesn't mean you can't create new traits for your own use but if there is trait that suit your need in this you should use it instead.
