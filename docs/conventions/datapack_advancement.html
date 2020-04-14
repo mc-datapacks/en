@@ -149,8 +149,8 @@
                     <main>
                         <h1><a class="header" href="#datapack-advancement-convention" id="datapack-advancement-convention">Datapack Advancement Convention</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This convention aim to generallize installation message of datapacks into one place. This is done by utilizing <a href="https://minecraft.gamepedia.com/Advancements">Advancement</a> tab to display installation message branching from the root advancement to datapack creator to the datapack itself.</p>
-<p>The convention is split into 3 section: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
+<p>This convention aims to generalize the installation message of datapacks. This is done by using the <a href="https://minecraft.gamepedia.com/Advancements">Advancement</a> tab to display installation message branching from the root advancement to datapack creator to the datapack itself.</p>
+<p>The convention is split into 3 sections: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
 <h2><a class="header" href="#1-root-advancement" id="1-root-advancement">1. Root Advancement</a></h2>
 <p>This is the advancement that every datapacks will branch off from. This advancement <strong>must</strong> be located at <code>/data/global/advancements/root.json</code> file.</p>
 <pre><code class="language-json">{
@@ -172,7 +172,7 @@
 }
 </code></pre>
 <h2><a class="header" href="#2-namespace-advancement" id="2-namespace-advancement">2. Namespace Advancement</a></h2>
-<p>This is the advancement allocated for <em>each</em> datapack creator, this advancement should be the same for all of <em>your</em> datapack. This advancement <strong>should</strong> be located at <code>/data/global/advancement/&lt;namespace&gt;.json</code>.</p>
+<p>This is the advancement is for <em>each</em> datapack creator, it should be the same for all of <em>your</em> datapacks. It <strong>should</strong> be located at <code>/data/global/advancement/&lt;namespace&gt;.json</code>.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;Your name&gt;&quot;,
@@ -193,7 +193,7 @@
 }
 </code></pre>
 <h2><a class="header" href="#3-datapack-advancement" id="3-datapack-advancement">3. Datapack Advancement</a></h2>
-<p>This is an advancement for <em>your</em> datapack, this should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute <code>/data/global/advancements/</code> folder.</p>
+<p>This is an advancement for <em>your</em> datapack, it should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute <code>/data/global/advancements/</code> folder.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;datapack name&gt;&quot;,
@@ -213,7 +213,7 @@
 }
 </code></pre>
 <h3><a class="header" href="#note" id="note">Note</a></h3>
-<p>everything encased inside <code>&lt;...&gt;</code> should be change to what is specify there.</p>
+<p>everything encased inside <code>&lt;...&gt;</code> should be changed to the specified information.</p>
 <h2><a class="header" href="#result" id="result">Result</a></h2>
 <p>Your advancement tab should now look something like this:</p>
 <p><img src="https://i.imgur.com/6bzBBr1.png" alt="Datapack Advancement Convention Preview" /><br />

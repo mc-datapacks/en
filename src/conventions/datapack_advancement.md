@@ -2,9 +2,9 @@
 
 ## About
 
-This convention aim to generallize installation message of datapacks into one place. This is done by utilizing [Advancement](https://minecraft.gamepedia.com/Advancements) tab to display installation message branching from the root advancement to datapack creator to the datapack itself.
+This convention aims to generalize the installation message of datapacks. This is done by using the [Advancement](https://minecraft.gamepedia.com/Advancements) tab to display installation message branching from the root advancement to datapack creator to the datapack itself.
 
-The convention is split into 3 section: `Root`, `Namespace` and `Datapack`
+The convention is split into 3 sections: `Root`, `Namespace` and `Datapack`
 
 ## 1. Root Advancement
 
@@ -32,7 +32,7 @@ This is the advancement that every datapacks will branch off from. This advancem
 
 ## 2. Namespace Advancement
 
-This is the advancement allocated for *each* datapack creator, this advancement should be the same for all of *your* datapack. This advancement **should** be located at `/data/global/advancement/<namespace>.json`.
+This is the advancement is for *each* datapack creator, it should be the same for all of *your* datapacks. It **should** be located at `/data/global/advancement/<namespace>.json`.
 
 ```json
 {
@@ -57,7 +57,7 @@ This is the advancement allocated for *each* datapack creator, this advancement 
 
 ## 3. Datapack Advancement
 
-This is an advancement for *your* datapack, this should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute `/data/global/advancements/` folder.
+This is an advancement for *your* datapack, it should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute `/data/global/advancements/` folder.
 
 ```json
 {
@@ -81,7 +81,7 @@ This is an advancement for *your* datapack, this should be unique from your othe
 
 ### Note
 
-everything encased inside `<...>` should be change to what is specify there.
+everything encased inside `<...>` should be changed to the specified information.
 
 ## Result
 
