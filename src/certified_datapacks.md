@@ -6,9 +6,11 @@
 https://i.imgur.com/lvZZouy.png
 ```
 
-You can attach this banner to your project if you've successfully followed [Official Conventions](./conventions/index.md), This allows people to quickly identify that your datapack is compatible with other datapacks.
+You can attach this banner to your project page after your datapack has been verified as a Certified Datapack.
 
-These are list of datapacks that have been verified:
+> Certified Datapacks have a benefit of knowing that your datapack will be compatible with other datapacks.
+
+These are a list of datapacks that have been verified:
 
 - [Undermagic](https://www.planetminecraft.com/data-pack/undermagic/) by Hashs#9531
 - [RedPlantation](https://github.com/RedCocoon/RedPlantation) by Cocoon#5487
