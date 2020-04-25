@@ -17,3 +17,4 @@ These are a list of datapacks that have been verified:
 - [3D Model Editor](https://www.planetminecraft.com/data-pack/3d-model-editor/) by Philipp O.#9679
 - [K1S](https://www.planetminecraft.com/data-pack/k1s-minecraft-pack/) by UltroGhast#0286
 - [GGUNZ](https://www.planetminecraft.com/data-pack/ggunz-guns-and-weapons/) by Geegaz#4001
+- [Homes Enhanced](https://www.planetminecraft.com/data-pack/homes-enhanced-just-another-homes-datapack/) by Gnottero#1195
