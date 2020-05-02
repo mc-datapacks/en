@@ -1,6 +1,6 @@
 # Enum Scoreboard
 
-You can use fake player to represent a state of your scoreboard instead of using the number directly. This make your code more verbose and increase maintainability for the future.
+You can use a fake player to represent a state of your scoreboard instead of using the number directly. This makes your code more verbose and increases maintainability for the future.
 
 ## Declaring enum
 
