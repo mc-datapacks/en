@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li></ol></li><li class="chapter-item expanded "><a href="certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li></ol></li><li class="chapter-item expanded "><a href="certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li class="chapter-item expanded "><a href="tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -467,6 +467,22 @@
 <blockquote>
 <p>Certified Datapacks have a benefit of knowing that your datapack will be compatible with other datapacks.</p>
 </blockquote>
+<h1><a class="header" href="#tips" id="tips">Tips</a></h1>
+<p>Various tips and tricks for developing datapack.</p>
+<h1><a class="header" href="#enum-scoreboard" id="enum-scoreboard">Enum Scoreboard</a></h1>
+<p>You can use fake player to represent a state of your scoreboard instead of using the number directly. This make your code more verbose and increase maintainability for the future.</p>
+<h2><a class="header" href="#declaring-enum" id="declaring-enum">Declaring enum</a></h2>
+<pre><code>scoreboard players set #state.idle bb.enum 1
+scoreboard players set #state.foo bb.enum 2
+scoreboard players set #state.bar bb.enum 3
+</code></pre>
+<p>The enum can hold any value that you want as long as it's unique, we only care about the existence of the fake player itself.</p>
+<h2><a class="header" href="#using-enum-state" id="using-enum-state">Using enum state</a></h2>
+<pre><code>execute if score @s bb.state = #state.idle bb.enum run function &lt;idle_state&gt;
+execute if score @s bb.state = #state.running bb.enum run function &lt;running_state&gt;
+execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping_state&gt;
+</code></pre>
+<p>Here we check the state of <code>@s</code> and run appropriate function that must only be run in that state.</p>
 
                     </main>
 

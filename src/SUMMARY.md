@@ -9,3 +9,6 @@
   - [Common Trait Convention](./conventions/common_trait.md)
 
 - [Certified Datapacks](./certified_datapacks.md)
+
+- [Tips](./tips/index.md)
+  - [Enum Scoreboard](./tips/enum_scoreboard.md)
