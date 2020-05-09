@@ -12,3 +12,4 @@
 
 - [Tips](./tips/index.md)
   - [Enum Scoreboard](./tips/enum_scoreboard.md)
+  - [Shulker Box Inventory Manipulation](./tips/shulker_box_inventory_manipulation.md)
