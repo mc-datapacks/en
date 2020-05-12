@@ -7,6 +7,7 @@
   - [Custom Model ID](./conventions/custom_model_id.md)
   - [Global Ignoring Tag](./conventions/global_ignoring_tag.md)
   - [Common Trait Convention](./conventions/common_trait.md)
+  - [Datapack Uninstallation](./conventions/datapack_uninstallation.md)
 
 - [Certified Datapacks](./certified_datapacks.md)
 
