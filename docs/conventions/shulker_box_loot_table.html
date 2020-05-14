@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Enum Scoreboard - MC Datapacks</title>
+        <title>Shulker Box Loot Table - MC Datapacks</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html" class="active"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html" class="active"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,33 +147,96 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#enum-scoreboard" id="enum-scoreboard">Enum Scoreboard</a></h1>
-<p>You can use a fake player to represent a state of your scoreboard instead of using the number directly. This makes your code more verbose and increases maintainability for the future.</p>
-<h2><a class="header" href="#declaring-enum" id="declaring-enum">Declaring enum</a></h2>
-<pre><code>scoreboard players set #state.idle bb.enum 1
-scoreboard players set #state.foo bb.enum 2
-scoreboard players set #state.bar bb.enum 3
+                        <h1><a class="header" href="#shulker-box-loot-table-convention" id="shulker-box-loot-table-convention">Shulker Box Loot Table Convention</a></h1>
+<h2><a class="header" href="#about" id="about">About</a></h2>
+<p>This convention aims to make <a href="../tips/shulker_box_inventory_manipulation.html">Shulker Box Inventory Manipulation</a> as conflicted-free as possible by enforcing a specific loot table for <code>minecraft:yellow_shulker_box</code> block.</p>
+<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<p>Simply use this loot table inside <code>/data/minecraft/loot_tables/blocks/yellow_shulker_box.json</code> when you want to use the <a href="../tips/shulker_box_inventory_manipulation.html">Inventory Manipulation</a> trick.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;minecraft:block&quot;,
+  &quot;pools&quot;: [
+    {
+      &quot;rolls&quot;: 1,
+      &quot;entries&quot;: [
+        {
+          &quot;type&quot;: &quot;minecraft:alternatives&quot;,
+          &quot;children&quot;: [
+            {
+              &quot;type&quot;: &quot;minecraft:dynamic&quot;,
+              &quot;name&quot;: &quot;minecraft:contents&quot;,
+              &quot;conditions&quot;: [
+                {
+                  &quot;condition&quot;: &quot;minecraft:match_tool&quot;,
+                  &quot;predicate&quot;: {
+                    &quot;nbt&quot;: &quot;{drop_contents: 1b}&quot;
+                  }
+                }
+              ]
+            },
+            {
+              &quot;type&quot;: &quot;minecraft:item&quot;,
+              &quot;functions&quot;: [
+                {
+                  &quot;function&quot;: &quot;minecraft:copy_name&quot;,
+                  &quot;source&quot;: &quot;block_entity&quot;
+                },
+                {
+                  &quot;function&quot;: &quot;minecraft:copy_nbt&quot;,
+                  &quot;source&quot;: &quot;block_entity&quot;,
+                  &quot;ops&quot;: [
+                    {
+                      &quot;source&quot;: &quot;Lock&quot;,
+                      &quot;target&quot;: &quot;BlockEntityTag.Lock&quot;,
+                      &quot;op&quot;: &quot;replace&quot;
+                    },
+                    {
+                      &quot;source&quot;: &quot;LootTable&quot;,
+                      &quot;target&quot;: &quot;BlockEntityTag.LootTable&quot;,
+                      &quot;op&quot;: &quot;replace&quot;
+                    },
+                    {
+                      &quot;source&quot;: &quot;LootTableSeed&quot;,
+                      &quot;target&quot;: &quot;BlockEntityTag.LootTableSeed&quot;,
+                      &quot;op&quot;: &quot;replace&quot;
+                    }
+                  ]
+                },
+                {
+                  &quot;function&quot;: &quot;minecraft:set_contents&quot;,
+                  &quot;entries&quot;: [
+                    {
+                      &quot;type&quot;: &quot;minecraft:dynamic&quot;,
+                      &quot;name&quot;: &quot;minecraft:contents&quot;
+                    }
+                  ]
+                }
+              ],
+              &quot;name&quot;: &quot;minecraft:yellow_shulker_box&quot;
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 </code></pre>
-<p>The enum can hold any value that you want as long as it's unique, we only care about the existence of the fake player itself.</p>
-<h2><a class="header" href="#using-enum-state" id="using-enum-state">Using enum state</a></h2>
-<pre><code>execute if score @s bb.state = #state.idle bb.enum run function &lt;idle_state&gt;
-execute if score @s bb.state = #state.running bb.enum run function &lt;running_state&gt;
-execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping_state&gt;
-</code></pre>
-<p>Here we check the state of <code>@s</code> and run appropriate function that must only be run in that state.</p>
+<h2><a class="header" href="#reference" id="reference">Reference</a></h2>
+<ul>
+<li><a href="../tips/shulker_box_inventory_manipulation.html">Shulker Box Inventory Manipulation</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../tips/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../conventions/datapack_uninstallation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../tips/shulker_box_inventory_manipulation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../certified_datapacks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -185,13 +248,13 @@ execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../tips/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../conventions/datapack_uninstallation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../tips/shulker_box_inventory_manipulation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../certified_datapacks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

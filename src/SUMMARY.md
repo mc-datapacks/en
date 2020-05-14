@@ -8,6 +8,7 @@
   - [Global Ignoring Tag](./conventions/global_ignoring_tag.md)
   - [Common Trait Convention](./conventions/common_trait.md)
   - [Datapack Uninstallation](./conventions/datapack_uninstallation.md)
+  - [Shulker Box Loot Table](./conventions/shulker_box_loot_table.md)
 
 - [Certified Datapacks](./certified_datapacks.md)
 
