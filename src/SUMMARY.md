@@ -10,7 +10,8 @@
   - [Datapack Uninstallation](./conventions/datapack_uninstallation.md)
   - [Shulker Box Loot Table](./conventions/shulker_box_loot_table.md)
 
-- [Certified Datapacks](./certified_datapacks.md)
+- [Certified Datapacks](./certified_datapacks/index.md)
+  - [Requirement](./certified_datapacks/requirement.md)
 
 - [Tips](./tips/index.md)
   - [Enum Scoreboard](./tips/enum_scoreboard.md)
