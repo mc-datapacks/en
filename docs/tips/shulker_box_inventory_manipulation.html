@@ -154,7 +154,7 @@
 <p>We take advantage of the fact that the shulker box can be configured to drop their content on the ground instead of a shulker box containing its content, which can then be used by <code>/loot</code> command to replace the player's inventory.</p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
 <p>1. To follow with the <a href="/conventions/index.html">Official Conventions</a> you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code><br />
-<a href="https://pastebin.com/4sspBvep">https://pastebin.com/4sspBvep</a></p>
+<a href="https://pastebin.com/4sspBvep"><center>https://pastebin.com/4sspBvep</center></a></p>
 <p>2. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from player view but for simplicity's sake. I'll place it at <code>~ ~ ~</code>.</p>
 <pre><code>setblock ~ ~ ~ minecraft:yellow_shulker_box
 </code></pre>

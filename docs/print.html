@@ -151,11 +151,11 @@
                     <main>
                         <h1><a class="header" href="#about" id="about">About</a></h1>
 <p>Minecraft Datapacks is a community-driven minecraft server about datapacks. This means we need a way to ensure compatibility between many datapacks to create a stable and friendly datapack ecosystem.</p>
-<p><a href="https://discord.gg/56ySADc">Discord</a></p>
+<p><a href="https://discord.gg/SnJQcfq">Discord</a></p>
 <h2><a class="header" href="#how-we-are-going-to-do-it" id="how-we-are-going-to-do-it">How we are going to do it</a></h2>
 <p>To achieve this we will use the &quot;programming conventions&quot; method, which we will kindly ask other users to follow to improve compatibility between datapacks. And to do that we need to create a way for users to be able to access these conventions very quickly. and that is the aim of this website.</p>
 <h2><a class="header" href="#contribution" id="contribution">Contribution</a></h2>
-<p>If you wish to contribute to this project you can do it via <a href="https://github.com/oOBoomberOo/mcdatapacks-wiki">this Github repository</a></p>
+<p>If you wish to contribute to this project you can do it via <a href="https://github.com/mc-datapacks">this Github repository</a></p>
 <p>As of right now, there are 3 types of contribution <strong>Grammar Contribution</strong>, <strong>Tips Contribution</strong> and <strong>Convention Contribution</strong></p>
 <ol>
 <li><strong>Grammar Contribution</strong> is a simple grammar correction pull-request, anyone can make this contribution if they notice grammar errors.</li>
@@ -590,7 +590,7 @@ execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping
 <p>We take advantage of the fact that the shulker box can be configured to drop their content on the ground instead of a shulker box containing its content, which can then be used by <code>/loot</code> command to replace the player's inventory.</p>
 <h2><a class="header" href="#implementation-1" id="implementation-1">Implementation</a></h2>
 <p>1. To follow with the <a href="tips//conventions/index.html">Official Conventions</a> you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code><br />
-<a href="https://pastebin.com/4sspBvep">https://pastebin.com/4sspBvep</a></p>
+<a href="https://pastebin.com/4sspBvep"><center>https://pastebin.com/4sspBvep</center></a></p>
 <p>2. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from player view but for simplicity's sake. I'll place it at <code>~ ~ ~</code>.</p>
 <pre><code>setblock ~ ~ ~ minecraft:yellow_shulker_box
 </code></pre>

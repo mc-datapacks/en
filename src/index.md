@@ -2,7 +2,7 @@
 
 Minecraft Datapacks is a community-driven minecraft server about datapacks. This means we need a way to ensure compatibility between many datapacks to create a stable and friendly datapack ecosystem.
 
-[Discord](https://discord.gg/56ySADc)
+[Discord](https://discord.gg/SnJQcfq)
 
 ## How we are going to do it
 
@@ -10,7 +10,7 @@ To achieve this we will use the "programming conventions" method, which we will 
 
 ## Contribution
 
-If you wish to contribute to this project you can do it via [this Github repository](https://github.com/oOBoomberOo/mcdatapacks-wiki)
+If you wish to contribute to this project you can do it via [this Github repository](https://github.com/mc-datapacks)
 
 As of right now, there are 3 types of contribution **Grammar Contribution**, **Tips Contribution** and **Convention Contribution**
 
