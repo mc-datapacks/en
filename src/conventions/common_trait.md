@@ -162,7 +162,7 @@ This trait represents an item that can be used to interact with the world.
 
 > This trait use [Slash Notation](#slash-notation)!
 
-This trait represents an item that can be considered "gemstone"
+This trait represents any item that have crystalline structure.
 
 |Trait|Description|
 |-----|-----------|
@@ -170,6 +170,11 @@ This trait represents an item that can be considered "gemstone"
 |gem/ruby|Ruby gemstone|
 |gem/emerald|Emerald gemstone|
 |gem/saphire|Saphire gemstone|
+|gem/prismarine|Prismarine|
+|gem/lapis|Lapis Lazuli gemstone|
+|gem/obsidian|Any Obsidian material|
+|gem/quartz|Any Quartz material|
+|gem/opal|Opal gemstone|
 
 ### Metal Sub-group
 
