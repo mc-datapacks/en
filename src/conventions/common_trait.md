@@ -169,7 +169,7 @@ This trait represents any item that have crystalline structure.
 |gem/diamond|Diamond gemstone|
 |gem/ruby|Ruby gemstone|
 |gem/emerald|Emerald gemstone|
-|gem/saphire|Saphire gemstone|
+|gem/sapphire|Sapphire gemstone|
 |gem/prismarine|Prismarine|
 |gem/lapis|Lapis Lazuli gemstone|
 |gem/obsidian|Any Obsidian material|
