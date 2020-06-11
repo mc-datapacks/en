@@ -89,3 +89,13 @@ Your advancement tab should now look something like this:
 
 ![Datapack Advancement Convention Preview](https://i.imgur.com/6bzBBr1.png)  
 (Image by @Hashs#9531)
+
+## Standalone Datapack (Optional)
+
+This is an optional syntax that you can use if you would like to display your datapack advancement in a standalone branch without any author name attached to it.
+
+The advancement file or 'Standalone Datapack' **must** be created inside `/data/global/advancements/standalone/` directory and the advancement must branch off from 
+the [Root Advancement](#1-root-advancement) directly with nothing in-between.
+Branching more advancements after this one is possible, however.
+
+> Keep in mind that if you are planning to release more datapacks you should use the normal syntax.
