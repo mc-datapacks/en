@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Shulker Box Inventory Manipulation - MC Datapacks</title>
+        <title>Hold Right Click Detection - MC Datapacks</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html" class="active"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/hold_right_click_detection.html"><strong aria-hidden="true">3.3.</strong> Hold Right Click Detection</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/hold_right_click_detection.html" class="active"><strong aria-hidden="true">3.3.</strong> Hold Right Click Detection</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,72 +149,66 @@
                     <main>
                         <h1><a class="header" href="#shulker-box-inventory-manipulation" id="shulker-box-inventory-manipulation">Shulker Box Inventory Manipulation</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This technique allows us to manipulate the player's inventory just like any NBT using the shulker box's loot table.</p>
+<p>This technique allows us to detect when a player is holding down right click.</p>
 <h2><a class="header" href="#concept" id="concept">Concept</a></h2>
-<p>We take advantage of the fact that the shulker box can be configured to drop their content on the ground instead of a shulker box containing its content, which can then be used by <code>/loot</code> command to replace the player's inventory.</p>
+<p>When a player is holding down right click while holding a carrot on a stick, Minecraft will take in another right click input after 4 ticks.<br/> 
+Therefore a right click action is considered continuous if another right click is performed within 4 ticks.</p>
+<h2><a class="header" href="#result" id="result">Result</a></h2>
+<p>You will be able to create something like this at the end. This datapack is the Example Datapack.<br/>
+(Click image below to open a youtube video)
+<a href="http://www.youtube.com/watch?v=ggjUPQ5BFkM" title="HRC Example"><img src="http://img.youtube.com/vi/ggjUPQ5BFkM/0.jpg" alt="Hold-Right-Click Example" /></a></p>
+<h2><a class="header" href="#example-datapack" id="example-datapack">Example Datapack</a></h2>
+<p>You can <a href="http://www.mediafire.com/file/9tczxda3rz3c1bk/hold_rclick_example.zip/file">download the example datapack here</a>
+Feels free to modify the example pack to be a starting point.<br/><br />
+Note: Example pack contains extra functionalities (Explosion spell) not explained here and are slightly different.<br/>
+Note_2: Attribution appreciated but not required.<br/></p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>1. To follow with the <a href="/conventions/index.html">Official Conventions</a> you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code><br />
-<a href="https://pastebin.com/4sspBvep"><center>https://pastebin.com/4sspBvep</center></a></p>
-<p>2. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from player view but for simplicity's sake. I'll place it at <code>~ ~ ~</code>.</p>
-<pre><code>setblock ~ ~ ~ minecraft:yellow_shulker_box
+<p>1. The Setup<br/>
+You will need 2 scoreboards.
+(in: setup.mcfunction)</p>
+<pre><code>## This scoreboard objective increase by 1 for every right click using carrot on a stick 
+scoreboard objectives add cc.ttr.coas minecraft.used:minecraft.carrot_on_a_stick
+## This objective is a timer that gets reset to 5 on right click
+scoreboard objectives add cc.ttr.last dummy
 </code></pre>
-<p>3. You need to clone the player's inventory into some sort of NBT buffer, you can clone this into a data storage since they are faster.</p>
-<pre><code>data modify storage &lt;storage&gt; inventory set from entity &lt;player&gt; Inventory
+<p>2. Right Click Detection<br/>
+Every time cc.ttr.coas is more than 1, we know that the player used a carrot on a stick, so we call the function tutorial:hold_detection<br/>
+(in: main.mcfunction)</p>
+<pre><code>execute as @a[scores={cc.ttr.coas=1..}] run function tutorial:hold_detection
 </code></pre>
-<p>4. Due to a limited number of slots inside the shulker box, You have to process the nbt in &quot;batch&quot; the easiest way to organize this batch can be done by splitting it into &quot;hotbar&quot;, &quot;inventory&quot;, &quot;armor&quot; and &quot;offhand&quot; batch.
-<!-- - "hotbar" batch will contain items from slot 0 to 8 -->
-<!-- - "inventory" batch will contain items from slot 9 to 35 -->
-<!-- - "armor" batch will contain items from slot 100 to 103 -->
-<!-- - "offhand" btach will contain items from slot -106 (with the negative sign) --></p>
-<p>4.1. Create each batch using these commands.</p>
-<pre><code>                                      |--- Batch name                                     |---- Slot number
-data modify storage &lt;storage&gt; batch.hotbar append from storage &lt;storage&gt; inventory[{Slot: 0b}]
-data modify storage &lt;storage&gt; batch.hotbar append from storage &lt;storage&gt; inventory[{Slot: 1b}]
-data modify storage &lt;storage&gt; batch.hotbar append from storage &lt;storage&gt; inventory[{Slot: 2b}]
-.
-.
-.
-
-// Don't forget to remove `Slot` nbt from the item before moving to the next step!
-data remove storage &lt;storage&gt; batch.hotbar[].Slot
+<p>3. Hold Right Click Initiation<br/>
+Function tutorial:hold_detection sets cc.ttr.used to 0 so another right click can be detected again and sets cc.ttr.last to 5, meaning a carrot_on_a_stick has been used in the last 5 ticks.<br/>
+(in: hold_detection.mcfunction)</p>
+<pre><code>scoreboard players set @s cc.ttr.used 0
+scoreboard players set @s cc.ttr.last 5
 </code></pre>
-<p>4.2. Modify the NBT of each item however you like it to be.</p>
-<p>5. Copy the nbt from the previous step into the shulker box and then replace the player's inventory.</p>
-<pre><code>data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.hotbar
-loot replace entity &lt;player&gt; hotbar.0 9 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
-
-data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.inventory
-loot replace entity &lt;player&gt; inventory.0 27 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
-
-data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.armor
-loot replace entity &lt;player&gt; armor.feet 4 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
-
-data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.offhand
-loot replace entity &lt;player&gt; weapon.offhand 1 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+<p>We decrease cc.ttr.last by 1 every tick if it's more than 0.<br/>
+(in: main.mcfunction)</p>
+<pre><code>scoreboard players remove @a[scores={cc.ttr.last=1..}] cc.ttr.last 1
 </code></pre>
-<p>Note: Notice the slots I used in each <code>/loot</code> command?</p>
-<p>6. Cleaning up</p>
-<pre><code>setblock ~ ~ ~ minecraft:air
-data remove storage &lt;storage&gt; batch
-data remove storage &lt;storage&gt; inventory
+<p>4. Hold Right Click Detection<br/>
+If score cc.ttr.last is more than 0, that means a right click has been performed within 5 ticks, so we run the command we wanted.<br/>
+Inversely, a right click is not considered held and we reset the score.<br/>
+(in: main.mcfunction)</p>
+<pre><code>## More than 0, do stuffs.
+execute as @a[scores={cc.ttr.last=1..}] run say Player Holding Right Click
+## Less than 0, reset scores.
+execute as @a[scores={cc.ttr.last=..0}] run say Player Not Holding Right Click
 </code></pre>
-<h2><a class="header" href="#note" id="note">Note</a></h2>
-<p>In this example, I assume that you need to modify NBT of all available slots but if you want to modify only items in your hotbar then you don't need to use &quot;inventory&quot;, &quot;armor&quot; and &quot;offhand&quot; batch.</p>
+<p>5. That's all!<br/>
+Happy Datapacking! Special thanks to Geegaz and TheSaltyPug!<br/><br />
+- Cocoon</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../tips/enum_scoreboard.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../tips/shulker_box_inventory_manipulation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../tips/hold_right_click_detection.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -224,15 +218,11 @@ data remove storage &lt;storage&gt; inventory
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../tips/enum_scoreboard.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../tips/shulker_box_inventory_manipulation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../tips/hold_right_click_detection.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 

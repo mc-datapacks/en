@@ -16,3 +16,4 @@
 - [Tips](./tips/index.md)
   - [Enum Scoreboard](./tips/enum_scoreboard.md)
   - [Shulker Box Inventory Manipulation](./tips/shulker_box_inventory_manipulation.md)
+  - [Hold Right Click Detection](./tips/hold_right_click_detection.md)
