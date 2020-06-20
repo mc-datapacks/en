@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hold Right Click Detection - MC Datapacks</title>
+        <title>Holding Right Click Detection - MC Datapacks</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/hold_right_click_detection.html" class="active"><strong aria-hidden="true">3.3.</strong> Hold Right Click Detection</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/holding_right_click_detection.html" class="active"><strong aria-hidden="true">3.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,57 +147,87 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#shulker-box-inventory-manipulation" id="shulker-box-inventory-manipulation">Shulker Box Inventory Manipulation</a></h1>
+                        <h1><a class="header" href="#holding-right-click-detection-by-cocoon" id="holding-right-click-detection-by-cocoon">Holding Right Click Detection by Cocoon</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This technique allows us to detect when a player is holding down right click.</p>
+<p>This method allow you to detect when player is &quot;holding&quot; right click using carrot on a stick.</p>
+<blockquote>
+<p>Note: I will be referring to &quot;carrot on a stick&quot; as &quot;coas&quot; from now on</p>
+</blockquote>
 <h2><a class="header" href="#concept" id="concept">Concept</a></h2>
-<p>When a player is holding down right click while holding a carrot on a stick, Minecraft will take in another right click input after 4 ticks.<br/> 
-Therefore a right click action is considered continuous if another right click is performed within 4 ticks.</p>
-<h2><a class="header" href="#result" id="result">Result</a></h2>
-<p>You will be able to create something like this at the end. This datapack is the Example Datapack.<br/>
-(Click image below to open a youtube video)
-<a href="http://www.youtube.com/watch?v=ggjUPQ5BFkM" title="HRC Example"><img src="http://img.youtube.com/vi/ggjUPQ5BFkM/0.jpg" alt="Hold-Right-Click Example" /></a></p>
-<h2><a class="header" href="#example-datapack" id="example-datapack">Example Datapack</a></h2>
-<p>You can <a href="http://www.mediafire.com/file/9tczxda3rz3c1bk/hold_rclick_example.zip/file">download the example datapack here</a>
-Feels free to modify the example pack to be a starting point.<br/><br />
-Note: Example pack contains extra functionalities (Explosion spell) not explained here and are slightly different.<br/>
-Note_2: Attribution appreciated but not required.<br/></p>
+<p>To detect when player is holding right click you need to know when player right click <code>coas</code> <em>twice</em> next to each other.<br />
+But because a single <code>coas</code> click need 2 ticks to process. To detect when player is holding you need atleast 4 ticks, which is a limitation of this method.</p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>1. The Setup<br/>
-You will need 2 scoreboards.
-(in: setup.mcfunction)</p>
-<pre><code>## This scoreboard objective increase by 1 for every right click using carrot on a stick 
-scoreboard objectives add cc.ttr.coas minecraft.used:minecraft.carrot_on_a_stick
-## This objective is a timer that gets reset to 5 on right click
-scoreboard objectives add cc.ttr.last dummy
+<p>1. Setup scoreboard objectives</p>
+<pre><code>#[setup]
+
+#&gt; This objective is used for detecting when player is right clicking.
+scoreboard objectives add &lt;coas&gt; minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add &lt;timer&gt; dummy
+#&gt; This objective is used to keep track of a &quot;state machine&quot;
+scoreboard objectives add &lt;state&gt; dummy
+
+#&gt; Constants to define the possible states player can take.
+scoreboard players set &lt;state.idle&gt; &lt;state&gt; 0 // Idling state
+scoreboard players set &lt;state.use&gt; &lt;state&gt; 1 // Using coas state
 </code></pre>
-<p>2. Right Click Detection<br/>
-Every time cc.ttr.coas is more than 1, we know that the player used a carrot on a stick, so we call the function tutorial:hold_detection<br/>
-(in: main.mcfunction)</p>
-<pre><code>execute as @a[scores={cc.ttr.coas=1..}] run function tutorial:hold_detection
+<blockquote>
+<p>State Machine is a design pattern that separate multiple states into their own execution area without overlapping each other.</p>
+</blockquote>
+<p>2. Setup state machine code</p>
+<blockquote>
+<p>This assume that you've created a function loop that trigger this function on every players already!</p>
+</blockquote>
+<pre><code>#[main]
+
+execute if score @s &lt;state&gt; = &lt;state.idle&gt; &lt;state&gt; run function [state/idle]
+execute if score @s &lt;state&gt; = &lt;state.use&gt; &lt;state&gt; run function [state/use]
 </code></pre>
-<p>3. Hold Right Click Initiation<br/>
-Function tutorial:hold_detection sets cc.ttr.used to 0 so another right click can be detected again and sets cc.ttr.last to 5, meaning a carrot_on_a_stick has been used in the last 5 ticks.<br/>
-(in: hold_detection.mcfunction)</p>
-<pre><code>scoreboard players set @s cc.ttr.used 0
-scoreboard players set @s cc.ttr.last 5
+<p>3. Detect right click</p>
+<pre><code>#[state/idle]
+
+execute if score @s &lt;coas&gt; matches 1.. run function [transition/use]
 </code></pre>
-<p>We decrease cc.ttr.last by 1 every tick if it's more than 0.<br/>
-(in: main.mcfunction)</p>
-<pre><code>scoreboard players remove @a[scores={cc.ttr.last=1..}] cc.ttr.last 1
+<pre><code>#[transition/use]
+
+# Setup necessary scoreboard values
+scoreboard players set @s &lt;timer&gt; 5
+scoreboard players set @s &lt;coas&gt; 0
+scoreboard players operation @s &lt;state&gt; = &lt;state.use&gt; &lt;state&gt;
 </code></pre>
-<p>4. Hold Right Click Detection<br/>
-If score cc.ttr.last is more than 0, that means a right click has been performed within 5 ticks, so we run the command we wanted.<br/>
-Inversely, a right click is not considered held and we reset the score.<br/>
-(in: main.mcfunction)</p>
-<pre><code>## More than 0, do stuffs.
-execute as @a[scores={cc.ttr.last=1..}] run say Player Holding Right Click
-## Less than 0, reset scores.
-execute as @a[scores={cc.ttr.last=..0}] run say Player Not Holding Right Click
+<p>4. Handling holding right click</p>
+<pre><code>#[state/use]
+
+scoreboard players remove @s &lt;timer&gt; 1
+
+# Check when the timer ran out if player has right click coas again
+execute if score @s &lt;timer&gt; matches 0 unless score @s &lt;coas&gt; matches 1.. run function [transition/idle]
+execute if score @s &lt;timer&gt; matches 0 if score @s &lt;coas&gt; matches 1.. run function [transition/reset_timer]
 </code></pre>
-<p>5. That's all!<br/>
-Happy Datapacking! Special thanks to Geegaz and TheSaltyPug!<br/><br />
-- Cocoon</p>
+<pre><code>#[transition/idle]
+
+scoreboard players set @s &lt;timer&gt; 0
+scoreboard players set @s &lt;coas&gt; 0
+scoreboard players operation @s &lt;state&gt; = &lt;state.idle&gt; &lt;state&gt;
+</code></pre>
+<pre><code>#[transition/reset_timer]
+
+scoreboard players set @s &lt;timer&gt; 5
+scoreboard players set @s &lt;coas&gt; 0
+</code></pre>
+<p>5. As long as <code>[state/use]</code> is running player will be holding right click on coas. You can use that information to execute any functions that you want.</p>
+<h2><a class="header" href="#result" id="result">Result</a></h2>
+<blockquote>
+<p>A simple spell casting system where a spell will be casted when player hold right click for a period of time</p>
+</blockquote>
+<p><img src="./holding_right_click_detection/result.gif" alt="result" /></p>
+<h2><a class="header" href="#note" id="note">Note</a></h2>
+<ul>
+<li><code>&lt;...&gt;</code> is a placeholder value that you have to replace with your own value.</li>
+<li><code>[...]</code> is a placeholder path to display relationship between each functions.</li>
+</ul>
+<h2><a class="header" href="#example-datapack" id="example-datapack">Example Datapack</a></h2>
+<p>You can download the <a href="./holding_right_click_detection/example.zip">example datapack</a> here.</p>
+<p>This example pack contains extra code used to display the title message to player.</p>
 
                     </main>
 
