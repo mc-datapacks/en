@@ -1,4 +1,4 @@
-# Global Ignoring Tag
+# Global Ignoring Tag (`***`)
 
 ## About
 

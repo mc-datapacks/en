@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="tips/holding_right_click_detection.html"><strong aria-hidden="true">3.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement*</a></li><li class="chapter-item expanded "><a href="conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.2.</strong> Datapack Uninstallation*</a></li><li class="chapter-item expanded "><a href="conventions/common_trait.html"><strong aria-hidden="true">1.3.</strong> Common Trait Convention**</a></li><li class="chapter-item expanded "><a href="conventions/custom_model_id.html"><strong aria-hidden="true">1.4.</strong> Custom Model ID***</a></li><li class="chapter-item expanded "><a href="conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.5.</strong> Global Ignoring Tag***</a></li><li class="chapter-item expanded "><a href="conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table***</a></li></ol></li><li class="chapter-item expanded "><a href="style_guideline/index.html"><strong aria-hidden="true">2.</strong> Style Guideline</a></li><li class="chapter-item expanded "><a href="certified_datapacks/index.html"><strong aria-hidden="true">3.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="certified_datapacks/requirement.html"><strong aria-hidden="true">3.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="tips/index.html"><strong aria-hidden="true">4.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tips/enum_scoreboard.html"><strong aria-hidden="true">4.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">4.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="tips/holding_right_click_detection.html"><strong aria-hidden="true">4.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -172,12 +172,18 @@
 <p>After that, we will discuss it, modify it, then vote on whether to add it or not. If the vote passed you can then submit a pull-request and wait for approval.</p>
 <h1><a class="header" href="#official-conventions" id="official-conventions">Official Conventions</a></h1>
 <p>These are official conventions that everyone <strong>must</strong> followed for datapack compatibility.</p>
-<h1><a class="header" href="#datapack-advancement-convention" id="datapack-advancement-convention">Datapack Advancement Convention</a></h1>
+<h1><a class="header" href="#datapack-advancement-" id="datapack-advancement-">Datapack Advancement (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about-1" id="about-1">About</a></h2>
-<p>This convention aims to generalize the installation message of datapacks. This is done by using the <a href="https://minecraft.gamepedia.com/Advancements">Advancement</a> tab to display installation message branching from the root advancement to datapack creator to the datapack itself.</p>
-<p>The convention is split into 3 sections: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
+<p>This convention aims to generalize the installation message into an easily viewable and non-obstructive way by putting it on a single advancement page.</p>
+<h2><a class="header" href="#preview" id="preview">Preview</a></h2>
+<p>This is an example of what this convention will look like</p>
+<p><img src="conventions/./advancement/preview.png" alt="" /></p>
+<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<p>The guideline is made up of 3 advancement nodes: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
 <h2><a class="header" href="#1-root-advancement" id="1-root-advancement">1. Root Advancement</a></h2>
-<p>This is the advancement that every datapacks will branch off from. This advancement <strong>must</strong> be located at <code>/data/global/advancements/root.json</code> file.</p>
+<p>This advancement is the root of all installed datapack's advancements.</p>
+<p><img src="conventions/./advancement/root.png" alt="" /></p>
+<p>You <strong>must</strong> create this file at <code>/data/global/advancements/root.json</code>.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;Installed Datapacks&quot;,
@@ -197,7 +203,9 @@
 }
 </code></pre>
 <h2><a class="header" href="#2-namespace-advancement" id="2-namespace-advancement">2. Namespace Advancement</a></h2>
-<p>This is the advancement is for <em>each</em> datapack creator, it should be the same for all of <em>your</em> datapacks. It <strong>should</strong> be located at <code>/data/global/advancement/&lt;namespace&gt;.json</code>.</p>
+<p>This advancement indicates the creator of the datapack.</p>
+<p><img src="conventions/./advancement/namespace.png" alt="" /></p>
+<p>It <strong>must</strong> be in the same location in every datapacks of yours. I recommend that you put it inside <code>/data/global/advancements/&lt;namespace&gt;.json</code>.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;Your name&gt;&quot;,
@@ -217,8 +225,19 @@
     }
 }
 </code></pre>
+<blockquote>
+<p><strong>Note</strong><br />
+If you are working on a project with multiple people you can choose to:</p>
+<ul>
+<li>Display this advancement as your own and credit them with other methods.</li>
+<li>Display this advancement with the &quot;team name&quot; of your choice.</li>
+<li>Display a &quot;<a href="conventions/datapack_advancement.html#extra-standalone-datapack">Standalone Datapack</a>&quot; instead.</li>
+</ul>
+</blockquote>
 <h2><a class="header" href="#3-datapack-advancement" id="3-datapack-advancement">3. Datapack Advancement</a></h2>
-<p>This is an advancement for <em>your</em> datapack, it should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute <code>/data/global/advancements/</code> folder.</p>
+<p>This advancement is used to display installation information about your datapack. It should be unique among your other datapacks.</p>
+<p><img src="conventions/./advancement/datapack.png" alt="" /></p>
+<p>You can create this advancement anywhere as long as you <strong>don't</strong> pollute <code>/data/global/advancements/folder</code></p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;datapack name&gt;&quot;,
@@ -237,87 +256,24 @@
     }
 }
 </code></pre>
-<h3><a class="header" href="#note" id="note">Note</a></h3>
-<p>everything encased inside <code>&lt;...&gt;</code> should be changed to the specified information.</p>
-<h2><a class="header" href="#result" id="result">Result</a></h2>
-<p>Your advancement tab should now look something like this:</p>
-<p><img src="https://i.imgur.com/6bzBBr1.png" alt="Datapack Advancement Convention Preview" /><br />
-(Image by @Hashs#9531)</p>
-<h2><a class="header" href="#standalone-datapack-optional" id="standalone-datapack-optional">Standalone Datapack (Optional)</a></h2>
-<p>This is an optional syntax that you can use if you would like to display your datapack advancement in a standalone branch without any author name attached to it.</p>
-<p>The advancement file or 'Standalone Datapack' <strong>must</strong> be created inside <code>/data/global/advancements/standalone/</code> directory and the advancement must branch off from 
-the <a href="conventions/datapack_advancement.html#1-root-advancement">Root Advancement</a> directly with nothing in-between.
-Branching more advancements after this one is possible, however.</p>
+<h2><a class="header" href="#note" id="note">Note</a></h2>
+<p>The syntax <code>&lt;...&gt;</code> indicates that you have to replace it with something else!</p>
+<h2><a class="header" href="#extra-standalone-datapack" id="extra-standalone-datapack">Extra: Standalone Datapack</a></h2>
+<p>This is an optional syntax that you can take to display installed datapack <em>without</em> displaying the creator's information.</p>
+<p>To implement this you simply skip the <a href="conventions/datapack_advancement.html#2-namespace-advancement">#2: Namespace Advancement</a> step and make sure that in step <a href="conventions/datapack_advancement.html#3-datapack-advancement">#3: Datapack Advancement</a> you create your file inside <code>/data/global/advancements/standalone/</code> directory.</p>
 <blockquote>
-<p>Keep in mind that if you are planning to release more datapacks you should use the normal syntax.</p>
+<p>Keep in mind that if you are planning to release more datapacks under this name. You should use the normal syntax over this one.</p>
 </blockquote>
-<h1><a class="header" href="#custom-model-id" id="custom-model-id">Custom Model ID</a></h1>
+<h1><a class="header" href="#datapack-uninstallation-" id="datapack-uninstallation-">Datapack Uninstallation (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about-2" id="about-2">About</a></h2>
-<p>This convention aims to reduce conflict within the <a href="https://minecraft.gamepedia.com/Model#Item_tags">custom model data</a> system as much as possible by assigning a unique id for every creator to use.</p>
-<h2><a class="header" href="#1-register-your-id" id="1-register-your-id">1. Register your id</a></h2>
-<p>&quot;id&quot; is an integer between 1-999 which we'll use to uniquely namespaced custom model data to prevent conflict between <a href="https://minecraft.gamepedia.com/Resource_pack">resourcepacks</a>.</p>
-<p>You can register your id at <a href="https://mc-datapacks.web.app/custom_model_id">https://mc-datapacks.web.app</a>.</p>
-<blockquote>
-<p>Do note that any id above 700 is susceptible to floating-point precision error.</p>
-</blockquote>
-<h2><a class="header" href="#2-prefix-your-model-with-your-id" id="2-prefix-your-model-with-your-id">2. Prefix your model with your id</a></h2>
-<p>You will prefix your custom model data with your id in this format where <code>XXX</code> is your ID and <code>0000</code> is any custom model data that fits within 4 digits.</p>
-<table><thead><tr><th>id</th><th>cmd</th></tr></thead><tbody>
-<tr><td>XXX</td><td>0000</td></tr>
-</tbody></table>
-<p>Here are some examples:</p>
-<h3><a class="header" href="#21-id--42" id="21-id--42">2.1. id = 42</a></h3>
-<pre><code class="language-json">{
-    &quot;overrides&quot;: [
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420020}, &quot;model&quot;: &quot;path/to/model/2&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420300}, &quot;model&quot;: &quot;path/to/model/3&quot;}
-    ]
-}
-</code></pre>
-<h3><a class="header" href="#22-id--808" id="22-id--808">2.2. id = 808</a></h3>
-<pre><code class="language-json">{
-    &quot;overrides&quot;: [
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8081001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8082002}, &quot;model&quot;: &quot;path/to/model/2&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8083003}, &quot;model&quot;: &quot;path/to/model/3&quot;}
-    ]
-}
-</code></pre>
-<h3><a class="header" href="#23-id--1" id="23-id--1">2.3. id = 1</a></h3>
-<pre><code class="language-json">{
-    &quot;overrides&quot;: [
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10010}, &quot;model&quot;: &quot;path/to/model/2&quot;},
-        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10011}, &quot;model&quot;: &quot;path/to/model/3&quot;}
-    ]
-}
-</code></pre>
-<h1><a class="header" href="#global-ignoring-tag" id="global-ignoring-tag">Global Ignoring Tag</a></h1>
+<p>This convention ensures that you have a way of uninstalling <em>most</em> of the contents of your datapack. The word &quot;most&quot; is used here because minecraft does not provide the necessary tool for us to actually uninstall or remove the entirety of datapack.</p>
+<h2><a class="header" href="#implementation-1" id="implementation-1">Implementation</a></h2>
+<p>There are no rules enforcing how you should implement the uninstallation method as long as you did implement it. But the following section is one of the many ways to implement it.</p>
+<h3><a class="header" href="#uninstallation-function" id="uninstallation-function">Uninstallation Function</a></h3>
+<p>You can create an &quot;uninstallation function&quot;, which when ran, will remove most of the content added from your datapack. You can tell the user about this function inside your project page or anywhere you like.</p>
+<h1><a class="header" href="#common-trait-convention-" id="common-trait-convention-">Common Trait Convention (<code>**</code>)</a></h1>
 <h2><a class="header" href="#about-3" id="about-3">About</a></h2>
-<p>This convention provides a way for datapack to communicate with each other by specifying entity tags other datapacks can then look for. This is used heavily to prevent other datapacks from killing/removing custom entities from the world unexpectedly.</p>
-<p>There are currently 4 ignoring tags: <code>global.ignore</code>, <code>global.ignore.pos</code>, <code>global.ignore.gui</code>, <code>global.ignore.kill</code></p>
-<h3><a class="header" href="#1-globalignorekill" id="1-globalignorekill">1. <code>global.ignore.kill</code></a></h3>
-<p>Any entity with this tag <strong>must not</strong> be killed by other datapack. This includes but not limited to <code>/kill</code> command.</p>
-<pre><code class="language-mcfunction">execute as @e[type=creeper, tag=!global.ignore.kill] run kill @s
-</code></pre>
-<h3><a class="header" href="#2-globalignoregui" id="2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
-<p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes but not limited to <code>/title</code>, <code>/particle</code>, <code>/playsound</code> commands.</p>
-<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
-</code></pre>
-<h3><a class="header" href="#3-globalignorepos" id="3-globalignorepos">3. <code>global.ignore.pos</code></a></h3>
-<p>Any entity with this tag <strong>must not</strong> be moved from where it was. This includes but not limited to <code>/tp</code>, <code>/teleport</code> commands.</p>
-<pre><code class="language-mcfunction">execute as @e[type=witch, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
-</code></pre>
-<h3><a class="header" href="#4-globalignore" id="4-globalignore">4. <code>global.ignore</code></a></h3>
-<p>Any entity with this tag <strong>must not</strong> be included in the entity selector at all, you can also think of this tag as a combination of every ignoring tags above.</p>
-<pre><code class="language-mcfunction">execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
-</code></pre>
-<h2><a class="header" href="#note-1" id="note-1">Note</a></h2>
-<p>The convention only applies if your function will change NBT of an unknown entity. if you are trying to change NBT of known entity (i.e. an entity with a special tag attached) you don't need to follow this convention.</p>
-<h1><a class="header" href="#common-trait-convention" id="common-trait-convention">Common Trait Convention</a></h1>
-<h2><a class="header" href="#about-4" id="about-4">About</a></h2>
-<p>This convention intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom item. This is done by utilizing Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.</p>
+<p>This convention intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom item. This is done by utilizing the Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.</p>
 <p>With that, we can create a unified lookup system that every datapacks can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.</p>
 <h3><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h3>
 <p>It can be hard to visualize how this convention would be useful in the real world, so we compile some useful usage that would not be possible without this convention.</p>
@@ -328,7 +284,7 @@ Branching more advancements after this one is possible, however.</p>
 </ol>
 <h3><a class="header" href="#traits" id="traits">Traits</a></h3>
 <p>Traits are behavior and properties that an object can have. By specifying these traits inside the item's nbt. Other datapacks will be able to refer to that item via traits instead of item id directly.</p>
-<p>Trait is an array of strings and so will look like this in nbt (notice <code>traits: [...]</code>?)</p>
+<p>Traits is an array of strings and so will look like this in nbt (notice <code>traits: [...]</code>?)</p>
 <pre><code class="language-mcfunction">/give @s diamond{ctc: {traits: [&quot;some&quot;, &quot;trait&quot;, &quot;here&quot;], id: &quot;example&quot;, from: &quot;convention:wiki&quot;}}
 </code></pre>
 <h3><a class="header" href="#syntax" id="syntax">Syntax</a></h3>
@@ -354,7 +310,7 @@ Branching more advancements after this one is possible, however.</p>
 <li><code>ore</code>, this trait tells us that this item is an ore.</li>
 </ul>
 <h4><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h4>
-<p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>, this is used when the trait alone can be ambiguous. For example, what does trait <code>orange</code> mean? is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
+<p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>, this is used when the trait alone can be ambiguous. For example, what does the trait <code>orange</code> mean? is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
 <p>In such case we'll use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
 <h2><a class="header" href="#usage" id="usage">Usage</a></h2>
 <p>To detect or check for trait items you just need to check for <code>traits</code> nbt of the item.</p>
@@ -440,7 +396,7 @@ Branching more advancements after this one is possible, however.</p>
 <blockquote>
 <p>This trait use <a href="conventions/common_trait.html#slash-notation">Slash Notation</a>!</p>
 </blockquote>
-<p>This trait represents any item that have crystalline structure.</p>
+<p>This trait represents any item that has a crystalline structure.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>gem/diamond</td><td>Diamond gemstone</td></tr>
 <tr><td>gem/ruby</td><td>Ruby gemstone</td></tr>
@@ -472,21 +428,74 @@ Branching more advancements after this one is possible, however.</p>
 <ul>
 <li><a href="https://paleocrafter-mcforge.readthedocs.io/en/fix-mkdoc-update/utilities/oredictionary/">Ore Dict</a></li>
 </ul>
-<h1><a class="header" href="#datapack-uninstallation-convention" id="datapack-uninstallation-convention">Datapack Uninstallation Convention</a></h1>
+<h1><a class="header" href="#custom-model-id-" id="custom-model-id-">Custom Model ID (<code>***</code>)</a></h1>
+<h2><a class="header" href="#about-4" id="about-4">About</a></h2>
+<p>This convention aims to reduce conflict within the <a href="https://minecraft.gamepedia.com/Model#Item_tags">custom model data</a> system as much as possible by assigning a unique id for every creator to use.</p>
+<h2><a class="header" href="#1-register-your-id" id="1-register-your-id">1. Register your id</a></h2>
+<p>&quot;id&quot; is an integer between 1-999 which we'll use to uniquely namespaced custom model data to prevent conflict between <a href="https://minecraft.gamepedia.com/Resource_pack">resourcepacks</a>.</p>
+<p>You can register your id at <a href="https://mc-datapacks.web.app/custom_model_id">https://mc-datapacks.web.app</a>.</p>
+<blockquote>
+<p>Do note that any id above 700 is susceptible to floating-point precision error.</p>
+</blockquote>
+<h2><a class="header" href="#2-prefix-your-model-with-your-id" id="2-prefix-your-model-with-your-id">2. Prefix your model with your id</a></h2>
+<p>You will prefix your custom model data with your id in this format where <code>XXX</code> is your ID and <code>0000</code> is any custom model data that fits within 4 digits.</p>
+<table><thead><tr><th>id</th><th>cmd</th></tr></thead><tbody>
+<tr><td>XXX</td><td>0000</td></tr>
+</tbody></table>
+<p>Here are some examples:</p>
+<h3><a class="header" href="#21-id--42" id="21-id--42">2.1. id = 42</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420020}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420300}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
+<h3><a class="header" href="#22-id--808" id="22-id--808">2.2. id = 808</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8081001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8082002}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8083003}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
+<h3><a class="header" href="#23-id--1" id="23-id--1">2.3. id = 1</a></h3>
+<pre><code class="language-json">{
+    &quot;overrides&quot;: [
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10010}, &quot;model&quot;: &quot;path/to/model/2&quot;},
+        {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10011}, &quot;model&quot;: &quot;path/to/model/3&quot;}
+    ]
+}
+</code></pre>
+<h1><a class="header" href="#global-ignoring-tag-" id="global-ignoring-tag-">Global Ignoring Tag (<code>***</code>)</a></h1>
 <h2><a class="header" href="#about-5" id="about-5">About</a></h2>
-<p>Every datapacks are required to implement a way to &quot;uninstall&quot; theirs datapack from the world.</p>
-<p>There is no specific implementation that you need to follow. This convention only enforces that you added some way to uninstall your datapack from the world.</p>
-<p>These are some example list of what could be uninstalled from the world</p>
-<ul>
-<li>Used scoreboards.</li>
-<li>Custom/Marker entities.</li>
-<li>/data storage</li>
-<li>forceloaded chunks</li>
-</ul>
-<h1><a class="header" href="#shulker-box-loot-table-convention" id="shulker-box-loot-table-convention">Shulker Box Loot Table Convention</a></h1>
+<p>This convention provides a way for datapack to communicate with each other by specifying entity tags other datapacks can then look for. This is used heavily to prevent other datapacks from killing/removing custom entities from the world unexpectedly.</p>
+<p>There are currently 4 ignoring tags: <code>global.ignore</code>, <code>global.ignore.pos</code>, <code>global.ignore.gui</code>, <code>global.ignore.kill</code></p>
+<h3><a class="header" href="#1-globalignorekill" id="1-globalignorekill">1. <code>global.ignore.kill</code></a></h3>
+<p>Any entity with this tag <strong>must not</strong> be killed by other datapack. This includes but not limited to <code>/kill</code> command.</p>
+<pre><code class="language-mcfunction">execute as @e[type=creeper, tag=!global.ignore.kill] run kill @s
+</code></pre>
+<h3><a class="header" href="#2-globalignoregui" id="2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
+<p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes but not limited to <code>/title</code>, <code>/particle</code>, <code>/playsound</code> commands.</p>
+<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
+</code></pre>
+<h3><a class="header" href="#3-globalignorepos" id="3-globalignorepos">3. <code>global.ignore.pos</code></a></h3>
+<p>Any entity with this tag <strong>must not</strong> be moved from where it was. This includes but not limited to <code>/tp</code>, <code>/teleport</code> commands.</p>
+<pre><code class="language-mcfunction">execute as @e[type=witch, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
+</code></pre>
+<h3><a class="header" href="#4-globalignore" id="4-globalignore">4. <code>global.ignore</code></a></h3>
+<p>Any entity with this tag <strong>must not</strong> be included in the entity selector at all, you can also think of this tag as a combination of every ignoring tags above.</p>
+<pre><code class="language-mcfunction">execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
+</code></pre>
+<h2><a class="header" href="#note-1" id="note-1">Note</a></h2>
+<p>The convention only applies if your function will change NBT of an unknown entity. if you are trying to change NBT of known entity (i.e. an entity with a special tag attached) you don't need to follow this convention.</p>
+<h1><a class="header" href="#shulker-box-loot-table-" id="shulker-box-loot-table-">Shulker Box Loot Table (<code>***</code>)</a></h1>
 <h2><a class="header" href="#about-6" id="about-6">About</a></h2>
 <p>This convention aims to make <a href="conventions/../tips/shulker_box_inventory_manipulation.html">Shulker Box Inventory Manipulation</a> as conflicted-free as possible by enforcing a specific loot table for <code>minecraft:yellow_shulker_box</code> block.</p>
-<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<h2><a class="header" href="#implementation-2" id="implementation-2">Implementation</a></h2>
 <p>Simply use this loot table inside <code>/data/minecraft/loot_tables/blocks/yellow_shulker_box.json</code> when you want to use the <a href="conventions/../tips/shulker_box_inventory_manipulation.html">Inventory Manipulation</a> trick.</p>
 <pre><code class="language-json">{
   &quot;type&quot;: &quot;minecraft:block&quot;,
@@ -560,11 +569,20 @@ Branching more advancements after this one is possible, however.</p>
 <ul>
 <li><a href="conventions/../tips/shulker_box_inventory_manipulation.html">Shulker Box Inventory Manipulation</a></li>
 </ul>
+<h1><a class="header" href="#style-guideline" id="style-guideline">Style Guideline</a></h1>
+<p>This is currently working in progress.</p>
+<p>You can read a draft version <a href="https://mc-datapacks.github.io/staff-guideline/style_guideline.html">here</a></p>
 <h1><a class="header" href="#certified-datapacks" id="certified-datapacks">Certified Datapacks</a></h1>
-<p><img src="https://i.imgur.com/NbVuvwA.png" alt="Certified Datapack Banner" /></p>
-<pre><code class="language-text">https://i.imgur.com/NbVuvwA.png
-</code></pre>
-<p>You can attach this banner to your project page after your datapack has been verified as a Certified Datapack.</p>
+<ul>
+<li>
+<p>Datapack that has followed a bare metal <strong>Tier 3</strong> conventions are allowed to use this banner
+<img src="https://i.imgur.com/4Z0ioH5.png" alt="" /></p>
+</li>
+<li>
+<p>Datapack that has followed <strong>Tier 3</strong> conventions and various style-related conventions defined in the <a href="certified_datapacks/../style_guideline/index.html">Style Guideline</a> section can use this banner.
+<img src="https://i.imgur.com/ltLPoQp.png" alt="" /></p>
+</li>
+</ul>
 <blockquote>
 <p>Certified Datapacks have a benefit of knowing that your datapack will be compatible with other datapacks.</p>
 </blockquote>
@@ -572,8 +590,7 @@ Branching more advancements after this one is possible, however.</p>
 <p>Datapack must satisfy these requirements to receive Certified Datapack title</p>
 <ul>
 <li>Datapack must be portable, it must not be tied down to a specific save.</li>
-<li>Datapack must use mcfunction directly. For example, using mcfunction to create a custom recipe does not count.</li>
-<li>Datapack must modify or add features to Minecraft.</li>
+<li>Datapack must follow all of <strong>Tier 3</strong> Conventions.</li>
 </ul>
 <h2><a class="header" href="#note-2" id="note-2">Note</a></h2>
 <ol>
@@ -601,7 +618,7 @@ execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping
 <p>This technique allows us to manipulate the player's inventory just like any NBT using the shulker box's loot table.</p>
 <h2><a class="header" href="#concept" id="concept">Concept</a></h2>
 <p>We take advantage of the fact that the shulker box can be configured to drop their content on the ground instead of a shulker box containing its content, which can then be used by <code>/loot</code> command to replace the player's inventory.</p>
-<h2><a class="header" href="#implementation-1" id="implementation-1">Implementation</a></h2>
+<h2><a class="header" href="#implementation-3" id="implementation-3">Implementation</a></h2>
 <p>1. To follow with the <a href="tips//conventions/index.html">Official Conventions</a> you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code><br />
 <a href="https://pastebin.com/4sspBvep"><center>https://pastebin.com/4sspBvep</center></a></p>
 <p>2. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from player view but for simplicity's sake. I'll place it at <code>~ ~ ~</code>.</p>
@@ -658,7 +675,7 @@ data remove storage &lt;storage&gt; inventory
 <h2><a class="header" href="#concept-1" id="concept-1">Concept</a></h2>
 <p>To detect when player is holding right click you need to know when player right click <code>coas</code> <em>twice</em> next to each other.<br />
 But because a single <code>coas</code> click need 2 ticks to process. To detect when player is holding you need atleast 4 ticks, which is a limitation of this method.</p>
-<h2><a class="header" href="#implementation-2" id="implementation-2">Implementation</a></h2>
+<h2><a class="header" href="#implementation-4" id="implementation-4">Implementation</a></h2>
 <p>1. Setup scoreboard objectives</p>
 <pre><code>#[setup]
 
@@ -717,7 +734,7 @@ scoreboard players set @s &lt;timer&gt; 5
 scoreboard players set @s &lt;coas&gt; 0
 </code></pre>
 <p>5. As long as <code>[state/use]</code> is running player will be holding right click on coas. You can use that information to execute any functions that you want.</p>
-<h2><a class="header" href="#result-1" id="result-1">Result</a></h2>
+<h2><a class="header" href="#result" id="result">Result</a></h2>
 <blockquote>
 <p>A simple spell casting system where a spell will be casted when player hold right click for a period of time</p>
 </blockquote>

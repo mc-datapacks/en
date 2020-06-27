@@ -1,8 +1,8 @@
-# Common Trait Convention
+# Common Trait Convention (`**`)
 
 ## About
 
-This convention intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom item. This is done by utilizing Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.
+This convention intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom item. This is done by utilizing the Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.
 
 With that, we can create a unified lookup system that every datapacks can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.
 
@@ -18,7 +18,7 @@ It can be hard to visualize how this convention would be useful in the real worl
 
 Traits are behavior and properties that an object can have. By specifying these traits inside the item's nbt. Other datapacks will be able to refer to that item via traits instead of item id directly.
 
-Trait is an array of strings and so will look like this in nbt (notice `traits: [...]`?)
+Traits is an array of strings and so will look like this in nbt (notice `traits: [...]`?)
 
 ```mcfunction
 /give @s diamond{ctc: {traits: ["some", "trait", "here"], id: "example", from: "convention:wiki"}}
@@ -52,7 +52,7 @@ Let's look at `traits` nbt
 
 #### Slash Notation
 
-In the above example, you will notice the use of `/` in `metal/copper`, this is used when the trait alone can be ambiguous. For example, what does trait `orange` mean? is it the *color* orange or the *fruit* orange?
+In the above example, you will notice the use of `/` in `metal/copper`, this is used when the trait alone can be ambiguous. For example, what does the trait `orange` mean? is it the *color* orange or the *fruit* orange?
 
 In such case we'll use slash notation to separate them. `color/orange` and `fruit/orange`
 
@@ -162,7 +162,7 @@ This trait represents an item that can be used to interact with the world.
 
 > This trait use [Slash Notation](#slash-notation)!
 
-This trait represents any item that have crystalline structure.
+This trait represents any item that has a crystalline structure.
 
 |Trait|Description|
 |-----|-----------|

@@ -1,4 +1,4 @@
-# Shulker Box Loot Table Convention
+# Shulker Box Loot Table (`***`)
 
 ## About
 

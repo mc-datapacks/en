@@ -3,8 +3,7 @@
 Datapack must satisfy these requirements to receive Certified Datapack title
 
 - Datapack must be portable, it must not be tied down to a specific save.
-- Datapack must use mcfunction directly. For example, using mcfunction to create a custom recipe does not count.
-- Datapack must modify or add features to Minecraft.
+- Datapack must follow all of **Tier 3** Conventions.
 
 ## Note
 

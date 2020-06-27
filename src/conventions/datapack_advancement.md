@@ -1,14 +1,26 @@
-# Datapack Advancement Convention
+# Datapack Advancement (`*`)
 
 ## About
 
-This convention aims to generalize the installation message of datapacks. This is done by using the [Advancement](https://minecraft.gamepedia.com/Advancements) tab to display installation message branching from the root advancement to datapack creator to the datapack itself.
+This convention aims to generalize the installation message into an easily viewable and non-obstructive way by putting it on a single advancement page.
 
-The convention is split into 3 sections: `Root`, `Namespace` and `Datapack`
+## Preview
+
+This is an example of what this convention will look like
+
+![](./advancement/preview.png)
+
+## Implementation
+
+The guideline is made up of 3 advancement nodes: `Root`, `Namespace` and `Datapack`
 
 ## 1. Root Advancement
 
-This is the advancement that every datapacks will branch off from. This advancement **must** be located at `/data/global/advancements/root.json` file.
+This advancement is the root of all installed datapack's advancements.
+
+![](./advancement/root.png)
+
+You **must** create this file at `/data/global/advancements/root.json`.
 
 ```json
 {
@@ -32,7 +44,11 @@ This is the advancement that every datapacks will branch off from. This advancem
 
 ## 2. Namespace Advancement
 
-This is the advancement is for *each* datapack creator, it should be the same for all of *your* datapacks. It **should** be located at `/data/global/advancement/<namespace>.json`.
+This advancement indicates the creator of the datapack.
+
+![](./advancement/namespace.png)
+
+It **must** be in the same location in every datapacks of yours. I recommend that you put it inside `/data/global/advancements/<namespace>.json`.
 
 ```json
 {
@@ -55,9 +71,19 @@ This is the advancement is for *each* datapack creator, it should be the same fo
 }
 ```
 
+> **Note**  
+> If you are working on a project with multiple people you can choose to:
+> - Display this advancement as your own and credit them with other methods.
+> - Display this advancement with the "team name" of your choice.
+> - Display a "[Standalone Datapack](#extra-standalone-datapack)" instead.
+
 ## 3. Datapack Advancement
 
-This is an advancement for *your* datapack, it should be unique from your other Datapack Advancements. You can create this advancement anywhere as long as you don't pollute `/data/global/advancements/` folder.
+This advancement is used to display installation information about your datapack. It should be unique among your other datapacks.
+
+![](./advancement/datapack.png)
+
+You can create this advancement anywhere as long as you **don't** pollute `/data/global/advancements/folder`
 
 ```json
 {
@@ -79,23 +105,14 @@ This is an advancement for *your* datapack, it should be unique from your other 
 }
 ```
 
-### Note
+## Note
 
-everything encased inside `<...>` should be changed to the specified information.
+The syntax `<...>` indicates that you have to replace it with something else!
 
-## Result
+## Extra: Standalone Datapack
 
-Your advancement tab should now look something like this:
+This is an optional syntax that you can take to display installed datapack *without* displaying the creator's information.
 
-![Datapack Advancement Convention Preview](https://i.imgur.com/6bzBBr1.png)  
-(Image by @Hashs#9531)
+To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-advancement) step and make sure that in step [#3: Datapack Advancement](#3-datapack-advancement) you create your file inside `/data/global/advancements/standalone/` directory.
 
-## Standalone Datapack (Optional)
-
-This is an optional syntax that you can use if you would like to display your datapack advancement in a standalone branch without any author name attached to it.
-
-The advancement file or 'Standalone Datapack' **must** be created inside `/data/global/advancements/standalone/` directory and the advancement must branch off from 
-the [Root Advancement](#1-root-advancement) directly with nothing in-between.
-Branching more advancements after this one is possible, however.
-
-> Keep in mind that if you are planning to release more datapacks you should use the normal syntax.
+> Keep in mind that if you are planning to release more datapacks under this name. You should use the normal syntax over this one.

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Datapack Uninstallation - MC Datapacks</title>
+        <title>Datapack Uninstallation* - MC Datapacks</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.2.</strong> Custom Model ID</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.3.</strong> Global Ignoring Tag</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.4.</strong> Common Trait Convention</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html" class="active"><strong aria-hidden="true">1.5.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table</a></li></ol></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">2.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">2.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">3.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">3.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">3.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/holding_right_click_detection.html"><strong aria-hidden="true">3.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement*</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html" class="active"><strong aria-hidden="true">1.2.</strong> Datapack Uninstallation*</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.3.</strong> Common Trait Convention**</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.4.</strong> Custom Model ID***</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.5.</strong> Global Ignoring Tag***</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.6.</strong> Shulker Box Loot Table***</a></li></ol></li><li class="chapter-item expanded "><a href="../style_guideline/index.html"><strong aria-hidden="true">2.</strong> Style Guideline</a></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">3.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">3.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">4.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">4.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">4.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/holding_right_click_detection.html"><strong aria-hidden="true">4.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,30 +147,26 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#datapack-uninstallation-convention" id="datapack-uninstallation-convention">Datapack Uninstallation Convention</a></h1>
+                        <h1><a class="header" href="#datapack-uninstallation-" id="datapack-uninstallation-">Datapack Uninstallation (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>Every datapacks are required to implement a way to &quot;uninstall&quot; theirs datapack from the world.</p>
-<p>There is no specific implementation that you need to follow. This convention only enforces that you added some way to uninstall your datapack from the world.</p>
-<p>These are some example list of what could be uninstalled from the world</p>
-<ul>
-<li>Used scoreboards.</li>
-<li>Custom/Marker entities.</li>
-<li>/data storage</li>
-<li>forceloaded chunks</li>
-</ul>
+<p>This convention ensures that you have a way of uninstalling <em>most</em> of the contents of your datapack. The word &quot;most&quot; is used here because minecraft does not provide the necessary tool for us to actually uninstall or remove the entirety of datapack.</p>
+<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<p>There are no rules enforcing how you should implement the uninstallation method as long as you did implement it. But the following section is one of the many ways to implement it.</p>
+<h3><a class="header" href="#uninstallation-function" id="uninstallation-function">Uninstallation Function</a></h3>
+<p>You can create an &quot;uninstallation function&quot;, which when ran, will remove most of the content added from your datapack. You can tell the user about this function inside your project page or anywhere you like.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../conventions/common_trait.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../conventions/datapack_advancement.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../conventions/shulker_box_loot_table.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../conventions/common_trait.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -182,13 +178,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../conventions/common_trait.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../conventions/datapack_advancement.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../conventions/shulker_box_loot_table.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../conventions/common_trait.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
