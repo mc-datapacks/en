@@ -1,4 +1,4 @@
-# Holding Right Click Detection by Cocoon
+# Holding Right Click Detection
 
 ## About
 
@@ -6,10 +6,16 @@ This method allow you to detect when player is "holding" right click using carro
 
 > Note: I will be referring to "carrot on a stick" as "coas" from now on
 
+## Result
+
+> A simple spell casting system where a spell will be casted when player hold right click for a period of time
+
+![result](./holding_right_click_detection/result.gif)
+
 ## Concept
 
-To detect when player is holding right click you need to know when player right click `coas` *twice* next to each other.  
-But because a single `coas` click need 2 ticks to process. To detect when player is holding you need atleast 4 ticks, which is a limitation of this method.
+To detect when player is holding right click you need to know when player right click `coas` *twice* within a time threshold.  
+Because Minecraft takes in `coas` input every 4 tick, a right click is considered continuous if it's performed within 5 ticks of another click.
 
 ## Implementation
 
@@ -20,79 +26,43 @@ But because a single `coas` click need 2 ticks to process. To detect when player
 
 #> This objective is used for detecting when player is right clicking.
 scoreboard objectives add <coas> minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add <timer> dummy
-#> This objective is used to keep track of a "state machine"
-scoreboard objectives add <state> dummy
 
-#> Constants to define the possible states player can take.
-scoreboard players set <state.idle> <state> 0 // Idling state
-scoreboard players set <state.use> <state> 1 // Using coas state
+#> This objective is always more than 0 when player is holding right click
+#> We can use this to detect when player is holding right click
+scoreboard objectives add <timer> dummy
 ```
 
-> State Machine is a design pattern that separate multiple states into their own execution area without overlapping each other.
+2\. Detect right click
 
-2\. Setup state machine code
+```
+#[main]
+execute if score @s <coas> matches 1.. run function [coas/reset_timer]
+```
 
-> This assume that you've created a function loop that trigger this function on every players already!
+3\. Detect holding right click
 
 ```
 #[main]
 
-execute if score @s <state> = <state.idle> <state> run function [state/idle]
-execute if score @s <state> = <state.use> <state> run function [state/use]
-```
+# Decrease <timer> by one until it hits 0
+scoreboard players remove @s[scores={<timer>=1..}] <timer> 1
 
-3\. Detect right click
-
-```
-#[state/idle]
-
-execute if score @s <coas> matches 1.. run function [transition/use]
+# If <timer> is more than 0, we know that the player have right clicked within the last 5 ticks.
+# (Since <timer> decrease by 1 every tick and every time a right click is performed <timer> is set to 5 again.)
+execute if score @s <timer> matches 1.. run say Player is Holding Right Click!
 ```
 
 ```
-#[transition/use]
+#[coas/reset_timer]
 
-# Setup necessary scoreboard values
-scoreboard players set @s <timer> 5
-scoreboard players set @s <coas> 0
-scoreboard players operation @s <state> = <state.use> <state>
-```
-
-4\. Handling holding right click
-
-```
-#[state/use]
-
-scoreboard players remove @s <timer> 1
-
-# Check when the timer ran out if player has right click coas again
-execute if score @s <timer> matches 0 unless score @s <coas> matches 1.. run function [transition/idle]
-execute if score @s <timer> matches 0 if score @s <coas> matches 1.. run function [transition/reset_timer]
-```
-
-```
-#[transition/idle]
-
-scoreboard players set @s <timer> 0
-scoreboard players set @s <coas> 0
-scoreboard players operation @s <state> = <state.idle> <state>
-```
-
-```
-#[transition/reset_timer]
-
+# Set <timer> to 5 and <coas> to 0
 scoreboard players set @s <timer> 5
 scoreboard players set @s <coas> 0
 ```
 
-5\. As long as `[state/use]` is running player will be holding right click on coas. You can use that information to execute any functions that you want.
-
-## Result
-
-> A simple spell casting system where a spell will be casted when player hold right click for a period of time
-
-![result](./holding_right_click_detection/result.gif)
+5\. Conclusion
+If `<timer>` is more than 0, we know that the player have right clicked within the last 5 ticks since `<timer>` decrease by 1 every tick and every time a right click is performed `<timer>` is set to 5 again.  
+We can use `execute if score @s <timer> matches 1..` to know if `<timer>` is more than or equal to 1.
 
 ## Note
 
@@ -103,4 +73,7 @@ scoreboard players set @s <coas> 0
 
 You can download the [example datapack](./holding_right_click_detection/example.zip) here.
 
-This example pack contains extra code used to display the title message to player.
+This example pack contains extra code used to display the title message to player.  
+
+Happy Datapacking!  
+\- Cocoon
