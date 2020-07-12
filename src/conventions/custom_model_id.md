@@ -9,7 +9,6 @@ This convention aims to reduce conflict within the [custom model data](https://m
 "id" is an integer between 1-999 which we'll use to uniquely namespaced custom model data to prevent conflict between [resourcepacks](https://minecraft.gamepedia.com/Resource_pack).
 
 You can register your id at [https://mc-datapacks.web.app](https://mc-datapacks.web.app/custom_model_id).
-> Do note that any id above 700 is susceptible to floating-point precision error.
 
 ## 2. Prefix your model with your id
 
