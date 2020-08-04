@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Datapack Advancement* - MC Datapacks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../conventions/datapack_advancement.html" class="active"><strong aria-hidden="true">1.1.</strong> Datapack Advancement*</a></li><li class="chapter-item expanded "><a href="../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.2.</strong> Datapack Uninstallation*</a></li><li class="chapter-item expanded "><a href="../conventions/common_trait.html"><strong aria-hidden="true">1.3.</strong> Common Trait Convention**</a></li><li class="chapter-item expanded "><a href="../conventions/custom_model_id.html"><strong aria-hidden="true">1.4.</strong> Custom Model ID***</a></li><li class="chapter-item expanded "><a href="../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.5.</strong> Global Ignoring Tag***</a></li><li class="chapter-item expanded "><a href="../conventions/global_durability.html"><strong aria-hidden="true">1.6.</strong> Global Durability*</a></li><li class="chapter-item expanded "><a href="../conventions/namespace.html"><strong aria-hidden="true">1.7.</strong> Namespace Convention**</a></li><li class="chapter-item expanded "><a href="../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.8.</strong> Shulker Box Loot Table***</a></li></ol></li><li class="chapter-item expanded "><a href="../style_guideline/index.html"><strong aria-hidden="true">2.</strong> Style Guideline</a></li><li class="chapter-item expanded "><a href="../certified_datapacks/index.html"><strong aria-hidden="true">3.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../certified_datapacks/requirement.html"><strong aria-hidden="true">3.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../tips/index.html"><strong aria-hidden="true">4.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tips/enum_scoreboard.html"><strong aria-hidden="true">4.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">4.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../tips/holding_right_click_detection.html"><strong aria-hidden="true">4.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">MC Datapacks</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#datapack-advancement-" id="datapack-advancement-">Datapack Advancement (<code>*</code>)</a></h1>
+<h2><a class="header" href="#about" id="about">About</a></h2>
+<p>This convention aims to generalize the installation message into an easily viewable and non-obstructive way by putting it on a single advancement page.</p>
+<h2><a class="header" href="#preview" id="preview">Preview</a></h2>
+<p>This is an example of what this convention will look like</p>
+<p><img src="./advancement/preview.png" alt="" /></p>
+<h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
+<p>The guideline is made up of 3 advancement nodes: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
+<h2><a class="header" href="#1-root-advancement" id="1-root-advancement">1. Root Advancement</a></h2>
+<p>This advancement is the root of all installed datapack's advancements.</p>
+<p><img src="./advancement/root.png" alt="" /></p>
+<p>You <strong>must</strong> create this file at <code>/data/global/advancements/root.json</code>.</p>
+<pre><code class="language-json">{
+    &quot;display&quot;: {
+        &quot;title&quot;: &quot;Installed Datapacks&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;icon&quot;: {
+            &quot;item&quot;: &quot;minecraft:knowledge_book&quot;
+        },
+        &quot;background&quot;: &quot;minecraft:textures/block/gray_concrete.png&quot;,
+        &quot;show_toast&quot;: false,
+        &quot;announce_to_chat&quot;: false
+    },
+    &quot;criteria&quot;: {
+        &quot;trigger&quot;: {
+            &quot;trigger&quot;: &quot;minecraft:tick&quot;
+        }
+    }
+}
+</code></pre>
+<h2><a class="header" href="#2-namespace-advancement" id="2-namespace-advancement">2. Namespace Advancement</a></h2>
+<p>This advancement indicates the creator of the datapack.</p>
+<p><img src="./advancement/namespace.png" alt="" /></p>
+<p>It <strong>must</strong> be in the same location in every datapacks of yours. I recommend that you put it inside <code>/data/global/advancements/&lt;namespace&gt;.json</code>.</p>
+<pre><code class="language-json">{
+    &quot;display&quot;: {
+        &quot;title&quot;: &quot;&lt;Your name&gt;&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;icon&quot;: {
+            &quot;item&quot;: &quot;minecraft:player_head&quot;,
+            &quot;nbt&quot;: &quot;{SkullOwner: '&lt;your_minecraft_name&gt;'}&quot;
+        },
+        &quot;show_toast&quot;: false,
+        &quot;announce_to_chat&quot;: false
+    },
+    &quot;parent&quot;: &quot;global:root&quot;,
+    &quot;criteria&quot;: {
+        &quot;trigger&quot;: {
+            &quot;trigger&quot;: &quot;minecraft:tick&quot;
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Note</strong><br />
+If you are working on a project with multiple people you can choose to:</p>
+<ul>
+<li>Display this advancement as your own and credit them with other methods.</li>
+<li>Display this advancement with the &quot;team name&quot; of your choice.</li>
+<li>Display a &quot;<a href="#extra-standalone-datapack">Standalone Datapack</a>&quot; instead.</li>
+</ul>
+</blockquote>
+<h2><a class="header" href="#3-datapack-advancement" id="3-datapack-advancement">3. Datapack Advancement</a></h2>
+<p>This advancement is used to display installation information about your datapack. It should be unique among your other datapacks.</p>
+<p><img src="./advancement/datapack.png" alt="" /></p>
+<p>You can create this advancement anywhere as long as you <strong>don't</strong> pollute <code>/data/global/advancements/folder</code></p>
+<pre><code class="language-json">{
+    &quot;display&quot;: {
+        &quot;title&quot;: &quot;&lt;datapack name&gt;&quot;,
+        &quot;description&quot;: &quot;&lt;datapack description&gt;&quot;,
+        &quot;icon&quot;: {
+            &quot;item&quot;: &quot;&lt;item&gt;&quot;
+        },
+        &quot;announce_to_chat&quot;: false,
+        &quot;show_toast&quot;: false
+    },
+    &quot;parent&quot;: &quot;global:&lt;namespace&gt;&quot;,
+    &quot;criteria&quot;: {
+        &quot;trigger&quot;: {
+            &quot;trigger&quot;: &quot;minecraft:tick&quot;
+        }
+    }
+}
+</code></pre>
+<h2><a class="header" href="#note" id="note">Note</a></h2>
+<p>The syntax <code>&lt;...&gt;</code> indicates that you have to replace it with something else!</p>
+<h2><a class="header" href="#extra-standalone-datapack" id="extra-standalone-datapack">Extra: Standalone Datapack</a></h2>
+<p>This is an optional syntax that you can take to display installed datapack <em>without</em> displaying the creator's information.</p>
+<p>To implement this you simply skip the <a href="#2-namespace-advancement">#2: Namespace Advancement</a> step and make sure that in step <a href="#3-datapack-advancement">#3: Datapack Advancement</a> you create your file inside <code>/data/global/advancements/standalone/</code> directory.</p>
+<blockquote>
+<p>Keep in mind that if you are planning to release more datapacks under this name. You should use the normal syntax over this one.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../conventions/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../conventions/datapack_uninstallation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../conventions/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../conventions/datapack_uninstallation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

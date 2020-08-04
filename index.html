@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Minecraft Datapacks - MC Datapacks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement*</a></li><li class="chapter-item expanded "><a href="conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.2.</strong> Datapack Uninstallation*</a></li><li class="chapter-item expanded "><a href="conventions/common_trait.html"><strong aria-hidden="true">1.3.</strong> Common Trait Convention**</a></li><li class="chapter-item expanded "><a href="conventions/custom_model_id.html"><strong aria-hidden="true">1.4.</strong> Custom Model ID***</a></li><li class="chapter-item expanded "><a href="conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.5.</strong> Global Ignoring Tag***</a></li><li class="chapter-item expanded "><a href="conventions/global_durability.html"><strong aria-hidden="true">1.6.</strong> Global Durability*</a></li><li class="chapter-item expanded "><a href="conventions/namespace.html"><strong aria-hidden="true">1.7.</strong> Namespace Convention**</a></li><li class="chapter-item expanded "><a href="conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.8.</strong> Shulker Box Loot Table***</a></li></ol></li><li class="chapter-item expanded "><a href="style_guideline/index.html"><strong aria-hidden="true">2.</strong> Style Guideline</a></li><li class="chapter-item expanded "><a href="certified_datapacks/index.html"><strong aria-hidden="true">3.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="certified_datapacks/requirement.html"><strong aria-hidden="true">3.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="tips/index.html"><strong aria-hidden="true">4.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tips/enum_scoreboard.html"><strong aria-hidden="true">4.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">4.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="tips/holding_right_click_detection.html"><strong aria-hidden="true">4.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">MC Datapacks</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#about" id="about">About</a></h1>
+<p>Minecraft Datapacks is a community-driven minecraft server about datapacks. This means we need a way to ensure compatibility between many datapacks to create a stable and friendly datapack ecosystem.</p>
+<p><a href="https://discord.gg/SnJQcfq">Discord</a></p>
+<h2><a class="header" href="#how-we-are-going-to-do-it" id="how-we-are-going-to-do-it">How we are going to do it</a></h2>
+<p>To achieve this we will use the &quot;programming conventions&quot; method, which we will kindly ask other users to follow to improve compatibility between datapacks. And to do that we need to create a way for users to be able to access these conventions very quickly. and that is the aim of this website.</p>
+<h2><a class="header" href="#contribution" id="contribution">Contribution</a></h2>
+<p>If you wish to contribute to this project you can do it via <a href="https://github.com/mc-datapacks">this Github repository</a></p>
+<p>As of right now, there are 3 types of contribution <strong>Grammar Contribution</strong>, <strong>Tips Contribution</strong> and <strong>Convention Contribution</strong></p>
+<ol>
+<li><strong>Grammar Contribution</strong> is a simple grammar correction pull-request, anyone can make this contribution if they notice grammar errors.</li>
+<li><strong>Tips Contribution</strong> is a contribution to a &quot;tips&quot; section of this repository, similar to <strong>Grammar Contribution</strong> you just need to make a pull-request and wait for approval.</li>
+<li><strong>Convention Contribution</strong> is a contribution to the &quot;conventions&quot; section of this repository, to contribute this please read the next section.</li>
+</ol>
+<h3><a class="header" href="#convention-contribution" id="convention-contribution">Convention Contribution</a></h3>
+<p>To contribute to this you must first create an issue with the <code>Convention Suggestion</code> label in this format:</p>
+<ol>
+<li>explanation of the convention.</li>
+<li>explanation on how to implement it.</li>
+<li>explanation of why it should be added.</li>
+</ol>
+<p>After that, we will discuss it, modify it, then vote on whether to add it or not. If the vote passed you can then submit a pull-request and wait for approval.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="conventions/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a rel="next" href="conventions/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
