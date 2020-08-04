@@ -22,4 +22,3 @@
   - [Shulker Box Inventory Manipulation](./tips/shulker_box_inventory_manipulation.md)
   - [Holding Right Click Detection](./tips/holding_right_click_detection.md)
 
-- [Test](./test.md)
