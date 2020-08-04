@@ -18,10 +18,10 @@ It can be hard to visualize how this convention would be useful in the real worl
 
 Traits are behavior and properties that an object can have. By specifying these traits inside the item's nbt. Other datapacks will be able to refer to that item via traits instead of item id directly.
 
-Traits is an array of strings and so will look like this in nbt (notice `traits: [...]`?)
+Traits are a compound tag of strings and booleans and so will look like this in nbt (notice `traits: {...}`?)
 
 ```mcfunction
-/give @s diamond{ctc: {traits: ["some", "trait", "here"], id: "example", from: "convention:wiki"}}
+/give @s diamond{ctc: {traits: {"some": 1b, "trait": 1b, "here": 1b}, id: "example", from: "convention:wiki"}}
 ```
 
 ### Syntax
@@ -30,7 +30,7 @@ Common Trait Convention's syntax will be stored inside `ctc` nbt of item. inside
 
 - `id`: internal id of your item, this should not be used outside of your datapack but should be unique within your datapack.
 - `from`: a namespace specifying which datapack is the item comes from.
-- `traits`: an array of traits that you can use to refer to items outside of your datapack.
+- `traits`: a set of traits that you can use to refer to items outside of your datapack.
 
 We will assume the following syntax is the NBT structure of `/give` command
 
@@ -39,10 +39,13 @@ We will assume the following syntax is the NBT structure of `/give` command
     ctc: {
         id: "my_copper_ore",
         from: "convention:wiki",
-        traits: ["metal/copper", "block", "ore"]
+        traits: {"metal/copper": 1b, "block": 1b, "ore": 1b}
     }
 }
 ```
+
+> Minecraft does not have a `set` data type so we replicate it using a compound tag.
+> This means every trait must have a value of `1b` or `true` to stay consistent.
 
 Let's look at `traits` nbt
 
@@ -63,20 +66,34 @@ To detect or check for trait items you just need to check for `traits` nbt of th
 > Detect if the player is holding a weapon
 
 ```mcfunction
-execute as @a if entity @s SelectedItem.tag.ctc{traits: ["tool/weapon"]} run ...
+execute as @a if entity @s SelectedItem.tag.ctc.traits."tool/weapon" run ...
 ```
+
+This command detect if the item the player is holding contains trait `tool/weapon`
+
+---
 
 > Detect if the container contains copper ore
 
 ```mcfunction
-execute if block ~ ~ ~ Items[].tag.ctc{traits: ["metal/copper", "ore"]} run ...
+execute if block ~ ~ ~ Items[].tag.ctc.traits{"metal/copper": 1b, "ore": 1b} run ...
 ```
+
+This command detects if the container contains an item with traits `metal/copper` and `ore`
+
+---
 
 > Detect if the container contains a placeable item
 
 ```mcfunction
-execute if block ~ ~ ~ Items[].tag.ctc{traits: ["block"]} run ...
+execute if block ~ ~ ~ Items[].tag.ctc.traits."block" run ...
 ```
+
+This command detects if the container contain item with trait `block` which represent an item that can be placed on the ground.
+
+---
+
+> While quote around the trait is not necessary in some cases, I keep it there to stay consistent.
 
 ## Basic Traits
 
@@ -97,7 +114,7 @@ This trait represents the state of matter that this item holds.
 
 ### Special Type Group
 
-This trait represents common behavior from modded minecraft, this should help with integrating your pack into this convention.
+This trait represents common behavior from Modded Minecraft, this should help with integrating your pack into this convention.
 
 > This group is an exception to the rule above, you can use multiple traits from this group as much as you like.
 
