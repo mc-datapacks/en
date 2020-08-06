@@ -55,3 +55,7 @@ Here are some examples:
     ]
 }
 ```
+
+## Note
+
+This convention does not enforce any restriction from the 8th digit onwards. Datapacker could utilize this to gain a few more model slots if they want to. (the digit index is count from right-to-left of course)
