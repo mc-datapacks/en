@@ -488,6 +488,8 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
     ]
 }
 </code></pre>
+<h2><a class="header" href="#note-1" id="note-1">Note</a></h2>
+<p>This convention does not enforce any restriction from the 8th digit onwards. Datapacker could utilize this to gain a few more model slots if they want to. (the digit index is count from right-to-left of course)</p>
 <h1><a class="header" href="#global-ignoring-tag-" id="global-ignoring-tag-">Global Ignoring Tag (<code>***</code>)</a></h1>
 <h2><a class="header" href="#about-5" id="about-5">About</a></h2>
 <p>This convention provides a way for datapack to communicate with each other by specifying entity tags other datapacks can then look for. This is used heavily to prevent other datapacks from killing/removing custom entities from the world unexpectedly.</p>
@@ -508,7 +510,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <p>Any entity with this tag <strong>must not</strong> be included in the entity selector at all, you can also think of this tag as a combination of every ignoring tags above.</p>
 <pre><code class="language-mcfunction">execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
 </code></pre>
-<h2><a class="header" href="#note-1" id="note-1">Note</a></h2>
+<h2><a class="header" href="#note-2" id="note-2">Note</a></h2>
 <p>The convention only applies if your function will change NBT of an unknown entity. if you are trying to change NBT of known entity (i.e. an entity with a special tag attached) you don't need to follow this convention.</p>
 <h1><a class="header" href="#global-durability-" id="global-durability-">Global Durability (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about-6" id="about-6">About</a></h2>
@@ -531,7 +533,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <li><code>durability</code> is the maximum durability of the tool or the maximum damage the tool can take.</li>
 <li><code>broken</code> is a boolean specifying whether the item is &quot;broken&quot; (i.e. <a href="https://minecraft.gamepedia.com/Elytra">Broken Elytra</a>), this tag can be used in the case where you don't want to destroy the item when it ran out of durability.</li>
 </ul>
-<h2><a class="header" href="#note-2" id="note-2">Note</a></h2>
+<h2><a class="header" href="#note-3" id="note-3">Note</a></h2>
 <p>The convention only enforces <em>where</em> the tag should be, it does not enforce the method that you want to reduce their durability. And likewise, it also does not enforce that you have to keep <code>damage</code> and vanilla's <code>Damage</code> tag in-sync.</p>
 <h1><a class="header" href="#namespace-convention-" id="namespace-convention-">Namespace Convention (<code>**</code>)</a></h1>
 <h2><a class="header" href="#about-7" id="about-7">About</a></h2>
@@ -557,7 +559,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <p>In this example, I wrap the <code>custom_data</code> nbt inside my namespace to prevent any outside conflict entirely.</p>
 <hr />
 <p>The above example is my style of namespacing but there are many other styles that you can use as well, such as <code>namespace_foo</code>, <code>NAMESPACEfoo</code>, <code>namespace.foo</code>, <code>namespace:foo</code>, <code>namespace/foo</code>.</p>
-<h2><a class="header" href="#note-3" id="note-3">Note</a></h2>
+<h2><a class="header" href="#note-4" id="note-4">Note</a></h2>
 <p>Using <code>minecraft</code> namespace to modify vanilla's behavior is a special case and it is allowed within a reasonable situation.<br />
 However, setting <code>&quot;replace&quot;</code> to <code>true</code> in <code>tick.json</code> function tag is not a reasonable situation because that would prevent other datapacks from working.</p>
 <h1><a class="header" href="#shulker-box-loot-table-" id="shulker-box-loot-table-">Shulker Box Loot Table (<code>***</code>)</a></h1>
@@ -660,7 +662,7 @@ However, setting <code>&quot;replace&quot;</code> to <code>true</code> in <code>
 <li>Datapack must be portable, it must not be tied down to a specific save.</li>
 <li>Datapack must follow all of <strong>Tier 3</strong> Conventions.</li>
 </ul>
-<h2><a class="header" href="#note-4" id="note-4">Note</a></h2>
+<h2><a class="header" href="#note-5" id="note-5">Note</a></h2>
 <ol>
 <li>We may rule a datapack out at our discretion, for reasons we would then specify.</li>
 <li>This requirement is not final and can be changed in the future.</li>
@@ -732,7 +734,7 @@ loot replace entity &lt;player&gt; weapon.offhand 1 mine ~ ~ ~ iron_pickaxe{drop
 data remove storage &lt;storage&gt; batch
 data remove storage &lt;storage&gt; inventory
 </code></pre>
-<h2><a class="header" href="#note-5" id="note-5">Note</a></h2>
+<h2><a class="header" href="#note-6" id="note-6">Note</a></h2>
 <p>In this example, I assume that you need to modify NBT of all available slots but if you want to modify only items in your hotbar then you don't need to use &quot;inventory&quot;, &quot;armor&quot; and &quot;offhand&quot; batch.</p>
 <h1><a class="header" href="#holding-right-click-detection" id="holding-right-click-detection">Holding Right Click Detection</a></h1>
 <h2><a class="header" href="#about-10" id="about-10">About</a></h2>
@@ -782,7 +784,7 @@ scoreboard players set @s &lt;coas&gt; 0
 <p>5. Conclusion
 If <code>&lt;timer&gt;</code> is more than 0, we know that the player have right clicked within the last 5 ticks since <code>&lt;timer&gt;</code> decrease by 1 every tick and every time a right click is performed <code>&lt;timer&gt;</code> is set to 5 again.<br />
 We can use <code>execute if score @s &lt;timer&gt; matches 1..</code> to know if <code>&lt;timer&gt;</code> is more than or equal to 1.</p>
-<h2><a class="header" href="#note-6" id="note-6">Note</a></h2>
+<h2><a class="header" href="#note-7" id="note-7">Note</a></h2>
 <ul>
 <li><code>&lt;...&gt;</code> is a placeholder value that you have to replace with your own value.</li>
 <li><code>[...]</code> is a placeholder path to display relationship between each functions.</li>
