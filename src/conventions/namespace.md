@@ -1,4 +1,4 @@
-# Namespace Convention (`**`)
+# Namespace Convention (`***`)
 
 ## About
 
