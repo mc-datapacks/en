@@ -11,23 +11,25 @@ There are currently 4 ignoring tags: `global.ignore`, `global.ignore.pos`, `glob
 Any entity with this tag **must not** be killed by other datapack. This includes but not limited to `/kill` command.
 
 ```mcfunction
-execute as @e[type=creeper, tag=!global.ignore.kill] run kill @s
+execute as @e[type=creeper, tag=!global.ignore, tag=!global.ignore.kill] run kill @s
 ```
 
 ### 2. `global.ignore.gui`
 
-Any entity with this tag **must not** display visual effects around them. This includes but not limited to `/title`, `/particle`, `/playsound` commands.
+Any entity with this tag **must not** display visual effects around them. This includes but not limited to `/title` commands.
 
 ```mcfunction
-execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{"text": "Hello, World!", "color": "green"}]
+execute as @a[tag=!global.ignore, tag=!global.ignore.gui] at @s run title @s actionbar [{"text": "Hello, World!", "color": "green"}]
 ```
+
+> The exception of this is `/playsound`, `/tellraw` and `/particle` commands.
 
 ### 3. `global.ignore.pos`
 
 Any entity with this tag **must not** be moved from where it was. This includes but not limited to `/tp`, `/teleport` commands.
 
 ```mcfunction
-execute as @e[type=witch, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
+execute as @e[type=witch, tag=!global.ignore, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
 ```
 
 ### 4. `global.ignore`
@@ -37,6 +39,9 @@ Any entity with this tag **must not** be included in the entity selector at all,
 ```mcfunction
 execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
 ```
+
+> This tag cannot be use on player selector (`@a`, `@e[type=player]`, `@p`, etc.)  
+> However, entity selector that doesn't specifically run on the player (`@e[...]`) still need to filter out this tag.
 
 ## Note
 
