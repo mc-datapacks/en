@@ -17,8 +17,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        
         <link rel="icon" href="../favicon.svg">
+        
+        
         <link rel="shortcut icon" href="../favicon.png">
+        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
@@ -161,20 +165,27 @@
 <p>There are currently 4 ignoring tags: <code>global.ignore</code>, <code>global.ignore.pos</code>, <code>global.ignore.gui</code>, <code>global.ignore.kill</code></p>
 <h3><a class="header" href="#1-globalignorekill" id="1-globalignorekill">1. <code>global.ignore.kill</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be killed by other datapack. This includes but not limited to <code>/kill</code> command.</p>
-<pre><code class="language-mcfunction">execute as @e[type=creeper, tag=!global.ignore.kill] run kill @s
+<pre><code class="language-mcfunction">execute as @e[type=creeper, tag=!global.ignore, tag=!global.ignore.kill] run kill @s
 </code></pre>
 <h3><a class="header" href="#2-globalignoregui" id="2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
-<p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes but not limited to <code>/title</code>, <code>/particle</code>, <code>/playsound</code> commands.</p>
-<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
+<p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes but not limited to <code>/title</code> commands.</p>
+<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore, tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
 </code></pre>
+<blockquote>
+<p>The exception of this is <code>/playsound</code>, <code>/tellraw</code> and <code>/particle</code> commands.</p>
+</blockquote>
 <h3><a class="header" href="#3-globalignorepos" id="3-globalignorepos">3. <code>global.ignore.pos</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be moved from where it was. This includes but not limited to <code>/tp</code>, <code>/teleport</code> commands.</p>
-<pre><code class="language-mcfunction">execute as @e[type=witch, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
+<pre><code class="language-mcfunction">execute as @e[type=witch, tag=!global.ignore, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
 </code></pre>
 <h3><a class="header" href="#4-globalignore" id="4-globalignore">4. <code>global.ignore</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be included in the entity selector at all, you can also think of this tag as a combination of every ignoring tags above.</p>
 <pre><code class="language-mcfunction">execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
 </code></pre>
+<blockquote>
+<p>This tag cannot be use on player selector (<code>@a</code>, <code>@e[type=player]</code>, <code>@p</code>, etc.)<br />
+However, entity selector that doesn't specifically run on the player (<code>@e[...]</code>) still need to filter out this tag.</p>
+</blockquote>
 <h2><a class="header" href="#note" id="note">Note</a></h2>
 <p>The convention only applies if your function will change NBT of an unknown entity. if you are trying to change NBT of known entity (i.e. an entity with a special tag attached) you don't need to follow this convention.</p>
 
