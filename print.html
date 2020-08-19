@@ -504,7 +504,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 </code></pre>
 <h3><a class="header" href="#2-globalignoregui" id="2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes but not limited to <code>/title</code> commands.</p>
-<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore, tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
+<pre><code class="language-mcfunction">execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
 </code></pre>
 <blockquote>
 <p>The exception of this is <code>/playsound</code>, <code>/tellraw</code> and <code>/particle</code> commands.</p>
