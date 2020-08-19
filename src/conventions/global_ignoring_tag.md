@@ -19,7 +19,7 @@ execute as @e[type=creeper, tag=!global.ignore, tag=!global.ignore.kill] run kil
 Any entity with this tag **must not** display visual effects around them. This includes but not limited to `/title` commands.
 
 ```mcfunction
-execute as @a[tag=!global.ignore, tag=!global.ignore.gui] at @s run title @s actionbar [{"text": "Hello, World!", "color": "green"}]
+execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{"text": "Hello, World!", "color": "green"}]
 ```
 
 > The exception of this is `/playsound`, `/tellraw` and `/particle` commands.
