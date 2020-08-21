@@ -1,6 +1,6 @@
 # Requirement
 
-A datapack must satisfy these requirements to receive the Certified Datapack title:
+A datapack must satisfy these requirements to receive the Certified Datapack title
 
 - Datapack must be portable, it must not be tied down to a specific save.
 - Datapack must follow all of **Tier 3** Conventions.
