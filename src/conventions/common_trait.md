@@ -208,7 +208,7 @@ This trait represents common metallic items.
 |metal/tin|Item made up of tin|
 |metal/silver|Item made up of silver|
 |metal/lead|Item made up of lead|
-|metal/nickle|Item made up of nickel|
+|metal/nickel|Item made up of nickel|
 |metal/platinum|Item that made up of platinum|
 
 ## Reference
