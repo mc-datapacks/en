@@ -161,14 +161,14 @@
                     <main>
                         <h1><a class="header" href="#datapack-advancement-" id="datapack-advancement-">Datapack Advancement (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This convention aims to generalize the installation message into an easily viewable and non-obstructive way by putting it on a single advancement page.</p>
+<p>This convention aims to generalize installation messages in an easily viewable and non-obstructive way by putting it on a single advancement page.</p>
 <h2><a class="header" href="#preview" id="preview">Preview</a></h2>
-<p>This is an example of what this convention will look like</p>
+<p>This is an example of what this convention will look like.</p>
 <p><img src="./advancement/preview.png" alt="" /></p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>The guideline is made up of 3 advancement nodes: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code></p>
+<p>This guideline defines 3 advancement nodes: <code>Root</code>, <code>Namespace</code> and <code>Datapack</code>.</p>
 <h2><a class="header" href="#1-root-advancement" id="1-root-advancement">1. Root Advancement</a></h2>
-<p>This advancement is the root of all installed datapack's advancements.</p>
+<p>This advancement is the root of all installed datapacks' advancements.</p>
 <p><img src="./advancement/root.png" alt="" /></p>
 <p>You <strong>must</strong> create this file at <code>/data/global/advancements/root.json</code>.</p>
 <pre><code class="language-json">{
@@ -192,7 +192,7 @@
 <h2><a class="header" href="#2-namespace-advancement" id="2-namespace-advancement">2. Namespace Advancement</a></h2>
 <p>This advancement indicates the creator of the datapack.</p>
 <p><img src="./advancement/namespace.png" alt="" /></p>
-<p>It <strong>must</strong> be in the same location in every datapacks of yours. I recommend that you put it inside <code>/data/global/advancements/&lt;namespace&gt;.json</code>.</p>
+<p>It <strong>must</strong> be in the same location in every datapack of yours. I recommend that you put it inside <code>/data/global/advancements/&lt;namespace&gt;.json</code>.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;Your name&gt;&quot;,
@@ -222,9 +222,9 @@ If you are working on a project with multiple people you can choose to:</p>
 </ul>
 </blockquote>
 <h2><a class="header" href="#3-datapack-advancement" id="3-datapack-advancement">3. Datapack Advancement</a></h2>
-<p>This advancement is used to display installation information about your datapack. It should be unique among your other datapacks.</p>
+<p>This advancement is used to display installation information about your datapack. It should be unique among your datapacks.</p>
 <p><img src="./advancement/datapack.png" alt="" /></p>
-<p>You can create this advancement anywhere as long as you <strong>don't</strong> pollute <code>/data/global/advancements/folder</code></p>
+<p>You can create this advancement anywhere, as long as you <strong>don't</strong> pollute <code>/data/global/advancements/folder</code>.</p>
 <pre><code class="language-json">{
     &quot;display&quot;: {
         &quot;title&quot;: &quot;&lt;datapack name&gt;&quot;,
@@ -246,10 +246,10 @@ If you are working on a project with multiple people you can choose to:</p>
 <h2><a class="header" href="#note" id="note">Note</a></h2>
 <p>The syntax <code>&lt;...&gt;</code> indicates that you have to replace it with something else!</p>
 <h2><a class="header" href="#extra-standalone-datapack" id="extra-standalone-datapack">Extra: Standalone Datapack</a></h2>
-<p>This is an optional syntax that you can take to display installed datapack <em>without</em> displaying the creator's information.</p>
-<p>To implement this you simply skip the <a href="#2-namespace-advancement">#2: Namespace Advancement</a> step and make sure that in step <a href="#3-datapack-advancement">#3: Datapack Advancement</a> you create your file inside <code>/data/global/advancements/standalone/</code> directory.</p>
+<p>This is an optional syntax that you can take to display an installed datapack <em>without</em> displaying the creator's information.</p>
+<p>To implement this you simply skip the <a href="#2-namespace-advancement">#2: Namespace Advancement</a> step and make sure that in step <a href="#3-datapack-advancement">#3: Datapack Advancement</a> you create your file inside the <code>/data/global/advancements/standalone/</code> directory.</p>
 <blockquote>
-<p>Keep in mind that if you are planning to release more datapacks under this name. You should use the normal syntax over this one.</p>
+<p>Keep in mind that if you are planning to release more datapacks under this name, you should use the normal syntax over this one.</p>
 </blockquote>
 
                     </main>

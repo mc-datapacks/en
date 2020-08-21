@@ -161,31 +161,31 @@
                     <main>
                         <h1><a class="header" href="#namespace-convention-" id="namespace-convention-">Namespace Convention (<code>***</code>)</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This convention aims to prevent conflict when deciding the name for your scoreboards, functions, storages, etc. by using &quot;namespace prefix&quot;.</p>
+<p>This convention aims to prevent conflict when deciding the name for your scoreboards, functions, storages, etc. by using a &quot;namespace prefix&quot;.</p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>Namespace prefix must be used whenever it is possible. This includes tags (datapack), tags (<code>/tag</code>), nbts, scoreboards, functions, advancements, loot tables, structures, world generation settings, recipes, data storage.</p>
-<p>There is no rule specifying how you should design namespace prefix but these are some of the examples:</p>
+<p>A namespace prefix must be used whenever it is possible. This includes tags (datapack), tags (<code>/tag</code>), nbts, scoreboards, functions, advancements, loot tables, structures, world generation settings, recipes, data storage.</p>
+<p>There is no rule specifying how you should design your namespace prefix, but these are some of the examples:</p>
 <hr />
 <pre><code class="language-mcfunction">scoreboard objectives add bb.var dummy
 </code></pre>
-<p>In this example <code>bb</code> is the namespace which is shortened from <code>boomber</code> due to 16 characters limitation, I like to keep scoreboard's namespace low and then use <code>.</code> separator to quickly identify the namespace.</p>
+<p>In this example <code>bb</code> is the namespace which is shortened from <code>boomber</code> due to 16 characters limitation. I like to keep the scoreboard namespace short and use <code>.</code> to seperate the namespace from the name.</p>
 <hr />
 <pre><code class="language-mcfunction">tag @s add boomber.foo.bar
 </code></pre>
-<p>In this example, I use the full <code>boomber</code> namespace because tag doesn't have a character limit.</p>
+<p>In this example, I use a full <code>boomber</code> prefix, because tags don't have a character limit.</p>
 <hr />
 <pre><code class="language-mcfunction">data merge storage boomber:foo/bar {}
 </code></pre>
-<p>In this example data storage already have support for namespacing so I can take advantage of that right away.</p>
+<p>In this example data storage already has support for namespacing, so I don't need to use a prefix.</p>
 <hr />
 <pre><code class="language-mcfunction">give @s diamond{boomber: {custom_data: 123}}
 </code></pre>
-<p>In this example, I wrap the <code>custom_data</code> nbt inside my namespace to prevent any outside conflict entirely.</p>
+<p>In this example, I wrap the <code>custom_data</code> nbt inside another tag, allowing it to act as a namespace.</p>
 <hr />
-<p>The above example is my style of namespacing but there are many other styles that you can use as well, such as <code>namespace_foo</code>, <code>NAMESPACEfoo</code>, <code>namespace.foo</code>, <code>namespace:foo</code>, <code>namespace/foo</code>.</p>
+<p>The above examples are my style of namespacing, but there are many other approaches that you can take, such as <code>namespace_foo</code>, <code>NAMESPACEfoo</code>, <code>namespace.foo</code>, <code>namespace:foo</code> and <code>namespace/foo</code>. Your imagination is the limit!</p>
 <h2><a class="header" href="#note" id="note">Note</a></h2>
 <p>Using <code>minecraft</code> namespace to modify vanilla's behavior is a special case and it is allowed within a reasonable situation.<br />
-However, setting <code>&quot;replace&quot;</code> to <code>true</code> in <code>tick.json</code> function tag is not a reasonable situation because that would prevent other datapacks from working.</p>
+However, for example, setting <code>&quot;replace&quot;</code> to <code>true</code> in the <code>tick.json</code> function tag is not a &quot;reasonable situation&quot;, because that would prevent other datapacks from working.</p>
 
                     </main>
 

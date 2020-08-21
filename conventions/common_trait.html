@@ -161,26 +161,26 @@
                     <main>
                         <h1><a class="header" href="#common-trait-convention-" id="common-trait-convention-">Common Trait Convention (<code>**</code>)</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This convention intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom item. This is done by utilizing the Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.</p>
-<p>With that, we can create a unified lookup system that every datapacks can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.</p>
+<p>This convention is intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom items. This is done by utilizing Item's custom NBT feature. We can insert any kind of NBT inside Item, which we can access using other commands.</p>
+<p>With that, we can create a unified lookup system that every datapack can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.</p>
 <h3><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h3>
-<p>It can be hard to visualize how this convention would be useful in the real world, so we compile some useful usage that would not be possible without this convention.</p>
+<p>It can be hard to visualize how this convention would be useful in the real world, so we compiled some useful usage that would not be possible without this convention.</p>
 <ol>
 <li>Suppose you added a <code>custom furnace</code> which let you smelt copper ore into ingots. With this convention, you can detect for <strong>any</strong> copper ore from any datapacks to smelt it.</li>
-<li>Suppose you added a <code>fridge</code> which only accept food items, with this convention you can detect for <strong>any</strong> food items even the custom ones from other datapack.</li>
-<li>Suppose you added a <code>custom anvil</code> which lets you repair tools straight from the material instead of the ingot, with this convention you can detect <strong>any</strong> kind of material from other datapacks even when the base material doesn't match.</li>
+<li>Suppose you added a <code>fridge</code> which only accepts food items. With this convention, you can detect <strong>any</strong> food items, even the custom ones from other datapacks.</li>
+<li>Suppose you added a <code>custom anvil</code> which lets you repair tools straight from the material instead of the ingot. With this convention, you can detect <strong>any</strong> kind of material from other datapacks, even when the base material doesn't match.</li>
 </ol>
 <h3><a class="header" href="#traits" id="traits">Traits</a></h3>
-<p>Traits are behavior and properties that an object can have. By specifying these traits inside the item's nbt. Other datapacks will be able to refer to that item via traits instead of item id directly.</p>
-<p>Traits are a compound tag of strings and booleans and so will look like this in nbt (notice <code>traits: {...}</code>?)</p>
+<p>Traits represent behavior and properties that an object can have. By specifying these traits inside the item's NBT, other datapacks will be able to refer to that item via traits instead of item IDs directly.</p>
+<p>Traits are a compound tag of strings to booleans and so will look like this in NBT (notice <code>traits: {...}</code>?)</p>
 <pre><code class="language-mcfunction">/give @s diamond{ctc: {traits: {&quot;some&quot;: 1b, &quot;trait&quot;: 1b, &quot;here&quot;: 1b}, id: &quot;example&quot;, from: &quot;convention:wiki&quot;}}
 </code></pre>
 <h3><a class="header" href="#syntax" id="syntax">Syntax</a></h3>
-<p>Common Trait Convention's syntax will be stored inside <code>ctc</code> nbt of item. inside<code>ctc</code> contains: <code>id</code>, <code>from</code> and <code>traits</code> nbts.</p>
+<p>Common Trait Convention's syntax will be stored inside the <code>ctc</code> NBT of item. Inside <code>ctc</code> are the NBT tags: <code>id</code>, <code>from</code> and <code>traits</code>.</p>
 <ul>
-<li><code>id</code>: internal id of your item, this should not be used outside of your datapack but should be unique within your datapack.</li>
-<li><code>from</code>: a namespace specifying which datapack is the item comes from.</li>
-<li><code>traits</code>: a set of traits that you can use to refer to items outside of your datapack.</li>
+<li><code>id</code>: The internal ID of your item. This doesn't matter outside your datapack, but <em>should</em> be unique within your datapack.</li>
+<li><code>from</code>: A namespace specifying which datapack the item comes from.</li>
+<li><code>traits</code>: A set of traits.</li>
 </ul>
 <p>We will assume the following syntax is the NBT structure of <code>/give</code> command</p>
 <pre><code class="language-text">{
@@ -192,51 +192,51 @@
 }
 </code></pre>
 <blockquote>
-<p>Minecraft does not have a <code>set</code> data type so we replicate it using a compound tag.
+<p>Minecraft does not have a <code>set</code> data type, so we replicate it using a compound tag.
 This means every trait must have a value of <code>1b</code> or <code>true</code> to stay consistent.</p>
 </blockquote>
-<p>Let's look at <code>traits</code> nbt</p>
+<p>Let's look at these traits:</p>
 <ul>
-<li><code>metal/copper</code>, this trait tells us that this item is copper.</li>
-<li><code>block</code>, this trait tells us that this item is a placeable block.</li>
-<li><code>ore</code>, this trait tells us that this item is an ore.</li>
+<li><code>metal/copper</code>. This trait tells us that this item is copper.</li>
+<li><code>block</code>. This trait tells us that this item is a placeable block.</li>
+<li><code>ore</code>. This trait tells us that this item is an ore.</li>
 </ul>
 <h4><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h4>
-<p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>, this is used when the trait alone can be ambiguous. For example, what does the trait <code>orange</code> mean? is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
-<p>In such case we'll use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
+<p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>. This is used for categorization, when a name alone could be ambiguous or difficult to understand. For example, what would the trait <code>orange</code> mean? Is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
+<p>In such a case we'd use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
 <h2><a class="header" href="#usage" id="usage">Usage</a></h2>
-<p>To detect or check for trait items you just need to check for <code>traits</code> nbt of the item.</p>
+<p>To detect or check for trait items you just need to check the <code>traits</code> NBT of the item.</p>
 <blockquote>
 <p>Detect if the player is holding a weapon</p>
 </blockquote>
 <pre><code class="language-mcfunction">execute as @a if entity @s SelectedItem.tag.ctc.traits.&quot;tool/weapon&quot; run ...
 </code></pre>
-<p>This command detect if the item the player is holding contains trait <code>tool/weapon</code></p>
+<p>This command detects if the item the player is holding has the trait <code>tool/weapon</code>.</p>
 <hr />
 <blockquote>
 <p>Detect if the container contains copper ore</p>
 </blockquote>
 <pre><code class="language-mcfunction">execute if block ~ ~ ~ Items[].tag.ctc.traits{&quot;metal/copper&quot;: 1b, &quot;ore&quot;: 1b} run ...
 </code></pre>
-<p>This command detects if the container contains an item with traits <code>metal/copper</code> and <code>ore</code></p>
+<p>This command detects if the container contains an item with the traits <code>metal/copper</code> and <code>ore</code></p>
 <hr />
 <blockquote>
 <p>Detect if the container contains a placeable item</p>
 </blockquote>
 <pre><code class="language-mcfunction">execute if block ~ ~ ~ Items[].tag.ctc.traits.&quot;block&quot; run ...
 </code></pre>
-<p>This command detects if the container contain item with trait <code>block</code> which represent an item that can be placed on the ground.</p>
+<p>This command detects if the container contains an item with the trait <code>block</code>.</p>
 <hr />
 <blockquote>
-<p>While quote around the trait is not necessary in some cases, I keep it there to stay consistent.</p>
+<p>While quotes around the trait is not necessary in all cases, I always keep them there to stay consistent.</p>
 </blockquote>
 <h2><a class="header" href="#basic-traits" id="basic-traits">Basic Traits</a></h2>
-<p>This is a provided list of traits that you can use, this doesn't mean you can't create new traits for your own use but if there is a trait that suits your need in this you should use it instead.</p>
+<p>This is a provided list of traits that you can use. This doesn't mean you can't create new traits for your own use, but if there is a trait that suits your need in the list, you should use it.</p>
 <blockquote>
 <p>The list is split into multiple groups and you <strong>should not</strong> use traits from the same group twice.</p>
 </blockquote>
 <h3><a class="header" href="#object-type-group" id="object-type-group">Object Type Group</a></h3>
-<p>This trait represents the state of matter that this item holds.</p>
+<p>This trait represents the state of the matter that this item holds.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>gas</td><td>Gaseous substance</td></tr>
 <tr><td>liquid</td><td>Liquid substance</td></tr>
@@ -244,22 +244,22 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>item</td><td>Normal minecraft item</td></tr>
 </tbody></table>
 <h3><a class="header" href="#special-type-group" id="special-type-group">Special Type Group</a></h3>
-<p>This trait represents common behavior from Modded Minecraft, this should help with integrating your pack into this convention.</p>
+<p>This group represents common traits from Minecraft.</p>
 <blockquote>
 <p>This group is an exception to the rule above, you can use multiple traits from this group as much as you like.</p>
 </blockquote>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
-<tr><td>ore</td><td>Ore block that can usually be found in cave</td></tr>
-<tr><td>seed</td><td>Item that can be used to grow plant</td></tr>
+<tr><td>ore</td><td>Ore block that can usually be found in caves</td></tr>
+<tr><td>seed</td><td>Item that can be used to grow plants</td></tr>
 <tr><td>flower</td><td>Flower item</td></tr>
 <tr><td>grass</td><td>Block that can spread from one block to another</td></tr>
-<tr><td>sapling</td><td>Block that can grow into tree</td></tr>
+<tr><td>sapling</td><td>Block that can grow into a tree</td></tr>
 <tr><td>vegetable</td><td>Food item that comes from <code>seed</code></td></tr>
-<tr><td>log</td><td>Item that drops from tree</td></tr>
-<tr><td>planks</td><td>Item that come from processing <code>log</code></td></tr>
+<tr><td>log</td><td>Item that drops from tree trunk</td></tr>
+<tr><td>planks</td><td>Item that comes from processing <code>log</code></td></tr>
 </tbody></table>
 <h3><a class="header" href="#compression-group" id="compression-group">Compression Group</a></h3>
-<p>This trait represents an item that can be combined to create a more compact version of itself and vice versa</p>
+<p>This trait represents an item that can be combined to create a more compact version of itself, and vice versa.</p>
 <p>For example:</p>
 <ul>
 <li><code>redstone dust</code> -&gt; <code>redstone block</code></li>
@@ -267,35 +267,35 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <li><code>iron block</code> -&gt; <code>iron ingot</code></li>
 </ul>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
-<tr><td>packed</td><td>Most packed form of item, usually be a block form of this item</td></tr>
-<tr><td>ingot</td><td>Normal form of item, usually be an ingot form of this item</td></tr>
-<tr><td>nugget</td><td>Smallest form of item, usually be a nugget form of this item</td></tr>
+<tr><td>packed</td><td>Most packed form of item, usually a block</td></tr>
+<tr><td>ingot</td><td>Normal form of item, usually an ingot</td></tr>
+<tr><td>nugget</td><td>Smallest form of item, usually a nugget</td></tr>
 </tbody></table>
 <h3><a class="header" href="#edible-group" id="edible-group">Edible Group</a></h3>
-<p>This trait represents an edible item that can be used by the player (drinking included)</p>
+<p>This trait represents an edible item that can be used by the player (drinking included).</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>food</td><td>All types of edible item</td></tr>
 </tbody></table>
 <h3><a class="header" href="#armor-group" id="armor-group">Armor Group</a></h3>
-<p>This trait represents an item that can be worn by players and other entities</p>
+<p>This trait represents an item that can be worn by players and other entities.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>armor</td><td>All types of wearable item</td></tr>
 </tbody></table>
 <h3><a class="header" href="#tool-sub-group" id="tool-sub-group">Tool Sub-group</a></h3>
 <blockquote>
-<p>This trait use <a href="#slash-notation">Slash Notation</a>!</p>
+<p>This trait uses <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
 <p>This trait represents an item that can be used to interact with the world.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
-<tr><td>tool/mining</td><td>This item can be used to mine a stone block and other related blocks</td></tr>
-<tr><td>tool/chopping</td><td>This item can be used to cut trees and wood material</td></tr>
-<tr><td>tool/tilling</td><td>This item can be used to till the soil</td></tr>
-<tr><td>tool/watering</td><td>This item can be used to water the soil</td></tr>
+<tr><td>tool/mining</td><td>This item can be used to mine stone-like blocks</td></tr>
+<tr><td>tool/chopping</td><td>This item can be used to cut wooden blocks</td></tr>
+<tr><td>tool/tilling</td><td>This item can be used to till soil</td></tr>
+<tr><td>tool/watering</td><td>This item can be used to water soil</td></tr>
 <tr><td>tool/weapon</td><td>This item can be used to fight monsters and other players</td></tr>
 </tbody></table>
 <h3><a class="header" href="#gem-sub-group" id="gem-sub-group">Gem Sub-group</a></h3>
 <blockquote>
-<p>This trait use <a href="#slash-notation">Slash Notation</a>!</p>
+<p>This trait uses <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
 <p>This trait represents any item that has a crystalline structure.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
@@ -313,16 +313,16 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <blockquote>
 <p>This trait use <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
-<p>This trait represents the metallic items that are often added by mods</p>
+<p>This trait represents common metallic items.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
-<tr><td>metal/iron</td><td>Item that made up of iron</td></tr>
-<tr><td>metal/gold</td><td>Item that made up of gold</td></tr>
-<tr><td>metal/copper</td><td>Item that made up of copper</td></tr>
-<tr><td>metal/aluminium</td><td>Item that made up of aluminium</td></tr>
-<tr><td>metal/tin</td><td>Item that made up of tin</td></tr>
-<tr><td>metal/silver</td><td>Item that made up of silver</td></tr>
-<tr><td>metal/lead</td><td>Item that made up of lead</td></tr>
-<tr><td>metal/nickle</td><td>Item that made up of nickle</td></tr>
+<tr><td>metal/iron</td><td>Item made up of iron</td></tr>
+<tr><td>metal/gold</td><td>Item made up of gold</td></tr>
+<tr><td>metal/copper</td><td>Item made up of copper</td></tr>
+<tr><td>metal/aluminium</td><td>Item made up of aluminium</td></tr>
+<tr><td>metal/tin</td><td>Item made up of tin</td></tr>
+<tr><td>metal/silver</td><td>Item made up of silver</td></tr>
+<tr><td>metal/lead</td><td>Item made up of lead</td></tr>
+<tr><td>metal/nickel</td><td>Item made up of nickel</td></tr>
 <tr><td>metal/platinum</td><td>Item that made up of platinum</td></tr>
 </tbody></table>
 <h2><a class="header" href="#reference" id="reference">Reference</a></h2>

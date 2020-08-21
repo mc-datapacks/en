@@ -161,27 +161,26 @@
                     <main>
                         <h1><a class="header" href="#holding-right-click-detection" id="holding-right-click-detection">Holding Right Click Detection</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This method allow you to detect when player is &quot;holding&quot; right click using carrot on a stick.</p>
+<p>This method allows you to detect when player is &quot;holding&quot; right click, using a carrot on a stick.</p>
 <blockquote>
 <p>Note: I will be referring to &quot;carrot on a stick&quot; as &quot;coas&quot; from now on</p>
 </blockquote>
 <h2><a class="header" href="#result" id="result">Result</a></h2>
 <blockquote>
-<p>A simple spell casting system where a spell will be casted when player hold right click for a period of time</p>
+<p>A simple spell casting system where a spell will be cast when the player holds right click for a period of time</p>
 </blockquote>
 <p><img src="./holding_right_click_detection/result.gif" alt="result" /></p>
 <h2><a class="header" href="#concept" id="concept">Concept</a></h2>
-<p>To detect when player is holding right click you need to know when player right click <code>coas</code> <em>twice</em> within a time threshold.<br />
+<p>To detect when player is holding right click, you need to know when player right clicks <code>coas</code> <em>twice</em> within a time threshold.<br />
 Because Minecraft takes in <code>coas</code> input every 4 tick, a right click is considered continuous if it's performed within 5 ticks of another click.</p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
 <p>1. Setup scoreboard objectives</p>
 <pre><code>#[setup]
 
-#&gt; This objective is used for detecting when player is right clicking.
+#&gt; This objective is used for detecting when the player is right clicking.
 scoreboard objectives add &lt;coas&gt; minecraft.used:minecraft.carrot_on_a_stick
 
-#&gt; This objective is always more than 0 when player is holding right click
-#&gt; We can use this to detect when player is holding right click
+#&gt; This objective will alway be more than 0 when the player is holding right click
 scoreboard objectives add &lt;timer&gt; dummy
 </code></pre>
 <p>2. Detect right click</p>
@@ -194,7 +193,7 @@ execute if score @s &lt;coas&gt; matches 1.. run function [coas/reset_timer]
 # Decrease &lt;timer&gt; by one until it hits 0
 scoreboard players remove @s[scores={&lt;timer&gt;=1..}] &lt;timer&gt; 1
 
-# If &lt;timer&gt; is more than 0, we know that the player have right clicked within the last 5 ticks.
+# If &lt;timer&gt; is more than 0, we know that the player has right clicked within the last 5 ticks.
 # (Since &lt;timer&gt; decrease by 1 every tick and every time a right click is performed &lt;timer&gt; is set to 5 again.)
 execute if score @s &lt;timer&gt; matches 1.. run say Player is Holding Right Click!
 </code></pre>
@@ -205,7 +204,7 @@ scoreboard players set @s &lt;timer&gt; 5
 scoreboard players set @s &lt;coas&gt; 0
 </code></pre>
 <p>5. Conclusion
-If <code>&lt;timer&gt;</code> is more than 0, we know that the player have right clicked within the last 5 ticks since <code>&lt;timer&gt;</code> decrease by 1 every tick and every time a right click is performed <code>&lt;timer&gt;</code> is set to 5 again.<br />
+If <code>&lt;timer&gt;</code> is more than 0, we know that the player has right clicked within the last 5 ticks, since <code>&lt;timer&gt;</code> decreases by 1 every tick, and every time a right click is performed <code>&lt;timer&gt;</code> is set to 5 again.<br />
 We can use <code>execute if score @s &lt;timer&gt; matches 1..</code> to know if <code>&lt;timer&gt;</code> is more than or equal to 1.</p>
 <h2><a class="header" href="#note" id="note">Note</a></h2>
 <ul>
@@ -215,7 +214,7 @@ We can use <code>execute if score @s &lt;timer&gt; matches 1..</code> to know if
 <h2><a class="header" href="#example-datapack" id="example-datapack">Example Datapack</a></h2>
 <p>You can download the <a href="./holding_right_click_detection/example.zip">example datapack</a> here.</p>
 <p>This example pack contains extra code used to display the title message to player.</p>
-<p>Happy Datapacking!<br />
+<p>Happy Datapacking!
 - Cocoon</p>
 
                     </main>

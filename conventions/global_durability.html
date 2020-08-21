@@ -161,9 +161,9 @@
                     <main>
                         <h1><a class="header" href="#global-durability-" id="global-durability-">Global Durability (<code>*</code>)</a></h1>
 <h2><a class="header" href="#about" id="about">About</a></h2>
-<p>This convention extends the functionality of <a href="./common_trait.html">Common Trait Convention</a> by providing a syntax for &quot;custom durability&quot; which can be useful for datapack that adds tools that can have durability.</p>
+<p>This convention extends the functionality of the <a href="./common_trait.html">Common Trait Convention</a> by providing a syntax for &quot;custom durability&quot; which can be useful for datapacks that add tools that have durability.</p>
 <h3><a class="header" href="#implementation" id="implementation">Implementation</a></h3>
-<p>The convention exists inside <code>ctc</code> tag provided by <a href="./common_trait.html">Common Trait Convention</a> as follow</p>
+<p>The convention uses the <code>ctc</code> tag from the <a href="./common_trait.html">Common Trait Convention</a>, as follows:</p>
 <pre><code class="language-json">{
     ctc: {
         tool: {
@@ -178,10 +178,10 @@
 <ul>
 <li><code>damage</code> is the current damage of the tool, functionally the same as vanilla's <code>Damage</code> tag counterpart.</li>
 <li><code>durability</code> is the maximum durability of the tool or the maximum damage the tool can take.</li>
-<li><code>broken</code> is a boolean specifying whether the item is &quot;broken&quot; (i.e. <a href="https://minecraft.gamepedia.com/Elytra">Broken Elytra</a>), this tag can be used in the case where you don't want to destroy the item when it ran out of durability.</li>
+<li><code>broken</code> is a boolean specifying whether the item is &quot;broken&quot; (i.e. <a href="https://minecraft.gamepedia.com/Elytra">Broken Elytra</a>). This tag can be used in the case where you don't want to destroy the item when it runs out of durability.</li>
 </ul>
 <h2><a class="header" href="#note" id="note">Note</a></h2>
-<p>The convention only enforces <em>where</em> the tag should be, it does not enforce the method that you want to reduce their durability. And likewise, it also does not enforce that you have to keep <code>damage</code> and vanilla's <code>Damage</code> tag in-sync.</p>
+<p>The convention only enforces <em>where</em> the tag should be, it does not enforce the method by which you reduce durability. It also does not require that you have to keep <code>damage</code> and the vanilla <code>Damage</code> tag in sync.</p>
 
                     </main>
 
