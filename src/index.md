@@ -1,26 +1,26 @@
 # About
 
-Minecraft Datapacks is a community-driven minecraft server about datapacks. This means we need a way to ensure compatibility between many datapacks to create a stable and friendly datapack ecosystem.
+Minecraft Datapacks is a community-driven Minecraft server about datapacks. This means we need a way to ensure compatibility between many datapacks to create a stable and friendly datapack ecosystem.
 
 [Discord](https://discord.gg/SnJQcfq)
 
 ## How we are going to do it
 
-To achieve this we will use the "programming conventions" method, which we will kindly ask other users to follow to improve compatibility between datapacks. And to do that we need to create a way for users to be able to access these conventions very quickly. and that is the aim of this website.
+To achieve this we will use some "programming conventions", which we will ask other users to follow to improve compatibility between datapacks. To do that, we need to create a way for users to be able to access these conventions conveniently. That is the aim of this website.
 
 ## Contribution
 
-If you wish to contribute to this project you can do it via [this Github repository](https://github.com/mc-datapacks)
+If you wish to contribute to this project, you can do it via [this Github repository](https://github.com/mc-datapacks).
 
-As of right now, there are 3 types of contribution **Grammar Contribution**, **Tips Contribution** and **Convention Contribution**
+As of right now, there are 3 types of contribution: **Grammar Contributions**, **Tips Contributions** and **Convention Contributions**.
 
-1. **Grammar Contribution** is a simple grammar correction pull-request, anyone can make this contribution if they notice grammar errors.
-2. **Tips Contribution** is a contribution to a "tips" section of this repository, similar to **Grammar Contribution** you just need to make a pull-request and wait for approval.
-3. **Convention Contribution** is a contribution to the "conventions" section of this repository, to contribute this please read the next section.
+1. A **Grammar Contribution** is a simple grammar correction pull-request, anyone can make this contribution if they notice grammar errors.
+2. A **Tips Contribution** is a contribution to the "tips" section of this repository, similar to **Grammar Contributions** you just need to make a pull-request and wait for approval.
+3. A **Convention Contribution** is a contribution to the "conventions" section of this repository. To contribute to the conventions, please read the below section.
 
 ### Convention Contribution
 
-To contribute to this you must first create an issue with the `Convention Suggestion` label in this format:
+To contribute to the official conventions, you must first create an issue with the `Convention Suggestion` label in this format:
 
 1) explanation of the convention.
 2) explanation on how to implement it.

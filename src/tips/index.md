@@ -1,3 +1,3 @@
 # Tips
 
-Various tips and tricks for developing datapack.
+Various tips and tricks for developing datapacks.

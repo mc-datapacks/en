@@ -2,7 +2,7 @@
 
 ## About
 
-This convention aims to make [Shulker Box Inventory Manipulation](../tips/shulker_box_inventory_manipulation.md) as conflicted-free as possible by enforcing a specific loot table for `minecraft:yellow_shulker_box` block.
+This convention aims to make [Shulker Box Inventory Manipulation](../tips/shulker_box_inventory_manipulation.md) as conflict-free as possible by enforcing a specific loot table for the `minecraft:yellow_shulker_box` block.
 
 ## Implementation
 

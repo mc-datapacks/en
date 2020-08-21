@@ -2,17 +2,17 @@
 
 ## About
 
-This convention aims to reduce conflict within the [custom model data](https://minecraft.gamepedia.com/Model#Item_tags) system as much as possible by assigning a unique id for every creator to use.
+This convention aims to reduce conflict between [resource packs](https://minecraft.gamepedia.com/Resource_pack) within the [custom model data](https://minecraft.gamepedia.com/Model#Item_tags) system as much as possible by assigning a unique ID for every creator to use.
 
-## 1. Register your id
+## 1. Register your ID
 
-"id" is an integer between 1-999 which we'll use to uniquely namespaced custom model data to prevent conflict between [resourcepacks](https://minecraft.gamepedia.com/Resource_pack).
+Your "id" is an integer between 1-999 which we'll use as a unique namespace.
 
-You can register your id at [https://mc-datapacks.web.app](https://mc-datapacks.web.app/custom_model_id).
+You can register your ID at [https://mc-datapacks.web.app](https://mc-datapacks.web.app/custom_model_id).
 
 ## 2. Prefix your model with your id
 
-You will prefix your custom model data with your id in this format where `XXX` is your ID and `0000` is any custom model data that fits within 4 digits.
+You will prefix your custom model data with your ID in this format, where `XXX` is your ID and `0000` is your unique custom model data.
 
 |id|cmd|
 |---|----|
@@ -58,4 +58,4 @@ Here are some examples:
 
 ## Note
 
-This convention does not enforce any restriction from the 8th digit onwards. Datapacker could utilize this to gain a few more model slots if they want to. (the digit index is count from right-to-left of course)
+This convention does not enforce any restrictions from the 8th digit onwards. Datapackers could utilize this to gain a few more model slots if they wanted to. (the digit index is count from right-to-left of course)
