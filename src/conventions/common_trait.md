@@ -28,7 +28,7 @@ Traits are a compound tag of strings to booleans and so will look like this in N
 
 Common Trait Convention's syntax will be stored inside the `ctc` NBT of item. Inside `ctc` are the NBT tags: `id`, `from` and `traits`.
 
-- `id`: The internal ID of your item. This doesn't matter outside your datapack, but should be unique *within* your datapack.
+- `id`: The internal ID of your item. This doesn't matter outside your datapack, but *should* be unique within your datapack.
 - `from`: A namespace specifying which datapack the item comes from.
 - `traits`: A set of traits.
 
