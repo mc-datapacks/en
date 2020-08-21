@@ -2,21 +2,21 @@
 
 ## About
 
-This convention aims to generalize the installation message into an easily viewable and non-obstructive way by putting it on a single advancement page.
+This convention aims to generalize installation messages in an easily viewable and non-obstructive way by putting it on a single advancement page.
 
 ## Preview
 
-This is an example of what this convention will look like
+This is an example of what this convention will look like.
 
 ![](./advancement/preview.png)
 
 ## Implementation
 
-The guideline is made up of 3 advancement nodes: `Root`, `Namespace` and `Datapack`
+This guideline defines 3 advancement nodes: `Root`, `Namespace` and `Datapack`.
 
 ## 1. Root Advancement
 
-This advancement is the root of all installed datapack's advancements.
+This advancement is the root of all installed datapacks' advancements.
 
 ![](./advancement/root.png)
 
@@ -48,7 +48,7 @@ This advancement indicates the creator of the datapack.
 
 ![](./advancement/namespace.png)
 
-It **must** be in the same location in every datapacks of yours. I recommend that you put it inside `/data/global/advancements/<namespace>.json`.
+It **must** be in the same location in every datapack of yours. I recommend that you put it inside `/data/global/advancements/<namespace>.json`.
 
 ```json
 {
@@ -79,11 +79,11 @@ It **must** be in the same location in every datapacks of yours. I recommend tha
 
 ## 3. Datapack Advancement
 
-This advancement is used to display installation information about your datapack. It should be unique among your other datapacks.
+This advancement is used to display installation information about your datapack. It should be unique among your datapacks.
 
 ![](./advancement/datapack.png)
 
-You can create this advancement anywhere as long as you **don't** pollute `/data/global/advancements/folder`
+You can create this advancement anywhere, as long as you **don't** pollute `/data/global/advancements/folder`.
 
 ```json
 {
@@ -111,8 +111,8 @@ The syntax `<...>` indicates that you have to replace it with something else!
 
 ## Extra: Standalone Datapack
 
-This is an optional syntax that you can take to display installed datapack *without* displaying the creator's information.
+This is an optional syntax that you can take to display an installed datapack *without* displaying the creator's information.
 
-To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-advancement) step and make sure that in step [#3: Datapack Advancement](#3-datapack-advancement) you create your file inside `/data/global/advancements/standalone/` directory.
+To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-advancement) step and make sure that in step [#3: Datapack Advancement](#3-datapack-advancement) you create your file inside the `/data/global/advancements/standalone/` directory.
 
-> Keep in mind that if you are planning to release more datapacks under this name. You should use the normal syntax over this one.
+> Keep in mind that if you are planning to release more datapacks under this name, you should use the normal syntax over this one.

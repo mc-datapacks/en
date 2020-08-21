@@ -2,11 +2,11 @@
 
 ## About
 
-This convention ensures that you have a way of uninstalling *most* of the contents of your datapack. The word "most" is used here because minecraft does not provide the necessary tool for us to actually uninstall or remove the entirety of datapack.
+This convention ensures that you have a way of uninstalling *most* of the contents of your datapack. The word "most" is used here because Minecraft does not provide the necessary tools for us to actually uninstall or remove the entirety of the datapack.
 
 ## Implementation
 
-There are no rules enforcing how you should implement the uninstallation method as long as you did implement it. But the following section is one of the many ways to implement it.
+There are no rules enforcing how you should implement the uninstallation method, as long as you do implement it. However, the following section outlines one of the many ways to implement it.
 
 ### Uninstallation Function
 

@@ -1,3 +1,3 @@
 # Official Conventions
 
-These are official conventions that everyone **should** followed for datapack compatibility.
+These are the official conventions that everyone should follow for datapack compatibility.

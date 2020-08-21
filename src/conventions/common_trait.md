@@ -2,23 +2,23 @@
 
 ## About
 
-This convention intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom item. This is done by utilizing the Item's custom nbt feature. We can insert any kind of nbt inside item which we can use other commands to check/look into it.
+This convention is intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom items. This is done by utilizing Item's custom NBT feature. We can insert any kind of NBT inside Item, which we can access using other commands.
 
-With that, we can create a unified lookup system that every datapacks can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.
+With that, we can create a unified lookup system that every datapack can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.
 
 ### Example Usage
 
-It can be hard to visualize how this convention would be useful in the real world, so we compile some useful usage that would not be possible without this convention.
+It can be hard to visualize how this convention would be useful in the real world, so we compiled some useful usage that would not be possible without this convention.
 
 1. Suppose you added a `custom furnace` which let you smelt copper ore into ingots. With this convention, you can detect for **any** copper ore from any datapacks to smelt it.
-2. Suppose you added a `fridge` which only accept food items, with this convention you can detect for **any** food items even the custom ones from other datapack.
-3. Suppose you added a `custom anvil` which lets you repair tools straight from the material instead of the ingot, with this convention you can detect **any** kind of material from other datapacks even when the base material doesn't match.
+2. Suppose you added a `fridge` which only accepts food items. With this convention, you can detect **any** food items, even the custom ones from other datapacks.
+3. Suppose you added a `custom anvil` which lets you repair tools straight from the material instead of the ingot. With this convention, you can detect **any** kind of material from other datapacks, even when the base material doesn't match.
 
 ### Traits
 
-Traits are behavior and properties that an object can have. By specifying these traits inside the item's nbt. Other datapacks will be able to refer to that item via traits instead of item id directly.
+Traits represent behavior and properties that an object can have. By specifying these traits inside the item's NBT, other datapacks will be able to refer to that item via traits instead of item IDs directly.
 
-Traits are a compound tag of strings and booleans and so will look like this in nbt (notice `traits: {...}`?)
+Traits are a compound tag of strings to booleans and so will look like this in NBT (notice `traits: {...}`?)
 
 ```mcfunction
 /give @s diamond{ctc: {traits: {"some": 1b, "trait": 1b, "here": 1b}, id: "example", from: "convention:wiki"}}
@@ -26,11 +26,11 @@ Traits are a compound tag of strings and booleans and so will look like this in 
 
 ### Syntax
 
-Common Trait Convention's syntax will be stored inside `ctc` nbt of item. inside`ctc` contains: `id`, `from` and `traits` nbts.
+Common Trait Convention's syntax will be stored inside the `ctc` NBT of item. Inside `ctc` are the NBT tags: `id`, `from` and `traits`.
 
-- `id`: internal id of your item, this should not be used outside of your datapack but should be unique within your datapack.
-- `from`: a namespace specifying which datapack is the item comes from.
-- `traits`: a set of traits that you can use to refer to items outside of your datapack.
+- `id`: The internal ID of your item. This doesn't matter outside your datapack, but *should* be unique within your datapack.
+- `from`: A namespace specifying which datapack the item comes from.
+- `traits`: A set of traits.
 
 We will assume the following syntax is the NBT structure of `/give` command
 
@@ -44,24 +44,24 @@ We will assume the following syntax is the NBT structure of `/give` command
 }
 ```
 
-> Minecraft does not have a `set` data type so we replicate it using a compound tag.
+> Minecraft does not have a `set` data type, so we replicate it using a compound tag.
 > This means every trait must have a value of `1b` or `true` to stay consistent.
 
-Let's look at `traits` nbt
+Let's look at these traits:
 
-- `metal/copper`, this trait tells us that this item is copper.
-- `block`, this trait tells us that this item is a placeable block.
-- `ore`, this trait tells us that this item is an ore.
+- `metal/copper`. This trait tells us that this item is copper.
+- `block`. This trait tells us that this item is a placeable block.
+- `ore`. This trait tells us that this item is an ore.
 
 #### Slash Notation
 
-In the above example, you will notice the use of `/` in `metal/copper`, this is used when the trait alone can be ambiguous. For example, what does the trait `orange` mean? is it the *color* orange or the *fruit* orange?
+In the above example, you will notice the use of `/` in `metal/copper`. This is used for categorization, when a name alone could be ambiguous or difficult to understand. For example, what would the trait `orange` mean? Is it the *color* orange or the *fruit* orange?
 
-In such case we'll use slash notation to separate them. `color/orange` and `fruit/orange`
+In such a case we'd use slash notation to separate them. `color/orange` and `fruit/orange`
 
 ## Usage
 
-To detect or check for trait items you just need to check for `traits` nbt of the item.
+To detect or check for trait items you just need to check the `traits` NBT of the item.
 
 > Detect if the player is holding a weapon
 
@@ -69,7 +69,7 @@ To detect or check for trait items you just need to check for `traits` nbt of th
 execute as @a if entity @s SelectedItem.tag.ctc.traits."tool/weapon" run ...
 ```
 
-This command detect if the item the player is holding contains trait `tool/weapon`
+This command detects if the item the player is holding has the trait `tool/weapon`.
 
 ---
 
@@ -79,7 +79,7 @@ This command detect if the item the player is holding contains trait `tool/weapo
 execute if block ~ ~ ~ Items[].tag.ctc.traits{"metal/copper": 1b, "ore": 1b} run ...
 ```
 
-This command detects if the container contains an item with traits `metal/copper` and `ore`
+This command detects if the container contains an item with the traits `metal/copper` and `ore`
 
 ---
 
@@ -89,21 +89,21 @@ This command detects if the container contains an item with traits `metal/copper
 execute if block ~ ~ ~ Items[].tag.ctc.traits."block" run ...
 ```
 
-This command detects if the container contain item with trait `block` which represent an item that can be placed on the ground.
+This command detects if the container contains an item with the trait `block`.
 
 ---
 
-> While quote around the trait is not necessary in some cases, I keep it there to stay consistent.
+> While quotes around the trait is not necessary in all cases, I always keep them there to stay consistent.
 
 ## Basic Traits
 
-This is a provided list of traits that you can use, this doesn't mean you can't create new traits for your own use but if there is a trait that suits your need in this you should use it instead.
+This is a provided list of traits that you can use. This doesn't mean you can't create new traits for your own use, but if there is a trait that suits your need in the list, you should use it.
 
 > The list is split into multiple groups and you **should not** use traits from the same group twice.
 
 ### Object Type Group
 
-This trait represents the state of matter that this item holds.
+This trait represents the state of the matter that this item holds.
 
 |Trait|Description|
 |-----|-----------|
@@ -114,24 +114,24 @@ This trait represents the state of matter that this item holds.
 
 ### Special Type Group
 
-This trait represents common behavior from Modded Minecraft, this should help with integrating your pack into this convention.
+This group represents common traits from Minecraft.
 
 > This group is an exception to the rule above, you can use multiple traits from this group as much as you like.
 
 |Trait|Description|
 |-----|-----------|
-|ore|Ore block that can usually be found in cave|
-|seed|Item that can be used to grow plant|
+|ore|Ore block that can usually be found in caves|
+|seed|Item that can be used to grow plants|
 |flower|Flower item|
 |grass|Block that can spread from one block to another|
-|sapling|Block that can grow into tree|
+|sapling|Block that can grow into a tree|
 |vegetable|Food item that comes from `seed`|
-|log|Item that drops from tree|
-|planks|Item that come from processing `log`|
+|log|Item that drops from tree trunk|
+|planks|Item that comes from processing `log`|
 
 ### Compression Group
 
-This trait represents an item that can be combined to create a more compact version of itself and vice versa
+This trait represents an item that can be combined to create a more compact version of itself, and vice versa.
 
 For example:
 
@@ -141,13 +141,13 @@ For example:
 
 |Trait|Description|
 |-----|-----------|
-|packed|Most packed form of item, usually be a block form of this item|
-|ingot|Normal form of item, usually be an ingot form of this item|
-|nugget|Smallest form of item, usually be a nugget form of this item|
+|packed|Most packed form of item, usually a block|
+|ingot|Normal form of item, usually an ingot|
+|nugget|Smallest form of item, usually a nugget|
 
 ### Edible Group
 
-This trait represents an edible item that can be used by the player (drinking included)
+This trait represents an edible item that can be used by the player (drinking included).
 
 |Trait|Description|
 |-----|-----------|
@@ -155,7 +155,7 @@ This trait represents an edible item that can be used by the player (drinking in
 
 ### Armor Group
 
-This trait represents an item that can be worn by players and other entities
+This trait represents an item that can be worn by players and other entities.
 
 |Trait|Description|
 |-----|-----------|
@@ -163,21 +163,21 @@ This trait represents an item that can be worn by players and other entities
 
 ### Tool Sub-group
 
-> This trait use [Slash Notation](#slash-notation)!
+> This trait uses [Slash Notation](#slash-notation)!
 
 This trait represents an item that can be used to interact with the world.
 
 |Trait|Description|
 |-----|-----------|
-|tool/mining|This item can be used to mine a stone block and other related blocks|
-|tool/chopping|This item can be used to cut trees and wood material|
-|tool/tilling|This item can be used to till the soil|
-|tool/watering|This item can be used to water the soil|
+|tool/mining|This item can be used to mine stone-like blocks|
+|tool/chopping|This item can be used to cut wooden blocks|
+|tool/tilling|This item can be used to till soil|
+|tool/watering|This item can be used to water soil|
 |tool/weapon|This item can be used to fight monsters and other players|
 
 ### Gem Sub-group
 
-> This trait use [Slash Notation](#slash-notation)!
+> This trait uses [Slash Notation](#slash-notation)!
 
 This trait represents any item that has a crystalline structure.
 
@@ -197,18 +197,18 @@ This trait represents any item that has a crystalline structure.
 
 > This trait use [Slash Notation](#slash-notation)!
 
-This trait represents the metallic items that are often added by mods
+This trait represents common metallic items.
 
 |Trait|Description|
 |-----|-----------|
-|metal/iron|Item that made up of iron|
-|metal/gold|Item that made up of gold|
-|metal/copper|Item that made up of copper|
-|metal/aluminium|Item that made up of aluminium|
-|metal/tin|Item that made up of tin|
-|metal/silver|Item that made up of silver|
-|metal/lead|Item that made up of lead|
-|metal/nickle|Item that made up of nickle|
+|metal/iron|Item made up of iron|
+|metal/gold|Item made up of gold|
+|metal/copper|Item made up of copper|
+|metal/aluminium|Item made up of aluminium|
+|metal/tin|Item made up of tin|
+|metal/silver|Item made up of silver|
+|metal/lead|Item made up of lead|
+|metal/nickel|Item made up of nickel|
 |metal/platinum|Item that made up of platinum|
 
 ## Reference
