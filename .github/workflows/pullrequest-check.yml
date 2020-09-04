@@ -1,0 +1,22 @@
+name: Pull-request Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Building mdbook
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup mdbook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: 'latest'
+        
+    - name: Build website
+      run: mdbook build
