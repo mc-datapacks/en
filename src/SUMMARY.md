@@ -13,6 +13,9 @@
   - [Shulker Box Loot Table***](./conventions/shulker_box_loot_table.md)
 
 - [Style Guideline](./style_guideline/index.md)
+  - [Datapack Advancement](./style_guideline/datapack_advancement.md)
+  - [Datapack Uninstallation](./style_guideline/datapack_uninstallation.md)
+  - [Reloading Message](./style_guideline/reloading_message.md)
 
 - [Certified Datapacks](./certified_datapacks/index.md)
   - [Requirement](./certified_datapacks/requirement.md)
