@@ -8,7 +8,7 @@ We take advantage of the fact that the shulker box can be configured to drop the
 
 ## Implementation
 
-1\. To comply with the [Official Conventions](/conventions/index.md), you will have to modify the loot table of `minecraft:yellow_shulker_box` to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT `{drop_contents: 1b}`  
+1\. To comply with the [Official Conventions](/conventions/index.md), you will have to modify the loot table of `minecraft:yellow_shulker_box` to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT `{drop_contents: 1b}`. For compatibility, `air` should be used as the item.  
 [<center>https://pastebin.com/4sspBvep</center>](https://pastebin.com/4sspBvep)
 
 2\. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from the player's view, but for simplicity's sake, I'll place it at `~ ~ ~`.
@@ -49,16 +49,16 @@ data remove storage <storage> batch.hotbar[].Slot
 
 ```
 data modify block ~ ~ ~ Items set from storage <storage> batch.hotbar
-loot replace entity <player> hotbar.0 9 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity <player> hotbar.0 9 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage <storage> batch.inventory
-loot replace entity <player> inventory.0 27 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity <player> inventory.0 27 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage <storage> batch.armor
-loot replace entity <player> armor.feet 4 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity <player> armor.feet 4 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage <storage> batch.offhand
-loot replace entity <player> weapon.offhand 1 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity <player> weapon.offhand 1 mine ~ ~ ~ air{drop_contents: 1b}
 ```
 
 Note: Notice the slots I used in each `/loot` command?
