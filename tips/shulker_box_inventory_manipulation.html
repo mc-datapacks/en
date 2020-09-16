@@ -165,7 +165,7 @@
 <h2><a class="header" href="#concept" id="concept">Concept</a></h2>
 <p>We take advantage of the fact that the shulker box can be configured to drop their content on the ground instead of dropping a shulker box containing its content, which can then be used by the <code>/loot</code> command to replace the player's inventory.</p>
 <h2><a class="header" href="#implementation" id="implementation">Implementation</a></h2>
-<p>1. To comply with the <a href="/conventions/index.html">Official Conventions</a>, you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code><br />
+<p>1. To comply with the <a href="/conventions/index.html">Official Conventions</a>, you will have to modify the loot table of <code>minecraft:yellow_shulker_box</code> to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT <code>{drop_contents: 1b}</code>. For compatibility reasons, <code>air</code> must be used as the item.<br />
 <a href="https://pastebin.com/4sspBvep"><center>https://pastebin.com/4sspBvep</center></a></p>
 <p>2. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from the player's view, but for simplicity's sake, I'll place it at <code>~ ~ ~</code>.</p>
 <pre><code>setblock ~ ~ ~ minecraft:yellow_shulker_box
@@ -193,16 +193,16 @@ data remove storage &lt;storage&gt; batch.hotbar[].Slot
 <p>4.2. Modify the NBT of each item however you like it to be.</p>
 <p>5. Copy the NBT from the previous step into the shulker box and then replace the player's inventory.</p>
 <pre><code>data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.hotbar
-loot replace entity &lt;player&gt; hotbar.0 9 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity &lt;player&gt; hotbar.0 9 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.inventory
-loot replace entity &lt;player&gt; inventory.0 27 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity &lt;player&gt; inventory.0 27 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.armor
-loot replace entity &lt;player&gt; armor.feet 4 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity &lt;player&gt; armor.feet 4 mine ~ ~ ~ air{drop_contents: 1b}
 
 data modify block ~ ~ ~ Items set from storage &lt;storage&gt; batch.offhand
-loot replace entity &lt;player&gt; weapon.offhand 1 mine ~ ~ ~ iron_pickaxe{drop_contents: 1b}
+loot replace entity &lt;player&gt; weapon.offhand 1 mine ~ ~ ~ air{drop_contents: 1b}
 </code></pre>
 <p>Note: Notice the slots I used in each <code>/loot</code> command?</p>
 <p>6. Cleaning up</p>
