@@ -8,7 +8,7 @@ We take advantage of the fact that the shulker box can be configured to drop the
 
 ## Implementation
 
-1\. To comply with the [Official Conventions](/conventions/index.md), you will have to modify the loot table of `minecraft:yellow_shulker_box` to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT `{drop_contents: 1b}`. For compatibility, `air` should be used as the item.  
+1\. To comply with the [Official Conventions](/conventions/index.md), you will have to modify the loot table of `minecraft:yellow_shulker_box` to the loot table below. The loot table will drop its content on the ground when it's mined by an item with NBT `{drop_contents: 1b}`. For compatibility reasons, `air` must be used as the item.  
 [<center>https://pastebin.com/4sspBvep</center>](https://pastebin.com/4sspBvep)
 
 2\. Create a placeholder shulker box that you will use to modify the player's inventory. Usually, this should be placed far away from the player's view, but for simplicity's sake, I'll place it at `~ ~ ~`.
