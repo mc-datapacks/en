@@ -213,4 +213,4 @@ This trait represents common metallic items.
 
 ## Reference
 
-- [Ore Dict](https://paleocrafter-mcforge.readthedocs.io/en/fix-mkdoc-update/utilities/oredictionary/)
+- [Ore Dict](https://mcforge.readthedocs.io/en/1.12.x/utilities/oredictionary/)
