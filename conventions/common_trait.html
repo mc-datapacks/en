@@ -167,19 +167,19 @@
 <h2><a class="header" href="#about" id="about">About</a></h2>
 <p>This convention is intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom items. This is done by utilizing Item's custom NBT feature. We can insert any kind of NBT inside Item, which we can access using other commands.</p>
 <p>With that, we can create a unified lookup system that every datapack can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.</p>
-<h3><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h3>
+<h2><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h2>
 <p>It can be hard to visualize how this convention would be useful in the real world, so we compiled some useful usage that would not be possible without this convention.</p>
 <ol>
 <li>Suppose you added a <code>custom furnace</code> which let you smelt copper ore into ingots. With this convention, you can detect for <strong>any</strong> copper ore from any datapacks to smelt it.</li>
 <li>Suppose you added a <code>fridge</code> which only accepts food items. With this convention, you can detect <strong>any</strong> food items, even the custom ones from other datapacks.</li>
 <li>Suppose you added a <code>custom anvil</code> which lets you repair tools straight from the material instead of the ingot. With this convention, you can detect <strong>any</strong> kind of material from other datapacks, even when the base material doesn't match.</li>
 </ol>
-<h3><a class="header" href="#traits" id="traits">Traits</a></h3>
+<h2><a class="header" href="#traits" id="traits">Traits</a></h2>
 <p>Traits represent behavior and properties that an object can have. By specifying these traits inside the item's NBT, other datapacks will be able to refer to that item via traits instead of item IDs directly.</p>
 <p>Traits are a compound tag of strings to booleans and so will look like this in NBT (notice <code>traits: {...}</code>?)</p>
 <pre><code class="language-mcfunction">/give @s diamond{ctc: {traits: {&quot;some&quot;: 1b, &quot;trait&quot;: 1b, &quot;here&quot;: 1b}, id: &quot;example&quot;, from: &quot;convention:wiki&quot;}}
 </code></pre>
-<h3><a class="header" href="#syntax" id="syntax">Syntax</a></h3>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
 <p>Common Trait Convention's syntax will be stored inside the <code>ctc</code> NBT of item. Inside <code>ctc</code> are the NBT tags: <code>id</code>, <code>from</code> and <code>traits</code>.</p>
 <ul>
 <li><code>id</code>: The internal ID of your item. This doesn't matter outside your datapack, but <em>should</em> be unique within your datapack.</li>
@@ -205,7 +205,13 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <li><code>block</code>. This trait tells us that this item is a placeable block.</li>
 <li><code>ore</code>. This trait tells us that this item is an ore.</li>
 </ul>
-<h4><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h4>
+<h3><a class="header" href="#note" id="note">Note</a></h3>
+<ul>
+<li>When you are attempting to check for custom item using <code>id</code> tag <strong>must</strong> be done alongside <code>from</code> tag as well, you cannot separate it because it would break compatibility.</li>
+<li>The opposite of the above is not true, you can check for <code>from</code> tag without requiring <code>id</code> tag.</li>
+<li>If you use <code>id</code> tag to check for custom item, there is no need to check for <code>traits</code> tag as well.</li>
+</ul>
+<h2><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h2>
 <p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>. This is used for categorization, when a name alone could be ambiguous or difficult to understand. For example, what would the trait <code>orange</code> mean? Is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
 <p>In such a case we'd use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
 <h2><a class="header" href="#usage" id="usage">Usage</a></h2>
