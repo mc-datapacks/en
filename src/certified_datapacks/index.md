@@ -19,3 +19,8 @@ The following tags should be self-explanatory but if you feel that it isn't, ple
 - GitHub: `mcdp-certified` and `mcdp-quality`
 - Twitter: `#CertifiedMCDatapack` and `#QualityMCDatapack`
 - PlanetMinecraft: `mcdp_certified` and `mcdp_quality`
+
+We also have the official account on these platform as well:
+- Twitter: [@mcdatapacks](https://twitter.com/mcdatapacks)
+- GitHub: [@mcdatapack](https://github.com/mcdatapack)
+- PlanetMinecraft: [mcdatapack](https://www.planetminecraft.com/member/mcdatapack/)
