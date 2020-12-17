@@ -7,3 +7,15 @@
 ![](https://i.imgur.com/ltLPoQp.png)
 
 > Certified Datapacks have the benefit that they are guaranteed to be compatible with other datapacks.
+
+# Social Media
+
+We have created an "official tag" for various platform that you can include to indicate that your content is certified.
+
+> You **must not** use these tags in an attempt to appear as certified if your datapack is not certified!
+
+The following tags should be self-explanatory but if you feel that it isn't, please report this.
+
+- GitHub: `mcdp-certified` and `mcdp-quality`
+- Twitter: `#CertifiedMCDatapack` and `#QualityMCDatapack`
+- PlanetMinecraft: `mcdp_certified` and `mcdp_quality`
