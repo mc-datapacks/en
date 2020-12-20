@@ -219,7 +219,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <blockquote>
 <p>Detect if the player is holding a weapon</p>
 </blockquote>
-<pre><code class="language-mcfunction">execute as @a if entity @s SelectedItem.tag.ctc.traits.&quot;tool/weapon&quot; run ...
+<pre><code class="language-mcfunction">execute as @a if data entity @s SelectedItem.tag.ctc.traits.&quot;tool/weapon&quot; run ...
 </code></pre>
 <p>This command detects if the item the player is holding has the trait <code>tool/weapon</code>.</p>
 <hr />
