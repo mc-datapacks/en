@@ -72,7 +72,7 @@ To detect or check for trait items you just need to check the `traits` NBT of th
 > Detect if the player is holding a weapon
 
 ```mcfunction
-execute as @a if entity @s SelectedItem.tag.ctc.traits."tool/weapon" run ...
+execute as @a if data entity @s SelectedItem.tag.ctc.traits."tool/weapon" run ...
 ```
 
 This command detects if the item the player is holding has the trait `tool/weapon`.
