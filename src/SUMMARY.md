@@ -6,6 +6,7 @@
   - [Datapack Advancement*](./conventions/datapack_advancement.md)
   - [Datapack Uninstallation*](./conventions/datapack_uninstallation.md)
   - [Common Trait Convention**](./conventions/common_trait.md)
+    - [Examples](./conventions/common_trait/examples.md)
   - [Custom Model ID***](./conventions/custom_model_id.md)
   - [Global Ignoring Tag***](./conventions/global_ignoring_tag.md)
   - [Global Durability*](./conventions/global_durability.md)
