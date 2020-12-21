@@ -2,7 +2,7 @@
 
 ## About
 
-This convention is intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom items. This is done by utilizing Item's custom NBT feature. We can insert any kind of NBT inside Item, which we can access using other commands.
+This convention is intended to bring the Ore Dictionary system from [Forge](http://files.minecraftforge.net/) to datapack's custom items. This is done by utilizing the Item's custom NBT feature. We can insert any kind of NBT inside the Item, which we can access using other commands.
 
 With that, we can create a unified lookup system that every datapack can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.
 
@@ -11,7 +11,7 @@ With that, we can create a unified lookup system that every datapack can use to 
 It can be hard to visualize how this convention would be useful in the real world, so we compiled some useful usage that would not be possible without this convention.
 
 1. Suppose you added a `custom furnace` which let you smelt copper ore into ingots. With this convention, you can detect for **any** copper ore from any datapacks to smelt it.
-2. Suppose you added a `fridge` which only accepts food items. With this convention, you can detect **any** food items, even the custom ones from other datapacks.
+2. Suppose you added a `fridge` block that only accepts food items. With this convention, you can detect **any** food items, even the custom ones from other datapacks.
 3. Suppose you added a `custom anvil` which lets you repair tools straight from the material instead of the ingot. With this convention, you can detect **any** kind of material from other datapacks, even when the base material doesn't match.
 
 ## Traits
@@ -24,24 +24,26 @@ Traits are a compound tag of strings to booleans and so will look like this in N
 /give @s diamond{ctc: {traits: {"some": 1b, "trait": 1b, "here": 1b}, id: "example", from: "convention:wiki"}}
 ```
 
+Do note that there is no underlying mechanic that separates traits from any general NBT in the minecraft engine, we are creating this mechanic ourselves.
+
 ## Syntax
 
-Common Trait Convention's syntax will be stored inside the `ctc` NBT of item. Inside `ctc` are the NBT tags: `id`, `from` and `traits`.
+Common Trait Convention's syntax will be stored inside the `ctc` NBT of an item. Inside `ctc` are the NBT tags: `id`, `from` and `traits`.
 
 - `id`: The internal ID of your item. This doesn't matter outside your datapack, but *should* be unique within your datapack.
 - `from`: A namespace specifying which datapack the item comes from.
 - `traits`: A set of traits.
 
-We will assume the following syntax is the NBT structure of `/give` command
+For example, We will use an expanded form of the NBT used in `/give` command for readability. (but it's actually compacted into one line)
 
 ```text
-{
+/give @s minecraft:iron_ore{
     ctc: {
         id: "my_copper_ore",
         from: "convention:wiki",
         traits: {"metal/copper": 1b, "block": 1b, "ore": 1b}
     }
-}
+} 1
 ```
 
 > Minecraft does not have a `set` data type, so we replicate it using a compound tag.
@@ -55,13 +57,13 @@ Let's look at these traits:
 
 ### Note
 
-- When you are attempting to check for custom item using `id` tag **must** be done alongside `from` tag as well, you cannot separate it because it would break compatibility.
+- When you are attempting to check for a custom item using `id` tag **must** be done alongside `from` tag as well, you cannot separate it because it would break compatibility.
 - The opposite of the above is not true, you can check for `from` tag without requiring `id` tag.
-- If you use `id` tag to check for custom item, there is no need to check for `traits` tag as well.
+- If you use `id` tag to check for a custom item, there is no need to check for `traits` tag as well.
 
 ## Slash Notation
 
-In the above example, you will notice the use of `/` in `metal/copper`. This is used for categorization, when a name alone could be ambiguous or difficult to understand. For example, what would the trait `orange` mean? Is it the *color* orange or the *fruit* orange?
+In the above example, you will notice the use of `/` in `metal/copper`. This is used for categorization when a name alone could be ambiguous or difficult to understand. For example, what would the trait `orange` mean? Is it the *color* orange or the *fruit* orange?
 
 In such a case we'd use slash notation to separate them. `color/orange` and `fruit/orange`
 
@@ -99,7 +101,7 @@ This command detects if the container contains an item with the trait `block`.
 
 ---
 
-> While quotes around the trait is not necessary in all cases, I always keep them there to stay consistent.
+> While quotes around the trait are not necessary in all cases, I always keep them there to stay consistent.
 
 ## Basic Traits
 
@@ -137,7 +139,7 @@ This group represents common traits from Minecraft.
 
 ### Compression Group
 
-This trait represents an item that can be combined to create a more compact version of itself, and vice versa.
+This trait represents an item that can be combined to create a more compact version of itself and vice versa.
 
 For example:
 
