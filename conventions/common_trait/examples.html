@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Examples - MC Datapacks</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Minecraft Datapacks</a></li><li class="chapter-item expanded "><a href="../../conventions/index.html"><strong aria-hidden="true">1.</strong> Official Conventions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../conventions/datapack_advancement.html"><strong aria-hidden="true">1.1.</strong> Datapack Advancement*</a></li><li class="chapter-item expanded "><a href="../../conventions/datapack_uninstallation.html"><strong aria-hidden="true">1.2.</strong> Datapack Uninstallation*</a></li><li class="chapter-item expanded "><a href="../../conventions/common_trait.html"><strong aria-hidden="true">1.3.</strong> Common Trait Convention**</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../conventions/common_trait/examples.html" class="active"><strong aria-hidden="true">1.3.1.</strong> Examples</a></li></ol></li><li class="chapter-item expanded "><a href="../../conventions/custom_model_id.html"><strong aria-hidden="true">1.4.</strong> Custom Model ID***</a></li><li class="chapter-item expanded "><a href="../../conventions/global_ignoring_tag.html"><strong aria-hidden="true">1.5.</strong> Global Ignoring Tag***</a></li><li class="chapter-item expanded "><a href="../../conventions/global_durability.html"><strong aria-hidden="true">1.6.</strong> Global Durability*</a></li><li class="chapter-item expanded "><a href="../../conventions/namespace.html"><strong aria-hidden="true">1.7.</strong> Namespace Convention***</a></li><li class="chapter-item expanded "><a href="../../conventions/shulker_box_loot_table.html"><strong aria-hidden="true">1.8.</strong> Shulker Box Loot Table***</a></li></ol></li><li class="chapter-item expanded "><a href="../../style_guideline/index.html"><strong aria-hidden="true">2.</strong> Style Guideline</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../style_guideline/datapack_advancement.html"><strong aria-hidden="true">2.1.</strong> Datapack Advancement</a></li><li class="chapter-item expanded "><a href="../../style_guideline/datapack_uninstallation.html"><strong aria-hidden="true">2.2.</strong> Datapack Uninstallation</a></li><li class="chapter-item expanded "><a href="../../style_guideline/reloading_message.html"><strong aria-hidden="true">2.3.</strong> Reloading Message</a></li></ol></li><li class="chapter-item expanded "><a href="../../certified_datapacks/index.html"><strong aria-hidden="true">3.</strong> Certified Datapacks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../certified_datapacks/requirement.html"><strong aria-hidden="true">3.1.</strong> Requirement</a></li></ol></li><li class="chapter-item expanded "><a href="../../tips/index.html"><strong aria-hidden="true">4.</strong> Tips</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tips/enum_scoreboard.html"><strong aria-hidden="true">4.1.</strong> Enum Scoreboard</a></li><li class="chapter-item expanded "><a href="../../tips/shulker_box_inventory_manipulation.html"><strong aria-hidden="true">4.2.</strong> Shulker Box Inventory Manipulation</a></li><li class="chapter-item expanded "><a href="../../tips/holding_right_click_detection.html"><strong aria-hidden="true">4.3.</strong> Holding Right Click Detection</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">MC Datapacks</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#ctc-examples" id="ctc-examples">CTC Examples</a></h1>
+<p>Traits are really just a normal NBT stored inside the item, nothing is special about them from the minecraft engine but we make this convention to standardize a way to communicate using these NBT.</p>
+<p>There are two ways to use this nbt in your datapack, as a &quot;producer&quot; and a &quot;consumer&quot;.</p>
+<ul>
+<li>For the producer, you will specify the necessary traits into your custom item and tell the consumer how to handle your custom item using those traits.</li>
+<li>For the consumer, you will write a code to check for those traits and handle them accordingly.</li>
+</ul>
+<h2><a class="header" href="#creating-a-custom-item" id="creating-a-custom-item">Creating a custom item</a></h2>
+<p>Since trait is really just a normal NBT in an item. When you want to create a custom item you just need to attach the <code>ctc</code> field to it as well.</p>
+<pre><code>/give @s diamond_sword{CustomModelData: 1234567, ctc: {id: 'light_saber', from: 'example:light_saber', traits: {'tool/weapon': 1b, 'metal/platinum': 1b}}, display: {Name: 'Light Saber'} }
+#                                 ^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#                                  ^ You might want your custom item to have a custom texture         ^
+#                                                                                                     ^ The ctc field
+</code></pre>
+<p>Or you can specify it in the loot table form like this</p>
+<pre><code class="language-json">{
+	&quot;pools&quot;: [
+		{
+			&quot;rolls&quot;: 1,
+			&quot;entries&quot;: [
+				{
+					&quot;type&quot;: &quot;minecraft:item&quot;,
+					&quot;name&quot;: &quot;minecraft:diamond_sword&quot;,
+					&quot;functions&quot;: [
+						{
+							&quot;function&quot;: &quot;minecraft:set_nbt&quot;,
+							&quot;tag&quot;: &quot;{CustomModelData: 1234567}&quot;
+						},
+						{
+							&quot;function&quot;: &quot;minecraft:set_nbt&quot;,
+							&quot;tag&quot;: &quot;{ctc: {id: 'light_saber', from: 'example:light_saber', traits: {'tool/weapon': 1b, 'metal/platinum': 1b}}}&quot;
+						}
+					]
+				}
+			]
+		}
+	]
+}
+</code></pre>
+<h2><a class="header" href="#checking-for-trait-item" id="checking-for-trait-item">Checking for trait item</a></h2>
+<p>This check is usually used for checking a general item that <em>might</em> be from other datapack as well.</p>
+<p>Suppose we are creating a datapack that will display some special effect when the player is holding a weapon (i.e. health indicator, but that's left to the implementation).<br />
+In this case, we can take advantage of the <code>tool/weapon</code> trait but do note that you also need to take vanilla's weapon into account as well.</p>
+<p>We will write a function that is called on the player and check if it should display that special effect:</p>
+<pre><code class="language-mcfunction"># First, check for non-ctc vanilla items to see if the player is holding a weapon
+execute unless data entity @s SelectedItem.tag.ctc if predicate example:is_holding_weapon run function example:display_special_effect
+
+# Then check for the actual trait
+execute if data entity @s SelectedItem.tag.ctc.traits{'tool/weapon': 1b} run function example:display_special_effect
+</code></pre>
+<blockquote>
+<ul>
+<li><code>if predicate example:is_holding_weapon</code> is a pseudo-predicate that check whether the player is holding a weapon in their hand</li>
+<li><code>function example:display_special_effect</code> is a pseudo-function that execute the core feature of this datapack, the implementation of this function is irrelevant to this example.</li>
+</ul>
+</blockquote>
+<h2><a class="header" href="#checking-for-trait-item-inside-your-datapack" id="checking-for-trait-item-inside-your-datapack">Checking for trait item inside your datapack</a></h2>
+<p>There are situations where you only want to check for your own custom item and not other similar trait items. In this case, you can just check for the <code>ctc.id</code> and <code>ctc.field</code> directly.</p>
+<p>The rule for when to use a trait check or an explicit check is basically about whether it's &quot;external&quot; or &quot;internal&quot;.<br />
+Only use trait check for the function that wants to support other external items and only use explicit check for internal implementation that would cause a problem if it were other items.</p>
+<h2><a class="header" href="#the-misconceptions" id="the-misconceptions">The Misconceptions</a></h2>
+<ol>
+<li>
+<p>The convention <strong>does not</strong> have a limited set of traits you can use.<br />
+The convention itself only enforce the syntax of the <code>ctc</code> field, the traits provided in the convention is simply a commonly used one but you are free to create new trait as you see fit.</p>
+</li>
+<li>
+<p>The convention is an opt-in system where you can specify what kind of behavior do you want from other datapacks.<br />
+You are <strong>not</strong> required to correctly set the traits of your custom item base on its material or texture. The choice of choosing the trait for a custom item is on the author of the datapack.</p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../conventions/common_trait.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../conventions/custom_model_id.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../conventions/common_trait.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../conventions/custom_model_id.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
