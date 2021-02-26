@@ -163,14 +163,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#ctc-examples" id="ctc-examples">CTC Examples</a></h1>
+                        <h1 id="ctc-examples"><a class="header" href="#ctc-examples">CTC Examples</a></h1>
 <p>Traits are really just a normal NBT stored inside the item, nothing is special about them from the minecraft engine but we make this convention to standardize a way to communicate using these NBT.</p>
 <p>There are two ways to use this nbt in your datapack, as a &quot;producer&quot; and a &quot;consumer&quot;.</p>
 <ul>
 <li>For the producer, you will specify the necessary traits into your custom item and tell the consumer how to handle your custom item using those traits.</li>
 <li>For the consumer, you will write a code to check for those traits and handle them accordingly.</li>
 </ul>
-<h2><a class="header" href="#creating-a-custom-item" id="creating-a-custom-item">Creating a custom item</a></h2>
+<h2 id="creating-a-custom-item"><a class="header" href="#creating-a-custom-item">Creating a custom item</a></h2>
 <p>Since trait is really just a normal NBT in an item. When you want to create a custom item you just need to attach the <code>ctc</code> field to it as well.</p>
 <pre><code>/give @s diamond_sword{CustomModelData: 1234567, ctc: {id: 'light_saber', from: 'example:light_saber', traits: {'tool/weapon': 1b, 'metal/platinum': 1b}}, display: {Name: 'Light Saber'} }
 #                                 ^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -202,7 +202,7 @@
 	]
 }
 </code></pre>
-<h2><a class="header" href="#checking-for-trait-item" id="checking-for-trait-item">Checking for trait item</a></h2>
+<h2 id="checking-for-trait-item"><a class="header" href="#checking-for-trait-item">Checking for trait item</a></h2>
 <p>This check is usually used for checking a general item that <em>might</em> be from other datapack as well.</p>
 <p>Suppose we are creating a datapack that will display some special effect when the player is holding a weapon (i.e. health indicator, but that's left to the implementation).<br />
 In this case, we can take advantage of the <code>tool/weapon</code> trait but do note that you also need to take vanilla's weapon into account as well.</p>
@@ -219,11 +219,11 @@ execute if data entity @s SelectedItem.tag.ctc.traits{'tool/weapon': 1b} run fun
 <li><code>function example:display_special_effect</code> is a pseudo-function that execute the core feature of this datapack, the implementation of this function is irrelevant to this example.</li>
 </ul>
 </blockquote>
-<h2><a class="header" href="#checking-for-trait-item-inside-your-datapack" id="checking-for-trait-item-inside-your-datapack">Checking for trait item inside your datapack</a></h2>
+<h2 id="checking-for-trait-item-inside-your-datapack"><a class="header" href="#checking-for-trait-item-inside-your-datapack">Checking for trait item inside your datapack</a></h2>
 <p>There are situations where you only want to check for your own custom item and not other similar trait items. In this case, you can just check for the <code>ctc.id</code> and <code>ctc.field</code> directly.</p>
 <p>The rule for when to use a trait check or an explicit check is basically about whether it's &quot;external&quot; or &quot;internal&quot;.<br />
 Only use trait check for the function that wants to support other external items and only use explicit check for internal implementation that would cause a problem if it were other items.</p>
-<h2><a class="header" href="#the-misconceptions" id="the-misconceptions">The Misconceptions</a></h2>
+<h2 id="the-misconceptions"><a class="header" href="#the-misconceptions">The Misconceptions</a></h2>
 <ol>
 <li>
 <p>The convention <strong>does not</strong> have a limited set of traits you can use.<br />

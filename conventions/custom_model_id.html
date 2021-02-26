@@ -163,19 +163,19 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#custom-model-id-" id="custom-model-id-">Custom Model ID (<code>***</code>)</a></h1>
-<h2><a class="header" href="#about" id="about">About</a></h2>
+                        <h1 id="custom-model-id-"><a class="header" href="#custom-model-id-">Custom Model ID (<code>***</code>)</a></h1>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
 <p>This convention aims to reduce conflict between <a href="https://minecraft.gamepedia.com/Resource_pack">resource packs</a> within the <a href="https://minecraft.gamepedia.com/Model#Item_tags">custom model data</a> system as much as possible by assigning a unique ID for every creator to use.</p>
-<h2><a class="header" href="#1-register-your-id" id="1-register-your-id">1. Register your ID</a></h2>
+<h2 id="1-register-your-id"><a class="header" href="#1-register-your-id">1. Register your ID</a></h2>
 <p>Your &quot;id&quot; is an integer between 1-999 which we'll use as a unique namespace.</p>
-<p>You can register your ID at <a href="https://mcdatapacks.vercel.app/">https://mcdatapacks.vercel.app/</a>.</p>
-<h2><a class="header" href="#2-prefix-your-model-with-your-id" id="2-prefix-your-model-with-your-id">2. Prefix your model with your id</a></h2>
+<p>You can register your ID at <a href="https://mcdatapack.vercel.app/">https://mcdatapack.vercel.app/</a>.</p>
+<h2 id="2-prefix-your-model-with-your-id"><a class="header" href="#2-prefix-your-model-with-your-id">2. Prefix your model with your id</a></h2>
 <p>You will prefix your custom model data with your ID in this format, where <code>XXX</code> is your ID and <code>0000</code> is your unique custom model data.</p>
 <table><thead><tr><th>id</th><th>cmd</th></tr></thead><tbody>
 <tr><td>XXX</td><td>0000</td></tr>
 </tbody></table>
 <p>Here are some examples:</p>
-<h3><a class="header" href="#21-id--42" id="21-id--42">2.1. id = 42</a></h3>
+<h3 id="21-id--42"><a class="header" href="#21-id--42">2.1. id = 42</a></h3>
 <pre><code class="language-json">{
     &quot;overrides&quot;: [
         {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 420001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
@@ -184,7 +184,7 @@
     ]
 }
 </code></pre>
-<h3><a class="header" href="#22-id--808" id="22-id--808">2.2. id = 808</a></h3>
+<h3 id="22-id--808"><a class="header" href="#22-id--808">2.2. id = 808</a></h3>
 <pre><code class="language-json">{
     &quot;overrides&quot;: [
         {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 8081001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
@@ -193,7 +193,7 @@
     ]
 }
 </code></pre>
-<h3><a class="header" href="#23-id--1" id="23-id--1">2.3. id = 1</a></h3>
+<h3 id="23-id--1"><a class="header" href="#23-id--1">2.3. id = 1</a></h3>
 <pre><code class="language-json">{
     &quot;overrides&quot;: [
         {&quot;predicate&quot;: {&quot;custom_model_data&quot;: 10001}, &quot;model&quot;: &quot;path/to/model/1&quot;},
@@ -202,7 +202,7 @@
     ]
 }
 </code></pre>
-<h2><a class="header" href="#note" id="note">Note</a></h2>
+<h2 id="note"><a class="header" href="#note">Note</a></h2>
 <p>This convention does not enforce any restrictions from the 8th digit onwards. Datapackers could utilize this to gain a few more model slots if they wanted to. (the digit index is count from right-to-left of course)</p>
 
                     </main>

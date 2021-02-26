@@ -163,33 +163,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#global-ignoring-tag-" id="global-ignoring-tag-">Global Ignoring Tag (<code>***</code>)</a></h1>
-<h2><a class="header" href="#about" id="about">About</a></h2>
+                        <h1 id="global-ignoring-tag-"><a class="header" href="#global-ignoring-tag-">Global Ignoring Tag (<code>***</code>)</a></h1>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
 <p>This convention provides a way for datapacks to communicate with each other by specifying entity tags which other datapacks can then look for. This is used heavily to prevent other datapacks from killing/removing custom entities from the world unexpectedly.</p>
 <p>There are currently 4 ignoring tags: <code>global.ignore</code>, <code>global.ignore.pos</code>, <code>global.ignore.gui</code> and <code>global.ignore.kill</code>.</p>
-<h3><a class="header" href="#1-globalignorekill" id="1-globalignorekill">1. <code>global.ignore.kill</code></a></h3>
+<h3 id="1-globalignorekill"><a class="header" href="#1-globalignorekill">1. <code>global.ignore.kill</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be killed by other datapacks. This includes, but is not limited to, the <code>/kill</code> command.</p>
 <pre><code class="language-mcfunction">execute as @e[type=creeper, tag=!global.ignore, tag=!global.ignore.kill] run kill @s
 </code></pre>
-<h3><a class="header" href="#2-globalignoregui" id="2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
+<h3 id="2-globalignoregui"><a class="header" href="#2-globalignoregui">2. <code>global.ignore.gui</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> display visual effects around them. This includes, but is not limited to, the <code>/title</code> command.</p>
 <pre><code class="language-mcfunction">execute as @a[tag=!global.ignore.gui] at @s run title @s actionbar [{&quot;text&quot;: &quot;Hello, World!&quot;, &quot;color&quot;: &quot;green&quot;}]
 </code></pre>
 <blockquote>
 <p>This excludes the <code>/playsound</code>, <code>/tellraw</code> and <code>/particle</code> commands.</p>
 </blockquote>
-<h3><a class="header" href="#3-globalignorepos" id="3-globalignorepos">3. <code>global.ignore.pos</code></a></h3>
+<h3 id="3-globalignorepos"><a class="header" href="#3-globalignorepos">3. <code>global.ignore.pos</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be moved positionally. This includes, but is not limited to, the <code>/tp</code> and<code>/teleport</code> commands.</p>
 <pre><code class="language-mcfunction">execute as @e[type=witch, tag=!global.ignore, tag=!global.ignore.pos] at @s run tp @s ~ ~0.1 ~
 </code></pre>
-<h3><a class="header" href="#4-globalignore" id="4-globalignore">4. <code>global.ignore</code></a></h3>
+<h3 id="4-globalignore"><a class="header" href="#4-globalignore">4. <code>global.ignore</code></a></h3>
 <p>Any entity with this tag <strong>must not</strong> be included in an entity selector at all.</p>
 <pre><code class="language-mcfunction">execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/function
 </code></pre>
 <blockquote>
 <p>This tag does not apply to player-only selectors (<code>@a</code>, <code>@e[type=player]</code>, <code>@p</code>, etc.)</p>
 </blockquote>
-<h2><a class="header" href="#note" id="note">Note</a></h2>
+<h2 id="note"><a class="header" href="#note">Note</a></h2>
 <p>The convention only applies if your function will affect an unknown entity. If you are trying to target a known entity (e.g. an entity with a special tag attached specific to your datapack), you don't need to follow this convention.</p>
 
                     </main>

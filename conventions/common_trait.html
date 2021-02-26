@@ -163,24 +163,24 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#common-trait-convention-" id="common-trait-convention-">Common Trait Convention (<code>**</code>)</a></h1>
-<h2><a class="header" href="#about" id="about">About</a></h2>
+                        <h1 id="common-trait-convention-"><a class="header" href="#common-trait-convention-">Common Trait Convention (<code>**</code>)</a></h1>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
 <p>This convention is intended to bring the Ore Dictionary system from <a href="http://files.minecraftforge.net/">Forge</a> to datapack's custom items. This is done by utilizing the Item's custom NBT feature. We can insert any kind of NBT inside the Item, which we can access using other commands.</p>
 <p>With that, we can create a unified lookup system that every datapack can use to search for a specific item they want. You can then use the Common Trait Convention's provided syntax to construct a search function to find the item you need.</p>
-<h2><a class="header" href="#example-usage" id="example-usage">Example Usage</a></h2>
+<h2 id="example-usage"><a class="header" href="#example-usage">Example Usage</a></h2>
 <p>It can be hard to visualize how this convention would be useful in the real world, so we compiled some useful usage that would not be possible without this convention.</p>
 <ol>
 <li>Suppose you added a <code>custom furnace</code> which let you smelt copper ore into ingots. With this convention, you can detect for <strong>any</strong> copper ore from any datapacks to smelt it.</li>
 <li>Suppose you added a <code>fridge</code> block that only accepts food items. With this convention, you can detect <strong>any</strong> food items, even the custom ones from other datapacks.</li>
 <li>Suppose you added a <code>custom anvil</code> which lets you repair tools straight from the material instead of the ingot. With this convention, you can detect <strong>any</strong> kind of material from other datapacks, even when the base material doesn't match.</li>
 </ol>
-<h2><a class="header" href="#traits" id="traits">Traits</a></h2>
+<h2 id="traits"><a class="header" href="#traits">Traits</a></h2>
 <p>Traits represent behavior and properties that an object can have. By specifying these traits inside the item's NBT, other datapacks will be able to refer to that item via traits instead of item IDs directly.</p>
 <p>Traits are a compound tag of strings to booleans and so will look like this in NBT (notice <code>traits: {...}</code>?)</p>
 <pre><code class="language-mcfunction">/give @s diamond{ctc: {traits: {&quot;some&quot;: 1b, &quot;trait&quot;: 1b, &quot;here&quot;: 1b}, id: &quot;example&quot;, from: &quot;convention:wiki&quot;}}
 </code></pre>
 <p>Do note that there is no underlying mechanic that separates traits from any general NBT in the minecraft engine, we are creating this mechanic ourselves.</p>
-<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
 <p>Common Trait Convention's syntax will be stored inside the <code>ctc</code> NBT of an item. Inside <code>ctc</code> are the NBT tags: <code>id</code>, <code>from</code> and <code>traits</code>.</p>
 <ul>
 <li><code>id</code>: The internal ID of your item. This doesn't matter outside your datapack, but <em>should</em> be unique within your datapack.</li>
@@ -206,16 +206,16 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <li><code>block</code>. This trait tells us that this item is a placeable block.</li>
 <li><code>ore</code>. This trait tells us that this item is an ore.</li>
 </ul>
-<h3><a class="header" href="#note" id="note">Note</a></h3>
+<h3 id="note"><a class="header" href="#note">Note</a></h3>
 <ul>
 <li>When you are attempting to check for a custom item using <code>id</code> tag <strong>must</strong> be done alongside <code>from</code> tag as well, you cannot separate it because it would break compatibility.</li>
 <li>The opposite of the above is not true, you can check for <code>from</code> tag without requiring <code>id</code> tag.</li>
 <li>If you use <code>id</code> tag to check for a custom item, there is no need to check for <code>traits</code> tag as well.</li>
 </ul>
-<h2><a class="header" href="#slash-notation" id="slash-notation">Slash Notation</a></h2>
+<h2 id="slash-notation"><a class="header" href="#slash-notation">Slash Notation</a></h2>
 <p>In the above example, you will notice the use of <code>/</code> in <code>metal/copper</code>. This is used for categorization when a name alone could be ambiguous or difficult to understand. For example, what would the trait <code>orange</code> mean? Is it the <em>color</em> orange or the <em>fruit</em> orange?</p>
 <p>In such a case we'd use slash notation to separate them. <code>color/orange</code> and <code>fruit/orange</code></p>
-<h2><a class="header" href="#usage" id="usage">Usage</a></h2>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
 <p>To detect or check for trait items you just need to check the <code>traits</code> NBT of the item.</p>
 <blockquote>
 <p>Detect if the player is holding a weapon</p>
@@ -241,12 +241,12 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <blockquote>
 <p>While quotes around the trait are not necessary in all cases, I always keep them there to stay consistent.</p>
 </blockquote>
-<h2><a class="header" href="#basic-traits" id="basic-traits">Basic Traits</a></h2>
+<h2 id="basic-traits"><a class="header" href="#basic-traits">Basic Traits</a></h2>
 <p>This is a provided list of traits that you can use. This doesn't mean you can't create new traits for your own use, but if there is a trait that suits your need in the list, you should use it.</p>
 <blockquote>
 <p>The list is split into multiple groups and you <strong>should not</strong> use traits from the same group twice.</p>
 </blockquote>
-<h3><a class="header" href="#object-type-group" id="object-type-group">Object Type Group</a></h3>
+<h3 id="object-type-group"><a class="header" href="#object-type-group">Object Type Group</a></h3>
 <p>This trait represents the state of the matter that this item holds.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>gas</td><td>Gaseous substance</td></tr>
@@ -254,7 +254,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>block</td><td>Placeable item</td></tr>
 <tr><td>item</td><td>Normal minecraft item</td></tr>
 </tbody></table>
-<h3><a class="header" href="#special-type-group" id="special-type-group">Special Type Group</a></h3>
+<h3 id="special-type-group"><a class="header" href="#special-type-group">Special Type Group</a></h3>
 <p>This group represents common traits from Minecraft.</p>
 <blockquote>
 <p>This group is an exception to the rule above, you can use multiple traits from this group as much as you like.</p>
@@ -269,7 +269,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>log</td><td>Item that drops from tree trunk</td></tr>
 <tr><td>planks</td><td>Item that comes from processing <code>log</code></td></tr>
 </tbody></table>
-<h3><a class="header" href="#compression-group" id="compression-group">Compression Group</a></h3>
+<h3 id="compression-group"><a class="header" href="#compression-group">Compression Group</a></h3>
 <p>This trait represents an item that can be combined to create a more compact version of itself and vice versa.</p>
 <p>For example:</p>
 <ul>
@@ -282,17 +282,17 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>ingot</td><td>Normal form of item, usually an ingot</td></tr>
 <tr><td>nugget</td><td>Smallest form of item, usually a nugget</td></tr>
 </tbody></table>
-<h3><a class="header" href="#edible-group" id="edible-group">Edible Group</a></h3>
+<h3 id="edible-group"><a class="header" href="#edible-group">Edible Group</a></h3>
 <p>This trait represents an edible item that can be used by the player (drinking included).</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>food</td><td>All types of edible item</td></tr>
 </tbody></table>
-<h3><a class="header" href="#armor-group" id="armor-group">Armor Group</a></h3>
+<h3 id="armor-group"><a class="header" href="#armor-group">Armor Group</a></h3>
 <p>This trait represents an item that can be worn by players and other entities.</p>
 <table><thead><tr><th>Trait</th><th>Description</th></tr></thead><tbody>
 <tr><td>armor</td><td>All types of wearable item</td></tr>
 </tbody></table>
-<h3><a class="header" href="#tool-sub-group" id="tool-sub-group">Tool Sub-group</a></h3>
+<h3 id="tool-sub-group"><a class="header" href="#tool-sub-group">Tool Sub-group</a></h3>
 <blockquote>
 <p>This trait uses <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
@@ -304,7 +304,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>tool/watering</td><td>This item can be used to water soil</td></tr>
 <tr><td>tool/weapon</td><td>This item can be used to fight monsters and other players</td></tr>
 </tbody></table>
-<h3><a class="header" href="#gem-sub-group" id="gem-sub-group">Gem Sub-group</a></h3>
+<h3 id="gem-sub-group"><a class="header" href="#gem-sub-group">Gem Sub-group</a></h3>
 <blockquote>
 <p>This trait uses <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
@@ -320,7 +320,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>gem/quartz</td><td>Any Quartz material</td></tr>
 <tr><td>gem/opal</td><td>Opal gemstone</td></tr>
 </tbody></table>
-<h3><a class="header" href="#metal-sub-group" id="metal-sub-group">Metal Sub-group</a></h3>
+<h3 id="metal-sub-group"><a class="header" href="#metal-sub-group">Metal Sub-group</a></h3>
 <blockquote>
 <p>This trait use <a href="#slash-notation">Slash Notation</a>!</p>
 </blockquote>
@@ -336,7 +336,7 @@ This means every trait must have a value of <code>1b</code> or <code>true</code>
 <tr><td>metal/nickel</td><td>Item made up of nickel</td></tr>
 <tr><td>metal/platinum</td><td>Item that made up of platinum</td></tr>
 </tbody></table>
-<h2><a class="header" href="#reference" id="reference">Reference</a></h2>
+<h2 id="reference"><a class="header" href="#reference">Reference</a></h2>
 <ul>
 <li><a href="https://mcforge.readthedocs.io/en/1.12.x/utilities/oredictionary/">Ore Dict</a></li>
 </ul>

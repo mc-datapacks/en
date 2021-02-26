@@ -163,15 +163,15 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#enum-scoreboard" id="enum-scoreboard">Enum Scoreboard</a></h1>
+                        <h1 id="enum-scoreboard"><a class="header" href="#enum-scoreboard">Enum Scoreboard</a></h1>
 <p>You can use a fake player to represent a state on your scoreboard instead of using the number directly. This can make your code more readable and increase future maintainability.</p>
-<h2><a class="header" href="#declaring-enum" id="declaring-enum">Declaring enum</a></h2>
+<h2 id="declaring-enum"><a class="header" href="#declaring-enum">Declaring enum</a></h2>
 <pre><code>scoreboard players set #state.idle bb.enum 1
 scoreboard players set #state.foo bb.enum 2
 scoreboard players set #state.bar bb.enum 3
 </code></pre>
 <p>The enum can hold any value that you want as long as it's unique. We only care about the fake players existing and having values that can be told apart.</p>
-<h2><a class="header" href="#using-enum-state" id="using-enum-state">Using enum state</a></h2>
+<h2 id="using-enum-state"><a class="header" href="#using-enum-state">Using enum state</a></h2>
 <pre><code>execute if score @s bb.state = #state.idle bb.enum run function &lt;idle_state&gt;
 execute if score @s bb.state = #state.running bb.enum run function &lt;running_state&gt;
 execute if score @s bb.state = #state.stopping bb.enum run function &lt;stopping_state&gt;
