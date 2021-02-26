@@ -8,7 +8,7 @@ This convention aims to reduce conflict between [resource packs](https://minecra
 
 Your "id" is an integer between 1-999 which we'll use as a unique namespace.
 
-You can register your ID at [https://mcdatapacks.vercel.app/](https://mcdatapacks.vercel.app/).
+You can register your ID at [https://mcdatapack.vercel.app/](https://mcdatapack.vercel.app/).
 
 ## 2. Prefix your model with your id
 
