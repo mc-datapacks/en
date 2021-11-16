@@ -45,3 +45,56 @@ execute as @e[tag=!global.ignore] at @s run function namespace:internal/logic/fu
 ## Note
 
 The convention only applies if your function will affect an unknown entity. If you are trying to target a known entity (e.g. an entity with a special tag attached specific to your datapack), you don't need to follow this convention.
+
+--------------------
+
+### **Note from Convention Mod (Optional)**
+
+### **FAQ to use**
+
+> - **Q :** How can I use it? 
+> - **A :** You can apply each tag to your entity for a specific purpose, 
+> - **For example :**
+>> - You don't want anyone to kill your entity. But there's no problem if it moves. `[ "faq.entity", "global.ignore", "global.ignore.kill" ]`
+>> - This entity not use global ignoring tag since this is a temporary entity that is killed off right away.
+>> ```mcfunction
+>> summom area_effect_cloud ~ ~ ~ {Tags: ["faq.vector"], Age: 0, Duration: 1}
+>> <...> kill @e[tag=faq.vector]
+>> ```
+>> - This is a "chunk marker" entity that shouldn't be move or kill by other datapack, so this entity must have `global.ignore`, `global.ignore.pos` and `global.ignore.kill`
+>> ```mcfunction
+>> summom area_effect_cloud ~ ~ ~ {Tags: `[ "faq.chunk_maker", "global.ignore", "global.ignore.pos", "global.ignore.kill" ]`, Age: 0, Duration: 2147483647}
+>> ```
+>> - Besides `as @e[tag=!global.ignore]`, `tp @e[tag=!global...]`, if you don't want the command to execute due entity `global.ignore` is in an area, you can use `if entity @e[tag=!global.ignore,distance=..30]` or `unless entity @e[tag=global.ignore,distance=..30]` and so on that you can be applied and not contrary to the convention.
+
+> - **Q :** I don't want anyone to mess with my entity, I can tag it with `global.ignore` After using it I want to remove it but *"Any entity with this tag **must not** be included in an entity selector at all."* What do I need to do?
+> - **A :** You can `["global.ignore", "Owner.tag"]` and then remove with `@e[tag=Owner.tag]`
+
+> - **Q :** Can I just only have `!global.ignore` in the `kill`, `tp` command? Because if that entity has `[ "faq.maker", "global.ignore", "global.ignore.pos", "global.ignore.kill" ]` it won't be selected anyway. 
+> - **A :** Yes, you can. But you need to make sure that none of your entities you forgot to include `global.ignore`. And it can be an issue if some datapacks are certified, there is an entity that only `global.ignore.kill` or `global.ignore.pos` which may be caused by The reviewer overlooked or datapacker accidentally do.
+
+> - **Q :** Can I use score to filter `!global.ignore`?
+such as 
+>```mcfunction
+> scoreboard players set @e[tag=!global.ignore.kill] faq.pass 1
+> kill @e[scores={faq.pass=1}]
+>```
+> - **A :** Yes, you can. But you need to make sure that your score isn't altered in any other way that you might accidentally do.
+
+> - **Q :** If I'm not sure any `@s` has `!global.ignore` filtering at entry selector, can I use in `@s` instead?
+> - **A :** Yes, you can. But don't worry, I can check it. And in some cases, you use global ignoring tags at entry selectors, it may cause the command to not work as you want. But then you find that using it in `@s` it works normally, you can consider use this method. Which you can note on why you use it before I'll review it. This is because in practice, use global ignoring tags at entry selectors results in less tag usage.
+>```mcfunction
+> # Examples of usage found
+> # Pragmatic
+> execute as @e[tag=!global.ignore,tag=!global.ignore.kill] run function <...>
+>   ├ kill @s
+>   ├ kill @s
+>   ╰ Kill @s
+>
+> # Use in @s
+> > execute as @e[tag=!global.ignore] run function <...>
+>   ├ kill @s[tag=!global.ignore.kill]
+>   ├ kill @s[tag=!global.ignore.kill]
+>   ╰ Kill @s[tag=!global.ignore.kill]
+> # From this situation it was found that before kill command, there are some commands that must execute with tagged entities global.ignore.kill. But there were no kills in any of the commands at that point.
+>```
