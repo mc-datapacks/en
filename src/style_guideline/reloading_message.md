@@ -4,11 +4,26 @@ You **must not** send an automatic message when the world is reloaded. It will c
 
 Most of the time, the message will be an installation message, in which case you can use [Datapack Advancement](../conventions/datapack_advancement.md) instead.
 
+> **Example:** Use `load.json` call `setup` or `init` mcfunction that has tellraw command.
+```json
+{
+    "values": [
+        "convention:datapack/setup",
+    ]
+}
+```
+``convention:datapack/setup``
+```mcfunction
+tellraw @a <...>
+```
+
 --------------------
 
 ### **Note from Convention Mod (Optional)**
 
-> Exception cases: Use your custom advancement, send once message.
+### **Exception cases**
+
+> **Case 1 :** Use your `custom advancement`, send once message.
 ```json
 {
   "criteria": {
@@ -20,4 +35,11 @@ Most of the time, the message will be an installation message, in which case you
     "function": "..."
   }
 }
+```
+> **Case 2 :** Don't worry you can have tellraw commands in settings or init, but only for debugging purposes.
+
+``convention:datapack/setup``
+```mcfunction
+tellraw @a[name=Owner] <...>
+tellraw @a[tag=convention.debug] <...>
 ```
