@@ -70,9 +70,6 @@ The convention only applies if your function will affect an unknown entity. If y
 > - **Q :** I don't want anyone to mess with my entity, I can tag it with `global.ignore` After using it I want to remove it but *"Any entity with this tag **must not** be included in an entity selector at all."* What do I need to do?
 > - **A :** You can `["global.ignore", "Owner.tag"]` and then remove with `@e[tag=Owner.tag]`
 
-> - **Q :** Can I just only have `!global.ignore` in the `kill`, `tp` command? Because if that entity has `[ "faq.maker", "global.ignore", "global.ignore.pos", "global.ignore.kill" ]` it won't be selected anyway. 
-> - **A :** Yes, you can. But you need to make sure that none of your entities you forgot to include `global.ignore`. And it can be an issue if some datapacks are certified, there is an entity that only `global.ignore.kill` or `global.ignore.pos` which may be caused by The reviewer overlooked or datapacker accidentally do.
-
 > - **Q :** Can I use score to filter `!global.ignore`?
 such as 
 >```mcfunction
@@ -98,3 +95,8 @@ such as
 >   ╰ Kill @s[tag=!global.ignore.kill]
 > # From this situation it was found that before kill command, there are some commands that must execute with tagged entities global.ignore.kill. But there were no kills in any of the commands at that point.
 >```
+
+> - **Q :** Can I just only have `!global.ignore` in the `kill`, `tp` command? Because if that entity has `[ "faq.maker", "global.ignore", "global.ignore.pos", "global.ignore.kill" ]` it won't be selected anyway. 
+> - **A :** ~~Yes~~ and *No* or **shouldn't**. 
+>> - ~~Yes~~ you can and *No*: But you need to make sure that none of your entities you forgot to include `global.ignore`. And it can be an issue if some datapacks are certified, there is an entity that only `global.ignore.kill` or `global.ignore.pos` which may be caused by The reviewer overlooked or datapacker accidentally do.
+>> - **Shouldn't :** **Please note that** if a problem occurs which is likely to arise from the case used in `@s` tag for whatever reason we have encountered such as **"Why put another tag too when there are only `!global.ignore` It just filters everything out, so it's useless"**, or **"due to many of tags"**, or **"because you're lazy"**, or whatever, That's not the datapack reviewer's fault. Then you come and tell us that **"We found these cases in your datapack, but we still certify them."** You can't say that either because sometimes we review what we get back. It is the reason that it is useless to the reason that we have given and disrespect for such advice. That means we'll assume you don't care in conventions at all. If it gives you trouble. Why don't you do them yourself? You say some conventions are useless and stupid to use. Why don't you debate those ideas and issues at #convention-ideas? Please reduce your ego and toxic. And reason why Datapack Reviewer often pass some cases? Not because of empathy but considering and analyzing some reasons, some cases are not so serious. But if there is any issue in the future, we cannot ignore it.
