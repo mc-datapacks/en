@@ -187,7 +187,7 @@ That's the problem.
  - Will continue to review versions lower than 1.18, but will not guarantee if any scoreboard conflicts occur.
  - `scoreboard trigger` unnecessary use a namespace.
 Since it will be exposed to the user, so a nice readable name is quite important. We should allow it for now considering the benefit of readable trigger name.
- - You can use `datapack_name` at `namespace`, no problem. It depends on the writing style of each datapacker. But there may be some minor issues in the future. Therefore, please be forewarned. Therefore, please be forewarned. To suggest that you change it when you can, before can't be changed in the future. (I found this case of Datapack Utils by ICY105, since it acts as a core datapack, namespace changes will cause datapacks using these cores to be affected as well.) Hopefully, these tips will help you develop good coding. 
+ - You can use `datapack_name` at `namespace`, no problem. It depends on the writing style of each datapacker. But there may be some minor issues in the future. Therefore, please be forewarned. To suggest that you change it when you can, before can't be changed in the future. (I found this case of Datapack Utils by ICY105, since it acts as a core datapack, namespace changes will cause datapacks using these cores to be affected as well.) Hopefully, these tips will help you develop good coding. 
 > **6 Features of Good Software Code**
 > - **Readable** : Would it be better if other developers Read the directory and understand who wrote this data pack from here. 
 > - **Comment** : It would be better if there was
