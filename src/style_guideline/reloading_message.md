@@ -36,7 +36,7 @@ tellraw @a <...>
   }
 }
 ```
-> **Case 2 :** Don't worry you can have tellraw commands in settings or init, but only for debugging purposes.
+> **Case 2 :** Don't worry you can have tellraw commands in `setup` or `init`, but only for debugging purposes.
 
 ``convention:datapack/setup``
 ```mcfunction
