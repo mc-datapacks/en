@@ -24,7 +24,7 @@ scoreboard objectives add boomber.var dummy
 team add boomber.team
 ```
 
-In this example, I use a full `boomber` prefix, because scoreboard and team in v.1.18+ don't have a character limit.
+I use the entire `boomber` prefix in this example because scoreboards and teams in 1.18 don't have a character limit.
 
 -------------------
 
