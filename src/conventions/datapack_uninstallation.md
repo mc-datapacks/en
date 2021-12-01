@@ -64,7 +64,8 @@ If it is like this, the user must click `Extract here`.
 > - `<name>.zip/data`
 If it is like this, the user must click `Extract to "<name>\"`
 
-**3. Various reload methods**
+**4. Various reload methods**
+
 
  > 3.1 `/datapack disable <name>`
  >
