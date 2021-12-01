@@ -36,7 +36,7 @@ tellraw @a <...>
   }
 }
 ```
-> **Case 2 :** Don't worry you can have tellraw commands in `setup` or `init`, but only for debugging purposes.
+> **Case 2:** reload message for debugging purposes that the normal players shouldn't see.
 
 ``convention:datapack/setup``
 ```mcfunction
