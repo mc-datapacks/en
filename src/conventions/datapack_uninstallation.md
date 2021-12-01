@@ -27,23 +27,7 @@ You can create an "uninstallation function", which when ran, will remove most of
 > - Auto reload, Help ensure that everything is completely cleared. Due to the use of the `/reload` command, some multiplayer servers have a server launcher. Changed this reload command so vanilla's commands it won't work.
 >
 > Cons
-> - Be careful \<name>
->
-> Common problems
-> - In some cases I found that this command is not available in the uninstallation file, but even after removed `scoreboard`, `storage`, `team` the tick.json file will still run causing the uninstallation to fail.
-> - Another case to be aware of is \<name> . Because if you use `datapack disable "file/convention"`
-If the user installs a `.zip`, it won't work. And the file name must match as well.
-Even if you can do like this
-> ```mcfunction
-> datapack disable "file/convention"
-> datapack disable "file/convention.zip"
->```
-> But if file name is `convention_v1.0.0.zip`.
-Either install it as a `.zip` or `extract to folder` it won't work.
->```
-> <name>.zip -> /data
-> <name>/data
->```
+> - the datapack name is not reliable, the user can rename the datapack file to whatever they want.
 
 **2. Use /schedule clear \<function>** - `load.json only`
 ### **How to use**
