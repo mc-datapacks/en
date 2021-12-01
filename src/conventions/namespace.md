@@ -17,7 +17,7 @@ scoreboard objectives add bb.var dummy
 team add bb.team
 ```
 
-In this example `bb` is the namespace which is shortened from `boomber` due to 16 characters limitation. I like to keep scoreboard and team namespace short and use `.` to seperate the namespace from the name. If lower than v.1.18
+In this example, `bb` is the namespace that is shortened from `boomber` due to 16 characters limitation in 1.17 and below.
 
 ```mcfunction
 scoreboard objectives add boomber.var dummy
