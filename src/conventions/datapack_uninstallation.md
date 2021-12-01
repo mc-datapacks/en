@@ -74,7 +74,7 @@ If it is like this, the user must click `Extract to "<name>\"`
 
 **4. Conclusion from convention mod's opinion.**
 
-**Fact :** The `tick.json` file typically runs before `load.json`, sometimes resulting in an incomplete execute and installation. But we can set `load.json` for `setup` or `init` file to run before main or tick.
+**Note:** The `tick.json` file typically runs before `load.json`, sometimes resulting in an incomplete installation. You can avoid that by making the init file to run before the tick function.
 ```json
 {
     "values": [
@@ -82,7 +82,6 @@ If it is like this, the user must click `Extract to "<name>\"`
         "convention:datapack/main"
     ]
 }
-```
 
 If it was me, what method would I use? 
 > - Use `/schedule clear <function>` 
