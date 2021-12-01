@@ -67,13 +67,14 @@ If it is like this, the user must click `Extract to "<name>\"`
 **4. Various reload methods**
 
 
- > 3.1 `/datapack disable <name>`
+ > 4.1 `/datapack disable <name>`
  >
- > 3.2 `/reload` (There is an issue with some server launchers.)
+ > 4.2 `/reload` (There is an issue with some server launchers.)
  >
- > 3.3 `Exit and Re-join game or Stop & Re-launch Server`
+ > 4.3 `Exit and Re-join game or Stop & Re-launch Server`
 
-**4. Conclusion from convention mod's opinion.**
+**5. Conclusion from convention mod's opinion.**
+
 
 **Note:** The `tick.json` file typically runs before `load.json`, sometimes resulting in an incomplete installation. You can avoid that by making the init file to run before the tick function.
 ```json
