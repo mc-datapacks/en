@@ -50,7 +50,8 @@ The convention only applies if your function will affect an unknown entity. If y
 
 ### **Note from Convention Mod (Optional)**
 
-### **FAQ to use**
+**FAQ**
+
 
 > - **Q :** How can I use it? 
 > - **A :** You can apply each tag to your entity for a specific purpose, 
