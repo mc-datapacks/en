@@ -123,15 +123,15 @@ To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-a
 
 **3. Datapack Advancement**
 
-If you choose, use normal syntax, then you have more than 1 datapack.
+Choose the normal syntax when you have more than one datapack under the namespace.
 
-> I recommend that you put it inside `/data/<namespace>/advancements/<datapack name>.json`.
+> the advancement *should* be inside `/data/<namespace>/advancements/<datapack name>.json`.
 
 Example Datapack: [Boomber360](https://www.planetminecraft.com/member/boomber360/).
 
 **Extra: Standalone Datapack**
 
-If you choose, use Standalone, then you have everything in 1 datapack only.
+Use standalone format when you are going only to have one datapack under the namespace.
 
 > Ex. `/data/global/advancements/standalone/<datapack name>.json`.
 
