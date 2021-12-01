@@ -68,8 +68,9 @@ The convention only applies if your function will affect an unknown entity. If y
 >> ```
 >> - Besides `as @e[tag=!global.ignore]`, `tp @e[tag=!global...]`, if you don't want the command to execute due entity `global.ignore` is in an area, you can use `if entity @e[tag=!global.ignore,distance=..30]` or `unless entity @e[tag=global.ignore,distance=..30]` and so on that you can be applied and not contrary to the convention.
 
-> - **Q :** I don't want anyone to mess with my entity, I can tag it with `global.ignore` After using it I want to remove it but *"Any entity with this tag **must not** be included in an entity selector at all."* What do I need to do?
-> - **A :** You can `["global.ignore", "Owner.tag"]` and then remove with `@e[tag=Owner.tag]`
+> - **Q :** I don't want anyone to mess with my entity, I can tag it with `global.ignore` After using it, I want to remove it, but the convention enforce that *"any entity with this tag **must not** be included in an entity selector at all."* What do I need to do?
+> - **A :** You can tag it with your own tag (`["global.ignore", "owner.tag"]`) and then remove with `@e[tag=owner.tag]`
+
 
 > - **Q :** Can I use score to filter `!global.ignore`?
 such as 
