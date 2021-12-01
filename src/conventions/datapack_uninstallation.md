@@ -15,8 +15,9 @@ You can create an "uninstallation function", which when ran, will remove most of
 --------------------
 
 ### **Note from Convention Mod (Optional)**
-> I recommend if you have `scoreboard`, `storage`, `team`, you should remove it if possible.  
-> - If you can't remove something, such as `core scoreboard`, you can write the reason in the [request review](https://github.com/mc-datapacks/review-tracker/issues) or mcfunction comment.
+> `scoreboard`, `storage`, or `team`, should be removed. 
+> in a situation that you cannot remove them, you should includes the reason in the [request review](https://github.com/mc-datapacks/review-tracker/issues) or mcfunction comment.
+
 
 ###  **What should you know and be aware of about how to disable datapack**
 **1. Use /datapack disable \<name>** - `tick.json`
