@@ -87,8 +87,8 @@ If it was me, what method would I use?
 > - Use `/schedule clear <function>` 
 > - Use `.zip` (Just drag & drop, good experience for the users)
 > 
-> Because it has pros is **"Don't worry about the name & No need to disable datapack"**  since `tick.json` is not used.
-And installing `.zip` will be able to force the user to *exit the game or stop the server (reload method 3.3)* to delete the datapack file. Because the datapack is not disabled.
+> Because you don't have to worry about the name when disabling the datapack. And installing the `.zip` file will force the user to *exit the game or stop the server (reload method 3.3)* to delete the datapack file. Because the datapack is not disabled.
+
 
 > - If schedule function command is more than 2
 > - Use `Use /datapack disable <static_name>` (convention.zip every update)
