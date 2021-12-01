@@ -19,7 +19,8 @@ You can create an "uninstallation function", which when ran, will remove most of
 > in a situation that you cannot remove them, you should includes the reason in the [request review](https://github.com/mc-datapacks/review-tracker/issues) or mcfunction comment.
 
 
-###  **What should you know and be aware of about how to disable datapack**
+###  **What you should be aware of about disabling the datapack**
+
 **1. Use /datapack disable \<name>** - `tick.json`
 > Pros
 > - Using just 2 commands will clear the schedule command as well. 
