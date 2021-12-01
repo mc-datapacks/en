@@ -23,7 +23,7 @@ tellraw @a <...>
 
 ### **Exception cases**
 
-> **Case 1 :** Use your `custom advancement`, send once message.
+> **Case 1:** a custom advancement to keep track of who has seen the message.
 ```json
 {
   "criteria": {
