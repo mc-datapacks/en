@@ -23,8 +23,9 @@ You can create an "uninstallation function", which when ran, will remove most of
 
 **1. Use /datapack disable \<name>** - `tick.json`
 > Pros
-> - Using just 2 commands will clear the schedule command as well. 
-> - Auto reload, Help ensure that everything is completely cleared. Due to the use of the `/reload` command, some multiplayer servers have a server launcher. Changed this reload command so vanilla's commands it won't work.
+> - Only use two `datapack disable` commands. This will also disable the schedule command.
+> - Automatic reload without `/reload`. **Note:** `/reload` command doesn't work with some 
+server launchers.
 >
 > Cons
 > - the datapack name is not reliable, the user can rename the datapack file to whatever they want.
