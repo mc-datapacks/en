@@ -32,9 +32,9 @@ server launchers.
 
 **2. Use /schedule clear \<function>** - `load.json only`
 ### **How to use**
-Typically you will use `load.json` to call mcfunctions like load, init, etc. to install scoreboard objectives, etc. as you need. which these files will only run once
+Technically `load.json` file is commonly used to call the init file, which these files will only run once.
 
-But if you have to use the same functionality as `tick.json`, you simply use `load.json` to call your main or tick function and use the `schedule function convention:datapack/main 1t` on the last line.
+If you don't want to use `tick.json`, but you need the `mcfunction one tick` loop, you can use the `load.json`, call the mcfunction file you need, and place the `schedule function 1t` command at the end of the line.
 
 **Fun Fact :** If you are a beginner, you may not know that you can make mcfunction run slower tick cycles as you like.
 For example, run every 8 tick `schedule function <function> 8t` or every 1 second `schedule function <function> 20t or 1s` `t - tick`, `s - second`, `d - gameday`. Why am I talking about this? Because I've seen scoreboards used to do this before.
