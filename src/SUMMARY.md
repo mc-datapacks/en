@@ -12,6 +12,7 @@
   - [Global Durability*](./conventions/global_durability.md)
   - [Namespace Convention***](./conventions/namespace.md)
   - [Shulker Box Loot Table***](./conventions/shulker_box_loot_table.md)
+  - [Global Forceload Tag***](./conventions/global_forceload_tag.md)
 
 - [Style Guideline](./style_guideline/index.md)
   - [Datapack Advancement](./style_guideline/datapack_advancement.md)
