@@ -6,10 +6,6 @@ This convention requires data packs which force-load chunks to communicate their
 
 ## Implementation
 
-Any data pack requiring a chunk be force-loaded must have an unmoving entity with the tag `global.forceload` within that same chunk’s boundaries.
-
-### Addition
-
 When running `/forceload add`, the programmer must spawn a tagged entity or tag an existing entity with `global.forceload` in the same chunk and within the same tick that the chunk was added. This entity's entire hitbox must reside in the chunk at all times.
 
 -------------------
