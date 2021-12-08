@@ -17,9 +17,7 @@ summon marker ~ ~ ~ {Tags:["dp.example","global.forceload"]}
 
 In the above example, a marker (which the datapack can find later with the `dp.example` tag) is summoned when we begin force-loading the chunk. 
 
-### Removal
-
-When running `/forceload remove`, the programmer must first un-tag or kill their tagged entity and check *at least* all blocks in a vanilla-sized chunk (y=-64 to 320) for any other entities tagged `global.forceload`. If an entity is found, the chunk should *remain* force-loaded.
+And when running `/forceload remove`, the programmer must first un-tag or kill their tagged entity and check *at least* all blocks in a vanilla-sized chunk (y=-64 to 320) for any other entities tagged `global.forceload`. If an entity is found, the chunk should *remain* force-loaded.
 
 -------------------
 
