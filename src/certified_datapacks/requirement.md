@@ -21,4 +21,4 @@ A datapack must satisfy these requirements to receive the Certified Datapack tit
 - **Datapack unreleased:** please don't DM the file; instead, use `GitHub private repo` and invite the reviewer. Don't worry about any datapack functions leaking.
 - **After certified:** then your datapack will have an updated version, which you can request to review as many times as you want.
 - **Request review again:** please add the `changelog` or the `location of the changed file`. And If you're using `GitHub`, we can easily check the `commit history`. By doing so, the reviewer can't waste time reviewing what they've already reviewed.
-- If you have any questions about convantion, you can ask on GitHub or mention `@Convention Mod` and `@Datapack Reviewer` on the discord server.
+- If you have any questions about convention, you can ask on GitHub or mention `@Convention Mod` and `@Datapack Reviewer` on the discord server.
