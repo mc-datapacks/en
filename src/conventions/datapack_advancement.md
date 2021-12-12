@@ -116,3 +116,23 @@ This is an optional syntax that you can take to display an installed datapack *w
 To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-advancement) step and make sure that in step [#3: Datapack Advancement](#3-datapack-advancement) you create your file inside the `/data/global/advancements/standalone/` directory.
 
 > Keep in mind that if you are planning to release more datapacks under this name, you should use the normal syntax over this one.
+
+--------------------
+
+### **Note from Convention Mod (Optional)**
+
+**3. Datapack Advancement**
+
+Choose the normal syntax when you have more than one datapack under the namespace.
+
+> the advancement *should* be inside `/data/<namespace>/advancements/<datapack name>.json`.
+
+Example Datapack: [Boomber360](https://www.planetminecraft.com/member/boomber360/).
+
+**Extra: Standalone Datapack**
+
+Use standalone format when you are going only to have one datapack under the namespace.
+
+> Ex. `/data/global/advancements/standalone/<datapack name>.json`.
+
+Example Datapack: [CreeperMagnet](https://www.planetminecraft.com/data-pack/the-creeper-s-code/)
