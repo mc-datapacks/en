@@ -23,4 +23,5 @@ The following tags should be self-explanatory but if you feel that it isn't, ple
 We also have the official account on these platform as well:
 - Twitter: [@mcdatapacks](https://twitter.com/mcdatapacks)
 - GitHub: [@mcdatapack](https://github.com/mcdatapack)
+- Discord: [Minecraft Datapacks](https://discord.gg/SnJQcfq)
 - PlanetMinecraft: [mcdatapack](https://www.planetminecraft.com/member/mcdatapack/)
