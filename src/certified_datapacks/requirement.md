@@ -13,3 +13,12 @@ A datapack must satisfy these requirements to receive the Certified Datapack tit
 
 1. We may rule a datapack out at our discretion, for reasons we would then specify.
 2. This requirement is not final and can be changed in the future.
+
+### Note from Convention Mod
+
+- **Learn more about the convention** by reading the `Note from Convention Mod (Optional)` section, this allows you to confidently inspect your datapack before requesting review and reduces the Datapack Reviewer's workload.
+- **Request review:** please include every website where your datapack is published. It doesn't have to be just `GitHub` or `Planetminecraft`. And if you're on the Minecraft Datapacks discord server, add your `Username#0000` as well.
+- **Datapack unreleased:** please don't DM the file; instead, use `GitHub private repo` and invite the reviewer. Don't worry about any datapack functions leaking.
+- **After certified:** then your datapack will have an updated version, which you can request to review as many times as you want.
+- **Request review again:** please add the `changelog` or the `location of the changed file`. And If you're using `GitHub`, we can easily check the `commit history`. By doing so, the reviewer can't waste time reviewing what they've already reviewed.
+- If you have any questions about convantion, you can ask on GitHub or mention `@Convention Mod` and `@Datapack Reviewer` on the discord server.
