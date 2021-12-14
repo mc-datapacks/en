@@ -123,7 +123,8 @@ To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-a
 
 **3. Datapack Advancement**
 
-Choose the normal syntax when you have more than one datapack under the namespace.
+Use the regular format when you have more than one datapack under the namespace.
+
 
 > the advancement *should* be inside `/data/<namespace>/advancements/<datapack name>.json`.
 
