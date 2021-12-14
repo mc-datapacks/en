@@ -10,7 +10,9 @@ Most of the time, the message will be an installation message, in which case you
 
 ### **Exception cases**
 
-> **Case 1:** a custom advancement to keep track of who has seen the message.
+**Case 1:** Custom advancement 
+- Simply use this a custom advancement to keep track of who has seen the message.
+
 ```json
 {
   "criteria": {
@@ -23,9 +25,10 @@ Most of the time, the message will be an installation message, in which case you
   }
 }
 ```
-> **Case 2:** debugging reload messages that normal players shouldn't see.
 
-``convention:datapack/setup``
+**Case 2:** Debug message
+- This example is debugging reload messages that normal players shouldn't see. 
+
 ```mcfunction
 tellraw @a[name=Owner] <...>
 tellraw @a[tag=convention.debug] <...>
