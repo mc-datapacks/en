@@ -132,7 +132,8 @@ Example Datapack: [Boomber360](https://www.planetminecraft.com/member/boomber360
 
 **Extra: Standalone Datapack**
 
-Use standalone format when you are going only to have one datapack under the namespace.
+Use the standalone format if you only want one datapack under the namespace.
+
 
 > Ex. `/data/global/advancements/standalone/<datapack name>.json`.
 
