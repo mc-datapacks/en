@@ -121,7 +121,8 @@ To implement this you simply skip the [#2: Namespace Advancement](#2-namespace-a
 
 ### **Note from Convention Mod (Optional)**
 
-**3. Datapack Advancement**
+**Regular format**
+
 
 Use the regular format when you have more than one datapack under the namespace.
 
@@ -130,7 +131,7 @@ Use the regular format when you have more than one datapack under the namespace.
 
 Example Datapack: [Boomber360](https://www.planetminecraft.com/member/boomber360/).
 
-**Extra: Standalone Datapack**
+**Standalone format**
 
 Use the standalone format if you only want one datapack under the namespace.
 
