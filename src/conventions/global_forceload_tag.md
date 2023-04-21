@@ -25,7 +25,7 @@ And when running `/forceload remove`, the programmer must first un-tag or kill t
 # executed as our "marker" anywhere in the chunk
 # "math" is a dummy objective
 
-tag @s remove global.ignore
+tag @s remove global.forceload
 
 # Constant chunk width
 scoreboard players set #16 math 16
